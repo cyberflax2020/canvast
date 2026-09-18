@@ -8,11 +8,11 @@
   "statementZh": "配对评估的两侧均运行相同的 DeepSeek API 模型 deepseek-v4-pro。Canvast 侧直接连接 DeepSeek API；参考工具链（Claude Code 2.1.233）通过本地兼容代理 scripts/anthropic-openai-proxy.mjs 接入，该代理仅执行 Anthropic 到 OpenAI 的协议翻译，并转发至相同的 DeepSeek 账户、端点与模型。项目所有者人工确认每一次纳入运行均为上述同后端配置。",
   "scope": "This human attestation closes the strictSameModelVerified concern for publication. Machine strict-revision observation remains unavailable through the reference compatibility proxy; this attestation supplements, not replaces, the machine check, which continues to report strictSameModelVerified=false.",
   "scopeZh": "本人工确认用于终结发布流程中的 strictSameModelVerified 悬案。通过参考工具链的兼容代理仍无法进行机器级严格 revision 观测；本确认为机器检查的补充而非替代，机器检查继续报告 strictSameModelVerified=false。",
-  "generatedAt": "2026-09-18T16:14:47.000Z",
+  "generatedAt": "2026-09-18T16:59:42.000Z",
   "sourceManifest": {
     "path": "release/source-manifest.json",
-    "sha256": "c148b767012f4b533c2ca8fe069be855107c503a81dfa83b73ae21d05f860d7e",
-    "generatedAt": "2026-09-18T16:05:25.005Z"
+    "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980",
+    "generatedAt": "2026-09-18T16:57:37.180Z"
   },
   "evaluationArtifact": {
     "path": "eval-matrix/artifacts/paired-evaluation-latest.json",

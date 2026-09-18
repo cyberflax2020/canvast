@@ -3,11 +3,11 @@
   "kind": "canvast-macos-ui-impact",
   "status": "passed",
   "classification": "release-presentation",
-  "generatedAt": "2026-09-18T16:41:56.847Z",
+  "generatedAt": "2026-09-18T17:04:45.468Z",
   "currentSourceManifest": {
     "path": "release/source-manifest.json",
-    "sha256": "c148b767012f4b533c2ca8fe069be855107c503a81dfa83b73ae21d05f860d7e",
-    "generatedAt": "2026-09-18T16:05:25.005Z",
+    "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980",
+    "generatedAt": "2026-09-18T16:57:37.180Z",
     "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6"
   },
   "evaluationSourceManifest": {
@@ -4686,33 +4686,33 @@
     "evidenceProjection": {
       "command": "node scripts/generate-effectiveness-evidence.mjs verify --readme README.md",
       "status": "passed",
-      "completedAt": "2026-09-18T16:41:56.847Z",
+      "completedAt": "2026-09-18T17:04:45.468Z",
       "sourceManifest": {
         "path": "release/source-manifest.json",
-        "sha256": "c148b767012f4b533c2ca8fe069be855107c503a81dfa83b73ae21d05f860d7e",
-        "generatedAt": "2026-09-18T16:05:25.005Z",
+        "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980",
+        "generatedAt": "2026-09-18T16:57:37.180Z",
         "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6"
       }
     },
     "swiftBuild": {
       "command": "swift build --package-path macos-app",
       "status": "passed",
-      "completedAt": "2026-09-18T16:41:56.847Z",
+      "completedAt": "2026-09-18T17:04:45.468Z",
       "sourceManifest": {
         "path": "release/source-manifest.json",
-        "sha256": "c148b767012f4b533c2ca8fe069be855107c503a81dfa83b73ae21d05f860d7e",
-        "generatedAt": "2026-09-18T16:05:25.005Z",
+        "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980",
+        "generatedAt": "2026-09-18T16:57:37.180Z",
         "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6"
       }
     },
     "appSelfTest": {
       "command": "swift run --package-path macos-app CanvastApp --self-test",
       "status": "passed",
-      "completedAt": "2026-09-18T16:41:56.847Z",
+      "completedAt": "2026-09-18T17:04:45.468Z",
       "sourceManifest": {
         "path": "release/source-manifest.json",
-        "sha256": "c148b767012f4b533c2ca8fe069be855107c503a81dfa83b73ae21d05f860d7e",
-        "generatedAt": "2026-09-18T16:05:25.005Z",
+        "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980",
+        "generatedAt": "2026-09-18T16:57:37.180Z",
         "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6"
       }
     }
@@ -4734,7 +4734,7 @@
     },
     "effectivenessSummary": {
       "path": "release/artifacts/effectiveness-summary.json",
-      "sha256": "a3980929debce195441ce917b2eadfea8fac2c9be68ed3db3f3e2ffc980254db",
+      "sha256": "d74e70392cea0cf1bf889340a4c350da9c3f9c57f6dd387806e785a8092b6621",
       "generatedAt": "2026-09-16T08:45:42.366Z",
       "sourceManifestSha256": "cbcae4896c9e36d18bd1984f995102f9a3a19e55d298213e13893f4568b2ec79",
       "sourceTreeSha256": "ae34a963971e574ff99983a87b0fa17c027682586576f81d088ff66df6057234"
