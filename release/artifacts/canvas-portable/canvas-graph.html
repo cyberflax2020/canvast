@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Canvas Surface Proof</title>
+<style>
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0f172a; color: #e5e7eb; }
+header { padding: 16px 20px; border-bottom: 1px solid #334155; }
+main { height: calc(100vh - 82px); }
+svg { width: 100%; height: 100%; display: block; }
+.link { stroke: #64748b; stroke-opacity: 0.7; }
+.node circle { stroke: #f8fafc; stroke-width: 1.5px; }
+.node text { fill: #e5e7eb; font-size: 12px; paint-order: stroke; stroke: #0f172a; stroke-width: 3px; }
+.edge-label { fill: #94a3b8; font-size: 10px; }
+.meta { color: #94a3b8; margin-top: 4px; }
+.dependency { margin: 10px 20px; padding: 10px 12px; border: 1px solid #475569; border-radius: 8px; color: #cbd5e1; }
+.dependency a { color: #7dd3fc; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+</head>
+<body>
+<header>
+  <div>Canvas Surface Proof</div>
+  <div class="meta">4 nodes / 4 edges · plan:1 decision:1 file:1 agent_run:1 · drag nodes, scroll to zoom</div>
+</header>
+<div id="dependency" class="dependency">Interactive layout: network required for D3 7.9.0 from <a href="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js">jsDelivr CDN</a>. Offline: open <a href="./canvas-graph.svg">canvas-graph.svg</a>.</div>
+<noscript><div class="dependency">JavaScript is disabled. Open <a href="./canvas-graph.svg">canvas-graph.svg</a> for the standalone offline view.</div></noscript>
+<main><svg></svg></main>
+<script>
+const graph = {"nodes":[{"id":"plan-release","type":"plan","label":"Verify Canvas portable artifact"},{"id":"decision-offline","type":"decision","label":"Keep SVG standalone and disclose the HTML CDN"},{"id":"file-export","type":"file","label":"scripts/export-canvas.mjs"},{"id":"agent-proof","type":"agent_run","label":"Run the Canvas portable proof"}],"links":[{"source":"plan-release","target":"decision-offline","type":"MOTIVATED_BY"},{"source":"file-export","target":"agent-proof","type":"PRODUCED_BY"},{"source":"plan-release","target":"file-export","type":"DECOMPOSES_INTO"},{"source":"plan-release","target":"agent-proof","type":"EXECUTED_BY"}]};
+if (!globalThis.d3) {
+  document.querySelector("main").innerHTML = '<object data="./canvas-graph.svg" type="image/svg+xml" style="width:100%;height:100%"><a href="./canvas-graph.svg">Open the offline SVG</a></object>';
+} else {
+const width = window.innerWidth;
+const height = window.innerHeight - 82;
+const colors = { plan: "#38bdf8", decision: "#f59e0b", file: "#22c55e", agent_run: "#a78bfa" };
+const svg = d3.select("svg");
+const g = svg.append("g");
+svg.call(d3.zoom().scaleExtent([0.2, 5]).on("zoom", event => g.attr("transform", event.transform)));
+const simulation = d3.forceSimulation(graph.nodes)
+  .force("link", d3.forceLink(graph.links).id(d => d.id).distance(80))
+  .force("charge", d3.forceManyBody().strength(-220))
+  .force("center", d3.forceCenter(width / 2, height / 2))
+  .force("collide", d3.forceCollide().radius(34));
+const link = g.append("g").selectAll("line").data(graph.links).join("line").attr("class", "link").attr("stroke-width", 1.4);
+const edgeLabel = g.append("g").selectAll("text").data(graph.links).join("text").attr("class", "edge-label").text(d => d.type);
+const node = g.append("g").selectAll("g").data(graph.nodes).join("g").attr("class", "node").call(d3.drag()
+  .on("start", event => { if (!event.active) simulation.alphaTarget(0.3).restart(); event.subject.fx = event.subject.x; event.subject.fy = event.subject.y; })
+  .on("drag", event => { event.subject.fx = event.x; event.subject.fy = event.y; })
+  .on("end", event => { if (!event.active) simulation.alphaTarget(0); event.subject.fx = null; event.subject.fy = null; }));
+node.append("circle").attr("r", 10).attr("fill", d => colors[d.type] || "#94a3b8");
+node.append("title").text(d => d.type + ": " + d.id + "\n" + d.label);
+node.append("text").attr("x", 14).attr("y", 4).text(d => d.label.length > 64 ? d.label.slice(0, 61) + "..." : d.label);
+simulation.on("tick", () => {
+  link.attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+  edgeLabel.attr("x", d => (d.source.x + d.target.x) / 2).attr("y", d => (d.source.y + d.target.y) / 2);
+  node.attr("transform", d => "translate(" + d.x + "," + d.y + ")");
+});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "kind": "canvast-brand-assets",
+  "publisher": {
+    "project": "Canvast",
+    "name": "Canvast Contributors",
+    "provenance": "Original Canvast-specific product brand assets published by the Canvast project.",
+    "license": "Apache-2.0",
+    "licenseFile": "LICENSE"
+  },
+  "directoryPolicy": {
+    "canonicalDirectory": "assets/brand",
+    "exactFiles": [
+      "asset-manifest.json",
+      "canvast-hero.svg",
+      "canvast-logo.svg",
+      "canvast-logo.tui.txt",
+      "README.md"
+    ],
+    "developmentMaterialsAllowed": false
+  },
+  "canonicalAssets": [
+    {
+      "path": "assets/brand/canvast-logo.svg",
+      "mediaType": "image/svg+xml",
+      "size": 2631,
+      "sha256": "76f690a3204b65bd47a926fe74b4734487c3e565dd155b57eae3ca32f58c12f8",
+      "purpose": [
+        "product-brand",
+        "documentation",
+        "package",
+        "release",
+        "native-app"
+      ]
+    },
+    {
+      "path": "assets/brand/canvast-logo.tui.txt",
+      "mediaType": "text/plain; charset=utf-8",
+      "size": 466,
+      "sha256": "800671901a07937ca30ebae2d354d407937d1c2c4a8afc89ff95c36f2fffd48b",
+      "purpose": [
+        "product-brand",
+        "terminal-ui"
+      ]
+    },
+    {
+      "path": "assets/brand/canvast-hero.svg",
+      "mediaType": "image/svg+xml",
+      "size": 4021,
+      "sha256": "81dd02df41cf62a3797670e89801c9ed59f39fdfc004acf80606665beb17fbc5",
+      "purpose": [
+        "product-brand",
+        "documentation",
+        "release",
+        "social-preview"
+      ]
+    }
+  ],
+  "derivedCopies": [
+    {
+      "path": "macos-app/Sources/CanvastApp/Resources/Assets.xcassets/CanvastLogo.imageset/canvast-logo.svg",
+      "source": "assets/brand/canvast-logo.svg",
+      "relation": "exact-byte-copy",
+      "size": 2631,
+      "sha256": "76f690a3204b65bd47a926fe74b4734487c3e565dd155b57eae3ca32f58c12f8",
+      "purpose": [
+        "native-app-resource"
+      ]
+    }
+  ]
+}

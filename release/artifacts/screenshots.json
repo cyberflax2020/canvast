@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "kind": "canvast-screenshot-evidence",
+  "generatedAt": "2026-09-18T16:34:14.781Z",
+  "status": "passed",
+  "algorithm": "sha256",
+  "sourceManifest": {
+    "path": "release/source-manifest.json",
+    "sha256": "c148b767012f4b533c2ca8fe069be855107c503a81dfa83b73ae21d05f860d7e",
+    "generatedAt": "2026-09-18T16:05:25.005Z",
+    "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6"
+  },
+  "artifactCount": 28,
+  "totalBytes": 5209286,
+  "artifacts": [
+    {
+      "path": "docs/assets/user-guide/macos-onboarding.png",
+      "size": 66862,
+      "sha256": "ae9cdef5d44d5baefda4d33490dd3d38cdd2d17d27016094d7b56fe7ba6878bb"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-settings-api-key.png",
+      "size": 106175,
+      "sha256": "b7c9d259b7ca24c02f6338610f724d7997a8514f2f6a1df319360eb0fd2611ca"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-canvas.png",
+      "size": 180369,
+      "sha256": "2b502294eb9e228bc1ba087ef673997dc330db29ed9297c3590624d17f8d24b5"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-run-console.png",
+      "size": 174480,
+      "sha256": "2d93244cd86859debb9bfbbc02b3962bdc9651fd4c87878b3cf68ca504235642"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-tasks-plans.png",
+      "size": 205657,
+      "sha256": "cf1ee639fd8fc4b06c992eb281b91d5cf34d971d26b6e32680ba7fc971507cff"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-agents-workflows.png",
+      "size": 167964,
+      "sha256": "0351de22c839d01953317ee380adc8ad29185ea872d87e4c8148fe01e472f59c"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-safety-permissions.png",
+      "size": 178153,
+      "sha256": "384994845712bd475b48b62f05c4fba5bdef4687ede927fd15c3355f98b2c403"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-tools.png",
+      "size": 248802,
+      "sha256": "4425a9077f190fa71731a75a90a5aca2c33a7e2a2bf80257bcd8173f3b22a6cb"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-context.png",
+      "size": 153157,
+      "sha256": "81b6a52a09b62fcae1e1a10bc9fd0d5ec53bc69e2f167eaff408c87a519c8389"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-sessions.png",
+      "size": 190888,
+      "sha256": "40d5f2ee67e70f200e7a1297be50b6270b0e3d6520d37572e1764be7115e94f4"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-onboarding-zh-Hans.png",
+      "size": 70148,
+      "sha256": "86008a89966a9ae9a724dc310c8ed5b962449ca352008c9127b682b483d4d045"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-settings-api-key-zh-Hans.png",
+      "size": 105192,
+      "sha256": "604d9ce668db414a8e21379104d8638f2d6ab31f33b99a917c9bab9999136e5e"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-canvas-zh-Hans.png",
+      "size": 181251,
+      "sha256": "bef7262a95c20ff337920749addb96d3fbb1f6d0b83f9e96e273c18e3fb25f9c"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-run-console-zh-Hans.png",
+      "size": 172279,
+      "sha256": "27b4a16343c11a1486ae3631b7bbc215b884145c7d7bee4e028d94bf41c833b8"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-tasks-plans-zh-Hans.png",
+      "size": 201221,
+      "sha256": "0786fb0158efc43b6a5b2e773fb2b13c1823dc657764ef56c9704bdf0db85c12"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-agents-workflows-zh-Hans.png",
+      "size": 166952,
+      "sha256": "69e2b7f9916493d6a38e64e49c61acf0c13757811054baa2c36b624e6ef15bf4"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-safety-permissions-zh-Hans.png",
+      "size": 172369,
+      "sha256": "e3db0b24e9cf9b4ae6442367bfc7a80b8331212b3596663971dcd9f0499ed8ca"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-tools-zh-Hans.png",
+      "size": 239054,
+      "sha256": "333b0e6427383dbe9cdd28fda623ec49f431689539b1f22ebba9f6b7946b2f2e"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-context-zh-Hans.png",
+      "size": 145559,
+      "sha256": "c421ba989abf6d98771b801adf7355a2c70b61692a8a7cdbcfd53854b0ed5081"
+    },
+    {
+      "path": "docs/assets/user-guide/macos-sessions-zh-Hans.png",
+      "size": 183287,
+      "sha256": "930f2b47d9fe52b84a817f0742e1931842b014bf918a354f6d2118b36ef97dd4"
+    },
+    {
+      "path": "docs/assets/user-guide/tui-run-runtime.png",
+      "size": 230447,
+      "sha256": "3a377579e71f53b97b25be6087e4ae1f2067dc6045a27c0d04505840b85628ca"
+    },
+    {
+      "path": "docs/assets/user-guide/tui-task-plan-live.png",
+      "size": 271845,
+      "sha256": "853cd02085d41dcc8788fcee0c30500bf00dcb6638e9deebd15ebe063865932c"
+    },
+    {
+      "path": "docs/assets/user-guide/tui-sidecar-continuity.png",
+      "size": 212396,
+      "sha256": "9e0031f5a3b5f62d7635a40222eebed37df418daf7d0d5e1ab3ef92379adabae"
+    },
+    {
+      "path": "docs/assets/user-guide/tui-canvas-safety.png",
+      "size": 234340,
+      "sha256": "c3643facd528f6438fcbb0d5ea8785fecab5acab15dad241e27c4f03a7bb1e44"
+    },
+    {
+      "path": "docs/assets/user-guide/tui-run-runtime-zh-Hans.png",
+      "size": 230863,
+      "sha256": "79e058b6e0c33d80008b458177106590990ce4cf59514a046deab9e843115da5"
+    },
+    {
+      "path": "docs/assets/user-guide/tui-task-plan-live-zh-Hans.png",
+      "size": 272180,
+      "sha256": "fe839b1885aa77bdb31d8f89ea0d11699db1a79d50b9be7f60f8656a4cc825f1"
+    },
+    {
+      "path": "docs/assets/user-guide/tui-sidecar-continuity-zh-Hans.png",
+      "size": 212726,
+      "sha256": "0c9b59cf9fcbe4a90683d7cd21b1e3daf1010ae4179522266bf53b33cc9af77b"
+    },
+    {
+      "path": "docs/assets/user-guide/tui-canvas-safety-zh-Hans.png",
+      "size": 234670,
+      "sha256": "2c56a9affe764c7ba44f6ca8aee331644e6c7698ec1baba93fef21c24278fd72"
+    }
+  ],
+  "screenshotMatrix": {
+    "languages": [
+      "en",
+      "zh-Hans"
+    ],
+    "logicalCaptureCount": 14,
+    "artifactCount": 28,
+    "entries": [
+      {
+        "platform": "macos",
+        "captureName": "macos-onboarding",
+        "artifactName": "macos-onboarding",
+        "language": "en",
+        "path": "docs/assets/user-guide/macos-onboarding.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-settings-api-key",
+        "artifactName": "macos-settings-api-key",
+        "language": "en",
+        "path": "docs/assets/user-guide/macos-settings-api-key.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-canvas",
+        "artifactName": "macos-canvas",
+        "language": "en",
+        "path": "docs/assets/user-guide/macos-canvas.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-run-console",
+        "artifactName": "macos-run-console",
+        "language": "en",
+        "path": "docs/assets/user-guide/macos-run-console.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-tasks-plans",
+        "artifactName": "macos-tasks-plans",
+        "language": "en",
+        "path": "docs/assets/user-guide/macos-tasks-plans.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-agents-workflows",
+        "artifactName": "macos-agents-workflows",
+        "language": "en",
+        "path": "docs/assets/user-guide/macos-agents-workflows.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-safety-permissions",
+        "artifactName": "macos-safety-permissions",
+        "language": "en",
+        "path": "docs/assets/user-guide/macos-safety-permissions.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-tools",
+        "artifactName": "macos-tools",
+        "language": "en",
+        "path": "docs/assets/user-guide/macos-tools.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-context",
+        "artifactName": "macos-context",
+        "language": "en",
+        "path": "docs/assets/user-guide/macos-context.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-sessions",
+        "artifactName": "macos-sessions",
+        "language": "en",
+        "path": "docs/assets/user-guide/macos-sessions.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-onboarding",
+        "artifactName": "macos-onboarding-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/macos-onboarding-zh-Hans.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-settings-api-key",
+        "artifactName": "macos-settings-api-key-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/macos-settings-api-key-zh-Hans.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-canvas",
+        "artifactName": "macos-canvas-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/macos-canvas-zh-Hans.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-run-console",
+        "artifactName": "macos-run-console-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/macos-run-console-zh-Hans.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-tasks-plans",
+        "artifactName": "macos-tasks-plans-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/macos-tasks-plans-zh-Hans.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-agents-workflows",
+        "artifactName": "macos-agents-workflows-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/macos-agents-workflows-zh-Hans.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-safety-permissions",
+        "artifactName": "macos-safety-permissions-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/macos-safety-permissions-zh-Hans.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-tools",
+        "artifactName": "macos-tools-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/macos-tools-zh-Hans.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-context",
+        "artifactName": "macos-context-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/macos-context-zh-Hans.png"
+      },
+      {
+        "platform": "macos",
+        "captureName": "macos-sessions",
+        "artifactName": "macos-sessions-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/macos-sessions-zh-Hans.png"
+      },
+      {
+        "platform": "tui",
+        "captureName": "tui-run-runtime",
+        "artifactName": "tui-run-runtime",
+        "language": "en",
+        "path": "docs/assets/user-guide/tui-run-runtime.png"
+      },
+      {
+        "platform": "tui",
+        "captureName": "tui-task-plan-live",
+        "artifactName": "tui-task-plan-live",
+        "language": "en",
+        "path": "docs/assets/user-guide/tui-task-plan-live.png"
+      },
+      {
+        "platform": "tui",
+        "captureName": "tui-sidecar-continuity",
+        "artifactName": "tui-sidecar-continuity",
+        "language": "en",
+        "path": "docs/assets/user-guide/tui-sidecar-continuity.png"
+      },
+      {
+        "platform": "tui",
+        "captureName": "tui-canvas-safety",
+        "artifactName": "tui-canvas-safety",
+        "language": "en",
+        "path": "docs/assets/user-guide/tui-canvas-safety.png"
+      },
+      {
+        "platform": "tui",
+        "captureName": "tui-run-runtime",
+        "artifactName": "tui-run-runtime-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/tui-run-runtime-zh-Hans.png"
+      },
+      {
+        "platform": "tui",
+        "captureName": "tui-task-plan-live",
+        "artifactName": "tui-task-plan-live-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/tui-task-plan-live-zh-Hans.png"
+      },
+      {
+        "platform": "tui",
+        "captureName": "tui-sidecar-continuity",
+        "artifactName": "tui-sidecar-continuity-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/tui-sidecar-continuity-zh-Hans.png"
+      },
+      {
+        "platform": "tui",
+        "captureName": "tui-canvas-safety",
+        "artifactName": "tui-canvas-safety-zh-Hans",
+        "language": "zh-Hans",
+        "path": "docs/assets/user-guide/tui-canvas-safety-zh-Hans.png"
+      }
+    ],
+    "definition": {
+      "path": "scripts/user-guide-screenshot-matrix.mjs",
+      "size": 3063,
+      "sha256": "7911f4f23cfc9d0fc7129c72b91dff04db6c366ca50266bac429e3c56d4177a3"
+    }
+  }
+}

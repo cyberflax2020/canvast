@@ -1,0 +1,5 @@
+{
+  "model": "deepseek/deepseek-v4-pro",
+  "cleanupPeriodDays": 7,
+  "sessionDir": "./pi-data/sessions"
+}

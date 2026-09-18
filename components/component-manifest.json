@@ -1,0 +1,46 @@
+{
+  "updatedAt": "2026-08-18T04:24:00.000Z",
+  "policy": "bundled-first; network updates require explicit user confirmation",
+  "components": {
+    "fd": {
+      "status": "bundled",
+      "path": "components/bin/fd",
+      "sha256": "a1c0cc9ba1fd4e98e91db0bca41ec10eb77f16786ef5465087c0fc5b7714f189",
+      "version": "fd 10.0.0-canvast-shim",
+      "purpose": "offline startup autocomplete and find-tool fallback"
+    },
+    "rg": {
+      "status": "bundled",
+      "path": "components/bin/rg",
+      "sha256": "3dd1d7645dbe339a4de6f57447ca2e4b7f6dfefe1c7ace943fc77bd7b6378b9e",
+      "version": "ripgrep 14.0.0-canvast-shim",
+      "purpose": "offline grep-tool fallback when system ripgrep is unavailable"
+    }
+  },
+  "trustedArtifacts": {
+    "fd": {
+      "any": {
+        "version": "fd 10.0.0-canvast-shim",
+        "sha256": "a1c0cc9ba1fd4e98e91db0bca41ec10eb77f16786ef5465087c0fc5b7714f189",
+        "format": "script",
+        "arch": "architecture-neutral",
+        "source": {
+          "type": "local-dir",
+          "artifact": "fd"
+        }
+      }
+    },
+    "rg": {
+      "any": {
+        "version": "ripgrep 14.0.0-canvast-shim",
+        "sha256": "3dd1d7645dbe339a4de6f57447ca2e4b7f6dfefe1c7ace943fc77bd7b6378b9e",
+        "format": "script",
+        "arch": "architecture-neutral",
+        "source": {
+          "type": "local-dir",
+          "artifact": "rg"
+        }
+      }
+    }
+  }
+}

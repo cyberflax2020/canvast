@@ -1,0 +1,17 @@
+flowchart LR
+  %% node {"id":"plan-release","type":"plan"}
+  plan_release["plan: plan-release — Verify Canvas portable artifact"]
+  %% node {"id":"decision-offline","type":"decision"}
+  decision_offline["decision: decision-offline — Keep SVG standalone and disclose the HTML CDN"]
+  %% node {"id":"file-export","type":"file"}
+  file_export["file: file-export — scripts/export-canvas.mjs"]
+  %% node {"id":"agent-proof","type":"agent_run"}
+  agent_proof["agent_run: agent-proof — Run the Canvas portable proof"]
+  %% edge {"type":"MOTIVATED_BY","fromNodeId":"plan-release","toNodeId":"decision-offline"}
+  plan_release -- MOTIVATED_BY --> decision_offline
+  %% edge {"type":"PRODUCED_BY","fromNodeId":"file-export","toNodeId":"agent-proof"}
+  file_export -- PRODUCED_BY --> agent_proof
+  %% edge {"type":"DECOMPOSES_INTO","fromNodeId":"plan-release","toNodeId":"file-export"}
+  plan_release -- DECOMPOSES_INTO --> file_export
+  %% edge {"type":"EXECUTED_BY","fromNodeId":"plan-release","toNodeId":"agent-proof"}
+  plan_release -- EXECUTED_BY --> agent_proof

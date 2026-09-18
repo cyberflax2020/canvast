@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "declaration": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@sinclair/typebox": ["./node_modules/typebox"]
+    }
+  },
+  "include": ["src/**/*.ts", "extensions/*.ts", "tests/**/*.ts", "tests/**/*.d.ts"],
+  "exclude": ["node_modules", "dist", "eval-matrix"]
+}

@@ -1,0 +1,228 @@
+#!/usr/bin/env node
+const fs = require("node:fs");
+const path = require("node:path");
+
+function parseArgs(argv) {
+  const opts = {
+    json: false,
+    lineNumber: false,
+    ignoreCase: false,
+    fixedStrings: false,
+    hidden: false,
+    maxCount: undefined,
+    patterns: [],
+    types: [],
+    globs: [],
+    positional: [],
+  };
+  for (let i = 0; i < argv.length; i += 1) {
+    const arg = argv[i];
+    if (arg === "--") {
+      opts.positional.push(...argv.slice(i + 1));
+      break;
+    }
+    if (arg === "--version" || arg === "-V") opts.version = true;
+    else if (arg === "--json") opts.json = true;
+    else if (arg === "--line-number" || arg === "-n") opts.lineNumber = true;
+    else if (arg === "--ignore-case" || arg === "-i") opts.ignoreCase = true;
+    else if (arg === "--fixed-strings" || arg === "-F") opts.fixedStrings = true;
+    else if (arg === "--hidden") opts.hidden = true;
+    else if (arg === "--glob" || arg === "-g") opts.globs.push(argv[++i] || "");
+    else if (arg === "--max-count" || arg === "-m") opts.maxCount = parseMaxCount(argv[++i]);
+    else if (arg.startsWith("--max-count=")) opts.maxCount = parseMaxCount(arg.slice("--max-count=".length));
+    else if (arg === "--regexp" || arg === "-e") opts.patterns.push(argv[++i] || "");
+    else if (arg.startsWith("--regexp=")) opts.patterns.push(arg.slice("--regexp=".length));
+    else if (arg === "--type" || arg === "-t") opts.types.push(argv[++i] || "");
+    else if (arg.startsWith("--type=")) opts.types.push(arg.slice("--type=".length));
+    else if (arg === "--color=never") {
+      // Supported no-op.
+    } else if (arg.startsWith("-")) {
+      // Ignore unsupported flags to preserve startup robustness.
+    } else {
+      opts.positional.push(arg);
+    }
+  }
+  return opts;
+}
+
+function parseMaxCount(value) {
+  const parsed = Number.parseInt(value || "", 10);
+  return Number.isFinite(parsed) && parsed >= 0 ? parsed : undefined;
+}
+
+function typeGlobs(type) {
+  const normalized = String(type || "").toLowerCase();
+  if (["ts", "typescript"].includes(normalized)) return ["*.ts", "*.tsx"];
+  if (["js", "javascript"].includes(normalized)) return ["*.js", "*.jsx", "*.mjs", "*.cjs"];
+  if (["json"].includes(normalized)) return ["*.json"];
+  if (["md", "markdown"].includes(normalized)) return ["*.md", "*.markdown"];
+  return [];
+}
+
+function normalize(value) {
+  return value.replace(/\\/g, "/");
+}
+
+function globToRegExp(glob) {
+  let out = "^";
+  for (let i = 0; i < glob.length; i += 1) {
+    const ch = glob[i];
+    const next = glob[i + 1];
+    if (ch === "*" && next === "*") {
+      out += ".*";
+      i += 1;
+    } else if (ch === "*") {
+      out += "[^/]*";
+    } else if (ch === "?") {
+      out += "[^/]";
+    } else if ("\\^$+?.()|{}[]".includes(ch)) {
+      out += `\\${ch}`;
+    } else {
+      out += ch;
+    }
+  }
+  out += "$";
+  return new RegExp(out);
+}
+
+function isExcluded(rel) {
+  const value = normalize(rel);
+  return value === ".git" || value.startsWith(".git/") || value.includes("/.git/") ||
+    value === ".runtime" || value.startsWith(".runtime/") || value.includes("/.runtime/") ||
+    value === "node_modules" || value.startsWith("node_modules/") || value.includes("/node_modules/") ||
+    value === ".canvast-worktrees" || value.startsWith(".canvast-worktrees/") || value.includes("/.canvast-worktrees/");
+}
+
+function walkFiles(root) {
+  const files = [];
+  const seen = new Set();
+  function visit(abs) {
+    let stat;
+    try {
+      stat = fs.statSync(abs);
+    } catch {
+      return;
+    }
+    let real = abs;
+    try {
+      real = fs.realpathSync.native(abs);
+    } catch {
+      // Keep unresolved path.
+    }
+    const rel = normalize(path.relative(root, abs)) || ".";
+    if (rel !== "." && isExcluded(rel)) return;
+    if (stat.isDirectory()) {
+      if (seen.has(real)) return;
+      seen.add(real);
+      let entries = [];
+      try {
+        entries = fs.readdirSync(abs, { withFileTypes: true });
+      } catch {
+        return;
+      }
+      entries.sort((a, b) => a.name.localeCompare(b.name));
+      for (const entry of entries) visit(path.join(abs, entry.name));
+      return;
+    }
+    if (stat.isFile()) files.push(abs);
+  }
+  visit(root);
+  return files;
+}
+
+function matchesGlob(file, root, globs) {
+  if (!globs.length) return true;
+  const rel = normalize(path.relative(root, file));
+  const positives = [];
+  const negatives = [];
+  for (const glob of globs) {
+    if (!glob) return true;
+    const negative = glob.startsWith("!");
+    const raw = negative ? glob.slice(1) : glob;
+    (negative ? negatives : positives).push(globToRegExp(raw.includes("/") ? raw : `**/${raw}`));
+  }
+  if (negatives.some(re => re.test(rel))) return false;
+  if (positives.length === 0) return true;
+  return positives.some(re => re.test(rel));
+}
+
+function lineMatches(line, patterns, opts) {
+  return patterns.some(pattern => lineMatchesOne(line, pattern, opts));
+}
+
+function lineMatchesOne(line, pattern, opts) {
+  if (opts.fixedStrings) {
+    const haystack = opts.ignoreCase ? line.toLowerCase() : line;
+    const needle = opts.ignoreCase ? pattern.toLowerCase() : pattern;
+    return haystack.includes(needle);
+  }
+  try {
+    return new RegExp(pattern, opts.ignoreCase ? "i" : "").test(line);
+  } catch {
+    const haystack = opts.ignoreCase ? line.toLowerCase() : line;
+    const needle = opts.ignoreCase ? pattern.toLowerCase() : pattern;
+    return haystack.includes(needle);
+  }
+}
+
+const opts = parseArgs(process.argv.slice(2));
+if (opts.version) {
+  console.log("ripgrep 14.0.0-canvast-shim");
+  process.exit(0);
+}
+
+const patterns = (opts.patterns.length ? opts.patterns : [opts.positional[0]]).filter(Boolean);
+const searchRoots = opts.patterns.length ? opts.positional : opts.positional.slice(1);
+const roots = (searchRoots.length ? searchRoots : ["."]).map(root => path.resolve(root));
+const globs = [
+  ...opts.globs,
+  ...opts.types.flatMap(typeGlobs),
+];
+if (!patterns.length) process.exit(2);
+
+let matched = 0;
+const seenFiles = new Set();
+for (const root of roots) {
+for (const file of walkFiles(root)) {
+  let real = file;
+  try {
+    real = fs.realpathSync.native(file);
+  } catch {
+    // Keep unresolved path.
+  }
+  if (seenFiles.has(real)) continue;
+  seenFiles.add(real);
+  if (!matchesGlob(file, process.cwd(), globs)) continue;
+  let text;
+  try {
+    text = fs.readFileSync(file, "utf-8");
+  } catch {
+    continue;
+  }
+  const lines = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n").split("\n");
+  let matchedInFile = 0;
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
+    if (!lineMatches(line, patterns, opts)) continue;
+    if (opts.maxCount !== undefined && matchedInFile >= opts.maxCount) break;
+    matched += 1;
+    matchedInFile += 1;
+    if (opts.json) {
+      console.log(JSON.stringify({
+        type: "match",
+        data: {
+          path: { text: file },
+          lines: { text: `${line}\n` },
+          line_number: i + 1,
+          absolute_offset: 0,
+          submatches: [],
+        },
+      }));
+    } else {
+      const rel = normalize(path.relative(process.cwd(), file));
+      console.log(opts.lineNumber ? `${rel}:${i + 1}:${line}` : `${rel}:${line}`);
+    }
+  }
+}
+}
+process.exit(matched > 0 ? 0 : 1);

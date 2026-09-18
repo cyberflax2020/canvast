@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "kind": "canvast-effectiveness-summary",
+  "status": "passed",
+  "generatedAt": "2026-09-16T08:45:42.366Z",
+  "inputs": {
+    "pairedEvaluation": {
+      "path": "eval-matrix/artifacts/paired-evaluation-latest.json",
+      "sha256": "2462587f5fffe162d1f1474d9113f7a6ffd9157aff3a4abea050f9714548cb02",
+      "generatedAt": "2026-09-16T08:45:42.366Z"
+    },
+    "sourceManifest": {
+      "path": "release/source-manifest.json",
+      "sha256": "cbcae4896c9e36d18bd1984f995102f9a3a19e55d298213e13893f4568b2ec79",
+      "sourceTreeSha256": "ae34a963971e574ff99983a87b0fa17c027682586576f81d088ff66df6057234",
+      "generatedAt": "2026-09-16T07:06:15.375Z"
+    },
+    "smokeArtifact": {
+      "path": "eval-matrix/artifacts/paired-smoke-latest.json",
+      "sha256": "abb760ba462a694304f11310683afad3b776939def38a892fd3ca55a933e0a6b",
+      "generatedAt": "2026-09-16T07:12:54.517Z"
+    },
+    "modelBackendAttestation": {
+      "path": "release/artifacts/model-backend-attestation.json",
+      "sha256": "8c3b2240f1dd9a361de171129c9ea9084c19a8c1ad2905bd37dc7e40aed39f4a",
+      "attestedAt": "2026-09-18T13:56:17.000Z"
+    }
+  },
+  "document": {
+    "path": "docs/EFFECTIVENESS_EVIDENCE.md",
+    "sha256": "75278be99c031fa876ae0834056deca4368424c734adc5ca9245049b84b35f2c"
+  },
+  "comparisonOutcome": {
+    "status": "inconclusive",
+    "reason": "Strict same-model identity is unverified, so superiority remains inconclusive even if protocol execution is complete.",
+    "thresholds": {
+      "minimumCompletePairs": 4,
+      "minimumPassRateDelta": 0.1,
+      "maximumDurationRatio": 1,
+      "requireStrictSameModelVerified": true,
+      "requireZeroInfrastructureExclusions": true,
+      "maximumExactTwoSidedPValue": 0.05
+    }
+  },
+  "modelComparability": {
+    "strictSameModelVerified": false,
+    "status": "configured_same_model_but_reference_upstream_revision_unobserved",
+    "ownerAttestation": {
+      "attestedAt": "2026-09-18T13:56:17.000Z",
+      "attestedBy": "project owner (github.com/cyberflax2020)",
+      "statement": "Both sides of the paired evaluation ran against the same DeepSeek API model, deepseek-v4-pro. The Canvast side connected to the DeepSeek API directly; the reference toolchain (Claude Code 2.1.233) connected through the local compatibility proxy scripts/anthropic-openai-proxy.mjs, which performs Anthropic-to-OpenAI protocol translation only and forwards to the same DeepSeek account, endpoint, and model. The project owner manually confirms this same-backend configuration for every included run.",
+      "statementZh": "配对评估的两侧均运行相同的 DeepSeek API 模型 deepseek-v4-pro。Canvast 侧直接连接 DeepSeek API；参考工具链（Claude Code 2.1.233）通过本地兼容代理 scripts/anthropic-openai-proxy.mjs 接入，该代理仅执行 Anthropic 到 OpenAI 的协议翻译，并转发至相同的 DeepSeek 账户、端点与模型。项目所有者人工确认每一次纳入运行均为上述同后端配置。",
+      "scope": "This human attestation closes the strictSameModelVerified concern for publication. Machine strict-revision observation remains unavailable through the reference compatibility proxy; this attestation supplements, not replaces, the machine check, which continues to report strictSameModelVerified=false.",
+      "scopeZh": "本人工确认用于终结发布流程中的 strictSameModelVerified 悬案。通过参考工具链的兼容代理仍无法进行机器级严格 revision 观测；本确认为机器检查的补充而非替代，机器检查继续报告 strictSameModelVerified=false。"
+    }
+  },
+  "referenceToolchain": {
+    "version": "2.1.233 (Claude Code)",
+    "mode": "bare print via local compatibility proxy"
+  },
+  "metrics": {
+    "pairCount": 12,
+    "sideRunCount": 24,
+    "passes": {
+      "canvast": 12,
+      "reference": 12
+    },
+    "passRates": {
+      "canvast": 1,
+      "reference": 1,
+      "delta": 0
+    },
+    "pairedOutcomes": {
+      "bothPassed": 12,
+      "bothFailed": 0,
+      "canvastOnlyPassed": 0,
+      "referenceOnlyPassed": 0
+    },
+    "latencyMs": {
+      "canvastMedian": 61138.5,
+      "referenceMedian": 40736.5,
+      "difference": 20402,
+      "ratio": 1.5008
+    },
+    "exactSignTest": {
+      "discordantPairs": 0,
+      "twoSidedPValue": null
+    },
+    "tokenComparison": null
+  },
+  "bilateralEnhancedProbes": {
+    "summary": {
+      "totalDimensions": 4,
+      "pass": 0,
+      "tie": 0,
+      "fail": 0,
+      "inconclusive": 4
+    },
+    "dimensions": [
+      {
+        "id": "sidecar_primary_recovery",
+        "title": "Sidecar Continuation And Primary Recovery",
+        "verdict": "inconclusive",
+        "includedInClaim": false,
+        "canvastStatus": "inconclusive",
+        "referenceStatus": "inconclusive",
+        "rationale": "At least one repeat was missing structured evidence or disagreed with the others. / At least one repeat was missing structured evidence or disagreed with the others."
+      },
+      {
+        "id": "compaction_same_request_continuity",
+        "title": "Compaction Same-Request Continuity",
+        "verdict": "inconclusive",
+        "includedInClaim": false,
+        "canvastStatus": "inconclusive",
+        "referenceStatus": "inconclusive",
+        "rationale": "At least one repeat was missing structured evidence or disagreed with the others. / At least one repeat was missing structured evidence or disagreed with the others."
+      },
+      {
+        "id": "live_plan_projection",
+        "title": "Live Plan Tree Projection",
+        "verdict": "inconclusive",
+        "includedInClaim": false,
+        "canvastStatus": "inconclusive",
+        "referenceStatus": "inconclusive",
+        "rationale": "At least one repeat was missing structured evidence or disagreed with the others. / At least one repeat was missing structured evidence or disagreed with the others."
+      },
+      {
+        "id": "canvas_projection_and_export",
+        "title": "Canvas Projection And Export",
+        "verdict": "inconclusive",
+        "includedInClaim": false,
+        "canvastStatus": "inconclusive",
+        "referenceStatus": "inconclusive",
+        "rationale": "At least one repeat was missing structured evidence or disagreed with the others. / At least one repeat was missing structured evidence or disagreed with the others."
+      }
+    ]
+  }
+}

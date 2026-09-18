@@ -1,0 +1,68 @@
+# ============================================================================
+# Canvast .gitignore
+# ============================================================================
+
+# Dependencies / 依赖
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# Build output / 构建产物
+dist/
+build/
+*.tsbuildinfo
+
+# Environment & secrets / 环境变量和密钥
+.env
+.env.local
+.env.*.local
+.canvast-secrets/
+*.key
+*.pem
+auth.json
+
+# IDE / 编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS / 系统文件
+.DS_Store
+Thumbs.db
+
+# Local dev data / 本地开发数据
+.data/
+
+# Test output / 测试产物
+coverage/
+.nyc_output/
+test-results/
+
+# Logs / 日志
+*.log
+logs/
+
+# Runtime data (local) / 本地运行时数据
+.runtime/
+pi-data/
+sessions/
+
+# Resource watchdog runtime state (scripts/resource-watchdog.sh) / 资源守护运行时状态
+.pi/.watchdog-run/
+.pi/watchdog.status
+.pi/watchdog.log
+.pi/watchdog.log.old
+.pi/test-pids/
+
+# Python virtual env / Python 虚拟环境
+venv/
+.venv/
+
+# Temp files / 临时文件
+tmp/
+temp/
+*.tmp
+.aider.tags.cache.v4/

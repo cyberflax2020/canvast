@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Canvast — Project Governance Canvas for AI Agents</title>
+  <desc id="desc">Canvast hero banner: dark canvas with graph nodes and a traceable route, product name, and bilingual tagline.</desc>
+  <defs>
+    <style>
+      .bg { fill: #070b13; }
+      .grid { fill: none; stroke: #12283a; stroke-width: 1.5; }
+      .guide { fill: none; stroke: #1c577a; stroke-width: 2.5; stroke-dasharray: 12 10; opacity: .55; }
+      .frame { fill: none; stroke: #1fc4f4; stroke-width: 5; stroke-linecap: square; }
+      .route-shadow { fill: none; stroke: #143a2d; stroke-width: 12; stroke-linecap: square; stroke-linejoin: miter; opacity: .7; }
+      .route { fill: none; stroke: #47d86b; stroke-width: 7.5; stroke-linecap: square; stroke-linejoin: miter; }
+      .node { fill: #07111b; stroke: #1fc4f4; stroke-width: 6; }
+      .node-cyan { fill: #23c9f7; }
+      .node-green { fill: #45d869; }
+      .node-amber { fill: #ffbd36; }
+      .name { fill: #eaf6ff; font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif; font-size: 108px; font-weight: 800; letter-spacing: 10px; }
+      .tag-en { fill: #9fd9f2; font-family: "SF Pro Text", "Helvetica Neue", Arial, sans-serif; font-size: 33px; font-weight: 500; letter-spacing: 1.5px; }
+      .tag-zh { fill: #6f8ea6; font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; font-size: 27px; font-weight: 400; letter-spacing: 3px; }
+      .chip { fill: none; stroke-width: 2.5; }
+      .chip-text { font-family: "SF Mono", "Menlo", monospace; font-size: 21px; letter-spacing: 1px; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1280" height="640"/>
+
+  <!-- subtle canvas grid -->
+  <path class="grid" d="M0 160H1280M0 320H1280M0 480H1280"/>
+  <path class="grid" d="M213 0V640M427 0V640M640 0V640M853 0V640M1067 0V640"/>
+  <path class="guide" d="M80 560L1200 80"/>
+
+  <!-- graph route motif, right side -->
+  <path class="route-shadow" d="M900 520L980 440H1050L1080 410V330L1150 260H1210L1240 180"/>
+  <path class="route" d="M900 520L980 440H1050L1080 410V330L1150 260H1210L1240 180"/>
+
+  <circle class="node" cx="900" cy="520" r="24"/>
+  <circle class="node-cyan" cx="900" cy="520" r="9"/>
+  <circle class="node" cx="1080" cy="410" r="26"/>
+  <circle class="node-amber" cx="1080" cy="410" r="9.5"/>
+  <circle class="node" cx="1080" cy="330" r="20"/>
+  <circle class="node-green" cx="1080" cy="330" r="7.5"/>
+  <circle class="node" cx="1240" cy="180" r="24"/>
+  <circle class="node-green" cx="1240" cy="180" r="9"/>
+
+  <!-- corner frame marks -->
+  <path class="frame" d="M40 76V40H76"/>
+  <path class="frame" d="M1204 40H1240V76"/>
+  <path class="frame" d="M1240 564V600H1204"/>
+  <path class="frame" d="M76 600H40V564"/>
+
+  <!-- wordmark -->
+  <text class="name" x="96" y="300">CANVAST</text>
+  <rect x="100" y="332" width="330" height="6" fill="#1fc4f4"/>
+  <rect x="438" y="332" width="60" height="6" fill="#47d86b"/>
+  <rect x="506" y="332" width="24" height="6" fill="#ffbd36"/>
+
+  <text class="tag-en" x="98" y="408">Project Governance Canvas for AI Agents</text>
+  <text class="tag-zh" x="98" y="462">面向持续项目工作的本地优先 AI 编程工作空间</text>
+
+  <!-- capability chips -->
+  <g>
+    <rect class="chip" x="96" y="516" width="176" height="44" rx="8" stroke="#1fc4f4"/>
+    <text class="chip-text" x="120" y="545" fill="#9fd9f2">Sessions</text>
+  </g>
+  <g>
+    <rect class="chip" x="288" y="516" width="150" height="44" rx="8" stroke="#47d86b"/>
+    <text class="chip-text" x="312" y="545" fill="#9ce8b2">Canvas</text>
+  </g>
+  <g>
+    <rect class="chip" x="454" y="516" width="180" height="44" rx="8" stroke="#ffbd36"/>
+    <text class="chip-text" x="478" y="545" fill="#f2cf8a">Sandbox</text>
+  </g>
+  <g>
+    <rect class="chip" x="650" y="516" width="252" height="44" rx="8" stroke="#1c577a"/>
+    <text class="chip-text" x="674" y="545" fill="#6f8ea6">TUI + macOS App</text>
+  </g>
+</svg>

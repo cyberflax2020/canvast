@@ -1,0 +1,7 @@
+interface:
+  display_name: "Project Contract Harness"
+  short_description: "Closed-loop delivery guardrails for large agent projects"
+  default_prompt: "Use $project-contract-harness to recover or create this project's durable harness and close gaps with evidence."
+# Modified by Canvast: disable implicit invocation for bundled-skill isolation.
+policy:
+  allow_implicit_invocation: false

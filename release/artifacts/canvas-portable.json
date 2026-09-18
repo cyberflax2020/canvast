@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "kind": "canvast-canvas-portable-release",
+  "generatedAt": "2026-09-18T16:06:30.745Z",
+  "sourceManifest": {
+    "path": "release/source-manifest.json",
+    "status": "verified",
+    "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6",
+    "manifestSha256": "c148b767012f4b533c2ca8fe069be855107c503a81dfa83b73ae21d05f860d7e"
+  },
+  "entry": "npm run export:canvas -- --input release/artifacts/canvas-portable/fixture-input.json --out release/artifacts/canvas-portable --title \"Canvas Surface Proof\"",
+  "verificationCommand": "node scripts/export-canvas.mjs --input release/artifacts/canvas-portable/fixture-input.json --out release/artifacts/canvas-portable --title \"Canvas Surface Proof\"",
+  "fixture": {
+    "kind": "persisted-canvas-graph",
+    "path": "release/artifacts/canvas-portable/fixture-input.json",
+    "nodes": 4,
+    "edges": 4,
+    "sha256": "e56cff378a96ba4d1f36f996f7e65185e365d7d68258ba945f116c6db75b8b62"
+  },
+  "outputs": [
+    {
+      "path": "release/artifacts/canvas-portable/canvas-graph-export.json",
+      "mediaType": "application/json",
+      "bytes": 1253,
+      "sha256": "e56cff378a96ba4d1f36f996f7e65185e365d7d68258ba945f116c6db75b8b62"
+    },
+    {
+      "path": "release/artifacts/canvas-portable/canvas-report.md",
+      "mediaType": "text/markdown",
+      "bytes": 705,
+      "sha256": "209a3ad1e5ec229ad16f21b343377319cbc85ec69e721fd31f39654d84735338"
+    },
+    {
+      "path": "release/artifacts/canvas-portable/canvas-graph.mmd",
+      "mediaType": "text/vnd.mermaid",
+      "bytes": 1065,
+      "sha256": "a03380fac8cf56e10b66989a2bd65395d93a51836e241d1eb5ffde5ac6f7041c"
+    },
+    {
+      "path": "release/artifacts/canvas-portable/canvas-graph.svg",
+      "mediaType": "image/svg+xml",
+      "bytes": 4623,
+      "sha256": "83ecd58ccb4fbcb6877f1f0d758812f50ec1a37ad0d13c39b43e3937d3c1c23a"
+    },
+    {
+      "path": "release/artifacts/canvas-portable/canvas-graph.html",
+      "mediaType": "text/html",
+      "bytes": 4478,
+      "sha256": "824393e5c66f7c5d077468b9544255f260bf31742594afe5890350aa34c1cdbd"
+    }
+  ],
+  "assertions": [
+    "The real CLI produces exactly JSON, Markdown, Mermaid, standalone SVG, and interactive HTML.",
+    "All formats preserve the four Canvas node types and four traceability edges after credential and personal-home redaction.",
+    "SVG has no runtime dependency; HTML declares its pinned https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js dependency and links the offline SVG fallback."
+  ]
+}

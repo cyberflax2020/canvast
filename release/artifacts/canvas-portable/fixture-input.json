@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "id": "plan-release",
+      "type": "plan",
+      "properties": {
+        "goal": "Verify Canvas portable artifact",
+        "status": "in_progress"
+      }
+    },
+    {
+      "id": "decision-offline",
+      "type": "decision",
+      "properties": {
+        "chosen": "Keep SVG standalone and disclose the HTML CDN"
+      }
+    },
+    {
+      "id": "file-export",
+      "type": "file",
+      "properties": {
+        "path": "scripts/export-canvas.mjs",
+        "stale": false
+      }
+    },
+    {
+      "id": "agent-proof",
+      "type": "agent_run",
+      "properties": {
+        "task": "Run the Canvas portable proof",
+        "status": "completed"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "type": "MOTIVATED_BY",
+      "fromNodeId": "plan-release",
+      "toNodeId": "decision-offline"
+    },
+    {
+      "id": "edge-2",
+      "type": "PRODUCED_BY",
+      "fromNodeId": "file-export",
+      "toNodeId": "agent-proof"
+    },
+    {
+      "id": "edge-3",
+      "type": "DECOMPOSES_INTO",
+      "fromNodeId": "plan-release",
+      "toNodeId": "file-export"
+    },
+    {
+      "id": "edge-4",
+      "type": "EXECUTED_BY",
+      "fromNodeId": "plan-release",
+      "toNodeId": "agent-proof"
+    }
+  ]
+}

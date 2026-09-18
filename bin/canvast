@@ -1,0 +1,201 @@
+#!/bin/sh
+# ============================================================================
+# Canvast — Relocatable sealed-runtime launcher / Canvast source file
+# ============================================================================
+# @file        bin/canvast
+# @brief       Start Canvast exclusively from its packaged runtime tree.
+# @description Resolves the bundled Node and product payload relative to this
+#              file, so launch never consults a workspace wrapper or global npm.
+# @author      Canvast Contributors  @license Apache-2.0  @copyright (c) 2026
+# ============================================================================
+set -eu
+
+SELF_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+RUNTIME_DIR=$(CDPATH= cd -- "$SELF_DIR/.." && pwd -P)
+PRODUCT_DIR="$RUNTIME_DIR/package"
+NODE_BIN="$SELF_DIR/node"
+ENTRYPOINT="$PRODUCT_DIR/node_modules/@earendil-works/pi-coding-agent/dist/cli.js"
+ENVIRONMENT_POLICY="$PRODUCT_DIR/config-templates/sealed-runtime-environment.txt"
+OPENSSL_CONFIGURATION="$PRODUCT_DIR/config-templates/openssl.cnf"
+
+[ -x "$NODE_BIN" ] || { echo "Canvast sealed runtime: bundled bin/node is unavailable" >&2; exit 126; }
+[ -f "$ENTRYPOINT" ] || { echo "Canvast sealed runtime: product entrypoint is unavailable" >&2; exit 126; }
+[ -f "$ENVIRONMENT_POLICY" ] || { echo "Canvast sealed runtime: environment policy is unavailable" >&2; exit 126; }
+[ -f "$OPENSSL_CONFIGURATION" ] || { echo "Canvast sealed runtime: OpenSSL configuration is unavailable" >&2; exit 126; }
+
+while IFS= read -r VARIABLE_NAME || [ -n "$VARIABLE_NAME" ]; do
+  [ -n "$VARIABLE_NAME" ] || continue
+  case "$VARIABLE_NAME" in
+    [ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_]* ) ;;
+    * ) echo "Canvast sealed runtime: invalid environment policy entry" >&2; exit 126 ;;
+  esac
+  case "$VARIABLE_NAME" in
+    *[!ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_]* )
+      echo "Canvast sealed runtime: invalid environment policy entry" >&2; exit 126 ;;
+  esac
+  unset "$VARIABLE_NAME"
+done < "$ENVIRONMENT_POLICY"
+export OPENSSL_CONF="$OPENSSL_CONFIGURATION"
+
+export CANVAST_INSTALL_DIR="$PRODUCT_DIR"
+export CANVAST_WORKING_DIR="${CANVAST_WORKING_DIR:-$PWD}"
+export CANVAST_COMPONENTS_DIR="$PRODUCT_DIR/components"
+export CANVAST_COMPONENT_BIN_DIR="$CANVAST_COMPONENTS_DIR/bin"
+export PI_OFFLINE="${PI_OFFLINE:-1}"
+export PATH="$SELF_DIR:$CANVAST_COMPONENT_BIN_DIR:${PATH:-/usr/bin:/bin}"
+
+normalize_canvast_mode() {
+  case "$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')" in
+    enhanced|on|true|1|plus|canvast|canvest|super) printf '%s' enhanced ;;
+    parity|off|false|0|baseline|compat|compatible) printf '%s' parity ;;
+    *) return 1 ;;
+  esac
+}
+validate_owned_handle_invocation_id() {
+  [ -n "$1" ] && [ "${#1}" -le 256 ] || return 1
+  case "$1" in *[!\ -~]*) return 1 ;; esac
+}
+
+# Consume product-only controls before invoking the upstream CLI. Rotate the
+# original positional parameters exactly once so arbitrary forwarded arguments
+# retain their original order without eval or a shell-specific array.
+REMAINING_ARGUMENTS=$#
+OWNED_HANDLE_SNAPSHOT_COUNT=0
+OWNED_HANDLE_INVOCATION_ID_COUNT=0
+while [ "$REMAINING_ARGUMENTS" -gt 0 ]; do
+  ARGUMENT=$1
+  shift
+  REMAINING_ARGUMENTS=$((REMAINING_ARGUMENTS - 1))
+  case "$ARGUMENT" in
+    --canvast-owned-handle-snapshot)
+      [ "$OWNED_HANDLE_SNAPSHOT_COUNT" -eq 0 ] || { echo "Canvast sealed runtime: $ARGUMENT may only be specified once" >&2; exit 2; }
+      [ "$REMAINING_ARGUMENTS" -gt 0 ] || { echo "Canvast sealed runtime: $ARGUMENT requires an absolute path without NUL" >&2; exit 2; }
+      SNAPSHOT_VALUE=$1
+      case "$SNAPSHOT_VALUE" in --*) echo "Canvast sealed runtime: $ARGUMENT requires an absolute path without NUL" >&2; exit 2 ;; esac
+      shift
+      REMAINING_ARGUMENTS=$((REMAINING_ARGUMENTS - 1))
+      case "$SNAPSHOT_VALUE" in
+        /*) export CANVAST_OWNED_HANDLE_SNAPSHOT=$SNAPSHOT_VALUE ;;
+        *) echo "Canvast sealed runtime: $ARGUMENT requires an absolute path without NUL" >&2; exit 2 ;;
+      esac
+      OWNED_HANDLE_SNAPSHOT_COUNT=1
+      ;;
+    --canvast-owned-handle-snapshot=*)
+      [ "$OWNED_HANDLE_SNAPSHOT_COUNT" -eq 0 ] || { echo "Canvast sealed runtime: --canvast-owned-handle-snapshot may only be specified once" >&2; exit 2; }
+      SNAPSHOT_VALUE=${ARGUMENT#*=}
+      case "$SNAPSHOT_VALUE" in
+        /*) export CANVAST_OWNED_HANDLE_SNAPSHOT=$SNAPSHOT_VALUE ;;
+        *) echo "Canvast sealed runtime: --canvast-owned-handle-snapshot requires an absolute path without NUL" >&2; exit 2 ;;
+      esac
+      OWNED_HANDLE_SNAPSHOT_COUNT=1
+      ;;
+    --canvast-owned-handle-invocation-id)
+      [ "$OWNED_HANDLE_INVOCATION_ID_COUNT" -eq 0 ] || { echo "Canvast sealed runtime: $ARGUMENT may only be specified once" >&2; exit 2; }
+      [ "$REMAINING_ARGUMENTS" -gt 0 ] || { echo "Canvast sealed runtime: $ARGUMENT must be a printable string of at most 256 characters" >&2; exit 2; }
+      INVOCATION_VALUE=$1
+      case "$INVOCATION_VALUE" in --*) echo "Canvast sealed runtime: $ARGUMENT must be a printable string of at most 256 characters" >&2; exit 2 ;; esac
+      shift
+      REMAINING_ARGUMENTS=$((REMAINING_ARGUMENTS - 1))
+      validate_owned_handle_invocation_id "$INVOCATION_VALUE" || { echo "Canvast sealed runtime: $ARGUMENT must be a printable string of at most 256 characters" >&2; exit 2; }
+      export CANVAST_OWNED_HANDLE_INVOCATION_ID=$INVOCATION_VALUE
+      OWNED_HANDLE_INVOCATION_ID_COUNT=1
+      ;;
+    --canvast-owned-handle-invocation-id=*)
+      [ "$OWNED_HANDLE_INVOCATION_ID_COUNT" -eq 0 ] || { echo "Canvast sealed runtime: --canvast-owned-handle-invocation-id may only be specified once" >&2; exit 2; }
+      INVOCATION_VALUE=${ARGUMENT#*=}
+      validate_owned_handle_invocation_id "$INVOCATION_VALUE" || { echo "Canvast sealed runtime: --canvast-owned-handle-invocation-id must be a printable string of at most 256 characters" >&2; exit 2; }
+      export CANVAST_OWNED_HANDLE_INVOCATION_ID=$INVOCATION_VALUE
+      OWNED_HANDLE_INVOCATION_ID_COUNT=1
+      ;;
+    --canvast-mode|--canvest-mode)
+      if [ "$REMAINING_ARGUMENTS" -le 0 ]; then
+        echo "Canvast sealed runtime: $ARGUMENT requires parity or enhanced" >&2
+        exit 2
+      fi
+      MODE_VALUE=$1
+      shift
+      REMAINING_ARGUMENTS=$((REMAINING_ARGUMENTS - 1))
+      if ! CANVAST_MODE=$(normalize_canvast_mode "$MODE_VALUE"); then
+        echo "Canvast sealed runtime: $ARGUMENT must be parity or enhanced" >&2
+        exit 2
+      fi
+      export CANVAST_MODE CANVAST_MODE_SOURCE=argv
+      ;;
+    --canvast-mode=*|--canvest-mode=*)
+      if ! CANVAST_MODE=$(normalize_canvast_mode "${ARGUMENT#*=}"); then
+        echo "Canvast sealed runtime: ${ARGUMENT%%=*} must be parity or enhanced" >&2
+        exit 2
+      fi
+      export CANVAST_MODE CANVAST_MODE_SOURCE=argv
+      ;;
+    --canvast-enhanced|--canvest-enhanced)
+      export CANVAST_MODE=enhanced CANVAST_MODE_SOURCE=argv
+      ;;
+    --no-canvast-enhanced|--no-canvest-enhanced|--canvast-parity|--canvest-parity)
+      export CANVAST_MODE=parity CANVAST_MODE_SOURCE=argv
+      ;;
+    --canvast-unattended|--canvest-unattended) export CANVAST_UNATTENDED=1 ;;
+    --no-canvast-unattended|--no-canvest-unattended) export CANVAST_UNATTENDED=0 ;;
+    --canvast-sandbox|--canvest-sandbox)
+      if [ "$REMAINING_ARGUMENTS" -le 0 ]; then
+        echo "Canvast sealed runtime: $ARGUMENT requires a sandbox profile" >&2
+        exit 2
+      fi
+      export CANVAST_SANDBOX=$1
+      shift
+      REMAINING_ARGUMENTS=$((REMAINING_ARGUMENTS - 1))
+      ;;
+    --canvast-sandbox=*|--canvest-sandbox=*) export CANVAST_SANDBOX=${ARGUMENT#*=} ;;
+    *) set -- "$@" "$ARGUMENT" ;;
+  esac
+done
+
+[ "$OWNED_HANDLE_SNAPSHOT_COUNT" -eq "$OWNED_HANDLE_INVOCATION_ID_COUNT" ] || {
+  echo "Canvast sealed runtime: --canvast-owned-handle-snapshot and --canvast-owned-handle-invocation-id must be provided together" >&2
+  exit 2
+}
+
+if [ "${1:-}" = "--sealed-runtime-probe" ]; then
+  exec "$NODE_BIN" -e 'const path=require("node:path"); const root=path.resolve(process.argv[1]); process.stdout.write(JSON.stringify({ok:true,kind:"canvast-sealed-runtime",runtimeRoot:root,node:process.execPath,entrypoint:path.join(root,"package","node_modules","@earendil-works","pi-coding-agent","dist","cli.js")})+"\n")' "$RUNTIME_DIR"
+fi
+
+if [ "${1:-}" = "--project-root" ]; then
+  [ "$#" -ge 2 ] || { echo "Canvast sealed runtime: --project-root requires a directory" >&2; exit 64; }
+  export CANVAST_PROJECT_ROOT=$2
+  export CANVAST_WORKING_DIR=$2
+  cd -- "$2"
+  shift 2
+fi
+
+set -- "$ENTRYPOINT" \
+  --extension "$PRODUCT_DIR/extensions/canvast-core.ts" \
+  --extension "$PRODUCT_DIR/extensions/canvast-harness.ts" \
+  --extension "$PRODUCT_DIR/extensions/canvast-tui.ts" \
+  --extension "$PRODUCT_DIR/extensions/product-closure.ts" \
+  --extension "$PRODUCT_DIR/extensions/sandbox-bash.ts" \
+  --extension "$PRODUCT_DIR/extensions/canvast-permissions.ts" \
+  --extension "$PRODUCT_DIR/extensions/desktop-action.ts" \
+  --extension "$PRODUCT_DIR/extensions/plan-mode.ts" \
+  --extension "$PRODUCT_DIR/extensions/task-manager.ts" \
+  --extension "$PRODUCT_DIR/extensions/web-tools.ts" \
+  --extension "$PRODUCT_DIR/extensions/sub-agent.ts" \
+  --extension "$PRODUCT_DIR/extensions/code-review.ts" \
+  --extension "$PRODUCT_DIR/extensions/ask-user.ts" \
+  --extension "$PRODUCT_DIR/extensions/mcp-bridge.ts" \
+  --extension "$PRODUCT_DIR/extensions/git-tools.ts" \
+  --extension "$PRODUCT_DIR/extensions/token-tracker.ts" \
+  --extension "$PRODUCT_DIR/extensions/background-task.ts" \
+  --extension "$PRODUCT_DIR/extensions/canvas-repomap.ts" \
+  --extension "$PRODUCT_DIR/extensions/notebook-edit.ts" \
+  --extension "$PRODUCT_DIR/extensions/lsp-tools.ts" \
+  --extension "$PRODUCT_DIR/extensions/workflow.ts" \
+  --extension "$PRODUCT_DIR/extensions/cron-scheduler.ts" \
+  --extension "$PRODUCT_DIR/extensions/worktree.ts" \
+  --extension "$PRODUCT_DIR/extensions/artifact.ts" \
+  --extension "$PRODUCT_DIR/extensions/agent-comms.ts" \
+  --extension "$PRODUCT_DIR/extensions/report-findings.ts" \
+  --extension "$PRODUCT_DIR/extensions/monitor.ts" \
+  --extension "$PRODUCT_DIR/extensions/owned-handle-diagnostics.ts" \
+  "$@"
+
+exec "$NODE_BIN" "$@"

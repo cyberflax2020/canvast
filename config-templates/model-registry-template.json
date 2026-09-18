@@ -1,0 +1,32 @@
+{
+  "license": "MIT",
+  "source": "Example Canvast model registry. Replace with a compatible commercial-use registry such as LiteLLM MIT model metadata, or keep this normalized shape.",
+  "models": [
+    {
+      "id": "deepseek-chat",
+      "provider": "deepseek",
+      "contextWindowTokens": 131072,
+      "maxOutputTokens": 8192,
+      "modalities": ["text"],
+      "toolUse": "stable",
+      "structuredOutput": "stable",
+      "supportsParallelToolCalls": true,
+      "supportsWebSearch": false,
+      "supportsReasoning": false,
+      "reasoningEffort": "medium"
+    },
+    {
+      "id": "gpt-4.1",
+      "provider": "openai",
+      "contextWindowTokens": 1047576,
+      "maxOutputTokens": 32768,
+      "modalities": ["text", "image"],
+      "toolUse": "stable",
+      "structuredOutput": "stable",
+      "supportsParallelToolCalls": true,
+      "supportsWebSearch": false,
+      "supportsReasoning": true,
+      "reasoningEffort": "high"
+    }
+  ]
+}

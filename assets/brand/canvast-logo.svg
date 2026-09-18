@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Canvast logo</title>
+  <desc id="desc">A dark canvas frame with graph nodes and a traceable route.</desc>
+  <defs>
+    <style>
+      .bg { fill: #070b13; }
+      .grid { fill: none; stroke: #173b52; stroke-width: 2.5; stroke-linecap: square; }
+      .guide { fill: none; stroke: #1c577a; stroke-width: 3.25; stroke-linecap: square; stroke-dasharray: 10 8; opacity: .9; }
+      .frame { fill: none; stroke: #1fc4f4; stroke-width: 6.5; stroke-linecap: square; stroke-linejoin: miter; }
+      .route-shadow { fill: none; stroke: #143a2d; stroke-width: 10.5; stroke-linecap: square; stroke-linejoin: miter; opacity: .7; }
+      .route { fill: none; stroke: #47d86b; stroke-width: 8.5; stroke-linecap: square; stroke-linejoin: miter; }
+      .node { fill: #07111b; stroke: #1fc4f4; stroke-width: 7.5; }
+      .node-cyan { fill: #23c9f7; }
+      .node-green { fill: #45d869; }
+      .node-amber { fill: #ffbd36; }
+      .tick { fill: #ffbd36; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="256" height="256"/>
+
+  <path class="grid" d="M84 84H172V172H84Z"/>
+  <path class="grid" d="M128 58V198"/>
+  <path class="grid" d="M58 128H198"/>
+  <path class="guide" d="M63 63L193 193"/>
+
+  <path class="route-shadow" d="M63 194L94 163H119L128 154V128L153 103H178L194 63"/>
+  <path class="route" d="M63 194L94 163H119L128 154V128L153 103H178L194 63"/>
+
+  <path class="frame" d="M72 58H116M140 58H184"/>
+  <path class="frame" d="M72 198H116M140 198H184"/>
+  <path class="frame" d="M58 72V116M58 140V184"/>
+  <path class="frame" d="M198 72V116M198 140V184"/>
+
+  <path class="frame" d="M35 65V35H65"/>
+  <path class="frame" d="M191 35H221V65"/>
+  <path class="frame" d="M221 191V221H191"/>
+  <path class="frame" d="M65 221H35V191"/>
+
+  <rect class="tick" x="122" y="56" width="12" height="12"/>
+  <rect class="tick" x="122" y="188" width="12" height="12"/>
+  <rect class="tick" x="56" y="122" width="12" height="12"/>
+  <rect class="tick" x="188" y="122" width="12" height="12"/>
+
+  <circle class="node" cx="63" cy="63" r="27"/>
+  <circle class="node-cyan" cx="63" cy="63" r="10.5"/>
+
+  <circle class="node" cx="193" cy="63" r="27"/>
+  <circle class="node-green" cx="193" cy="63" r="10.5"/>
+
+  <circle class="node" cx="63" cy="193" r="27"/>
+  <circle class="node-green" cx="63" cy="193" r="10.5"/>
+
+  <circle class="node" cx="193" cy="193" r="27"/>
+  <circle class="node-cyan" cx="193" cy="193" r="10.5"/>
+
+  <circle class="node" cx="128" cy="128" r="29"/>
+  <circle class="node-amber" cx="128" cy="128" r="10.5"/>
+</svg>

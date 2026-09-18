@@ -1,0 +1,6 @@
+interface:
+  display_name: "Canvast Project Operator"
+  short_description: "Operate Canvast project context safely"
+  default_prompt: "Use $canvast-project-operator to resume a Canvast project, inspect context layers, and verify runtime safety."
+policy:
+  allow_implicit_invocation: false

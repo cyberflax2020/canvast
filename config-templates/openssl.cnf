@@ -1,0 +1,12 @@
+# Canvast sealed runtime OpenSSL configuration.
+# Keep provider activation self-contained and avoid build-host default paths.
+openssl_conf = canvast_init
+
+[canvast_init]
+providers = canvast_providers
+
+[canvast_providers]
+default = canvast_default_provider
+
+[canvast_default_provider]
+activate = 1

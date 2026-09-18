@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1376" height="420" viewBox="0 0 1376 420">
+<rect width="100%" height="100%" fill="#0f172a"/>
+<text x="48" y="32" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="22">Canvas Surface Proof</text>
+<text x="48" y="58" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">4 nodes / 4 edges · fixture-input.json</text>
+<defs><marker id="canvas-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/></marker></defs>
+<g aria-label="Typed Canvas edges">
+<g class="edge" data-edge-type="MOTIVATED_BY" data-from-node-id="plan-release" data-to-node-id="decision-offline" role="group" aria-label="MOTIVATED_BY: plan-release to decision-offline">
+<title>MOTIVATED_BY: plan-release → decision-offline</title>
+<line x1="66" y1="92" x2="386" y2="92" stroke="#f59e0b" stroke-opacity="0.72" stroke-width="1.25" marker-end="url(#canvas-arrow)"/>
+<text x="226" y="88" fill="#f59e0b" font-family="Arial, sans-serif" font-size="9" paint-order="stroke" stroke="#0f172a" stroke-width="3">MOTIVATED_BY</text>
+</g>
+<g class="edge" data-edge-type="PRODUCED_BY" data-from-node-id="file-export" data-to-node-id="agent-proof" role="group" aria-label="PRODUCED_BY: file-export to agent-proof">
+<title>PRODUCED_BY: file-export → agent-proof</title>
+<line x1="706" y1="92" x2="1026" y2="92" stroke="#22c55e" stroke-opacity="0.72" stroke-width="1.25" marker-end="url(#canvas-arrow)"/>
+<text x="866" y="88" fill="#22c55e" font-family="Arial, sans-serif" font-size="9" paint-order="stroke" stroke="#0f172a" stroke-width="3">PRODUCED_BY</text>
+</g>
+<g class="edge" data-edge-type="DECOMPOSES_INTO" data-from-node-id="plan-release" data-to-node-id="file-export" role="group" aria-label="DECOMPOSES_INTO: plan-release to file-export">
+<title>DECOMPOSES_INTO: plan-release → file-export</title>
+<line x1="66" y1="92" x2="706" y2="92" stroke="#38bdf8" stroke-opacity="0.72" stroke-width="1.25" marker-end="url(#canvas-arrow)"/>
+<text x="386" y="88" fill="#38bdf8" font-family="Arial, sans-serif" font-size="9" paint-order="stroke" stroke="#0f172a" stroke-width="3">DECOMPOSES_INTO</text>
+</g>
+<g class="edge" data-edge-type="EXECUTED_BY" data-from-node-id="plan-release" data-to-node-id="agent-proof" role="group" aria-label="EXECUTED_BY: plan-release to agent-proof">
+<title>EXECUTED_BY: plan-release → agent-proof</title>
+<line x1="66" y1="92" x2="1026" y2="92" stroke="#a78bfa" stroke-opacity="0.72" stroke-width="1.25" marker-end="url(#canvas-arrow)"/>
+<text x="546" y="88" fill="#a78bfa" font-family="Arial, sans-serif" font-size="9" paint-order="stroke" stroke="#0f172a" stroke-width="3">EXECUTED_BY</text>
+</g>
+</g>
+<text x="48" y="82" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="13">plan (1)</text>
+<g class="node" data-node-id="plan-release" data-node-type="plan" role="group" aria-label="plan: plan-release">
+<title>plan: plan-release</title>
+<circle cx="66" cy="92" r="7" fill="#38bdf8" stroke="#f8fafc" stroke-width="1"/>
+<text x="79" y="96" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="11">Verify Canvas portable artifact</text>
+</g>
+<text x="368" y="82" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="13">decision (1)</text>
+<g class="node" data-node-id="decision-offline" data-node-type="decision" role="group" aria-label="decision: decision-offline">
+<title>decision: decision-offline</title>
+<circle cx="386" cy="92" r="7" fill="#f59e0b" stroke="#f8fafc" stroke-width="1"/>
+<text x="399" y="96" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="11">Keep SVG standalone and disclose the HT...</text>
+</g>
+<text x="688" y="82" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="13">file (1)</text>
+<g class="node" data-node-id="file-export" data-node-type="file" role="group" aria-label="file: file-export">
+<title>file: file-export</title>
+<circle cx="706" cy="92" r="7" fill="#22c55e" stroke="#f8fafc" stroke-width="1"/>
+<text x="719" y="96" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="11">scripts/export-canvas.mjs</text>
+</g>
+<text x="1008" y="82" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="13">agent_run (1)</text>
+<g class="node" data-node-id="agent-proof" data-node-type="agent_run" role="group" aria-label="agent_run: agent-proof">
+<title>agent_run: agent-proof</title>
+<circle cx="1026" cy="92" r="7" fill="#a78bfa" stroke="#f8fafc" stroke-width="1"/>
+<text x="1039" y="96" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="11">Run the Canvas portable proof</text>
+</g>
+</svg>

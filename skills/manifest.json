@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": [
+    {
+      "name": "canvast-project-operator",
+      "path": "skills/canvast-project-operator",
+      "activation": "explicit",
+      "defaultEnabled": false,
+      "allowImplicitInvocation": false,
+      "license": "Apache-2.0",
+      "licenseFile": "LICENSE",
+      "provenance": "Canvast project-local operator skill"
+    },
+    {
+      "name": "project-contract-harness",
+      "path": "skills/project-contract-harness",
+      "activation": "explicit",
+      "defaultEnabled": false,
+      "allowImplicitInvocation": false,
+      "license": "Apache-2.0",
+      "licenseFile": "skills/project-contract-harness/LICENSE",
+      "provenance": "Vendored Project Contract Harness TraeCode skill package"
+    }
+  ]
+}
