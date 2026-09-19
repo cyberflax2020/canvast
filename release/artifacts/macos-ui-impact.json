@@ -3,27 +3,28 @@
   "kind": "canvast-macos-ui-impact",
   "status": "passed",
   "classification": "release-presentation",
-  "generatedAt": "2026-09-18T17:04:45.468Z",
+  "generatedAt": "2026-09-19T00:54:21.929Z",
   "currentSourceManifest": {
     "path": "release/source-manifest.json",
-    "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980",
-    "generatedAt": "2026-09-18T16:57:37.180Z",
-    "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6"
+    "sha256": "21d449413b331d12a7c946aa85cabebb1f92649cf7eb4dd210a9d7c19bad48d3",
+    "generatedAt": "2026-09-19T00:29:43.530Z",
+    "sourceTreeSha256": "f45631367ad84bd58780afc622b9511919d2fb1e6d395f6f0d253e2e28bbe5fa"
   },
   "evaluationSourceManifest": {
     "path": "release/source-manifest.json",
-    "sha256": "cbcae4896c9e36d18bd1984f995102f9a3a19e55d298213e13893f4568b2ec79",
-    "generatedAt": "2026-09-16T07:06:15.375Z",
-    "sourceTreeSha256": "ae34a963971e574ff99983a87b0fa17c027682586576f81d088ff66df6057234",
+    "sha256": "55587d20e78575efa3b97229387021d2e5698f236beef1f37f2bad9792dd4d2e",
+    "generatedAt": "2026-09-18T22:34:18.920Z",
+    "sourceTreeSha256": "7b584540d5e2ed98f4e844c00ce839bb049f21a6161b1a56e381e0f61a4bb077",
     "document": {
       "schemaVersion": 2,
       "kind": "canvast-source-snapshot",
-      "generatedAt": "2026-09-16T07:06:15.375Z",
+      "generatedAt": "2026-09-18T22:34:18.920Z",
       "algorithm": "sha256",
       "scope": {
         "entries": [
           "assets/brand/README.md",
           "assets/brand/asset-manifest.json",
+          "assets/brand/canvast-hero.svg",
           "assets/brand/canvast-logo.svg",
           "assets/brand/canvast-logo.tui.txt",
           "components",
@@ -88,11 +89,11 @@
       },
       "policy": {
         "path": "scripts/release-source-policy.mjs",
-        "sha256": "6a8998a200de5cffc9d07aee93f03ef54ef20c3c87d8c863901e65f5271bc1a1"
+        "sha256": "fc267f2ef73421ceef2bdae9e1ebb6a73748282e296300222a058357b33f6afe"
       },
-      "fileCount": 646,
-      "totalBytes": 9582435,
-      "sourceTreeSha256": "ae34a963971e574ff99983a87b0fa17c027682586576f81d088ff66df6057234",
+      "fileCount": 650,
+      "totalBytes": 9720112,
+      "sourceTreeSha256": "7b584540d5e2ed98f4e844c00ce839bb049f21a6161b1a56e381e0f61a4bb077",
       "files": [
         {
           "path": ".env.example",
@@ -102,9 +103,15 @@
         },
         {
           "path": "assets/brand/asset-manifest.json",
-          "size": 1591,
+          "size": 1938,
           "mode": 420,
-          "sha256": "f026d653f0ef5c9b46572b1992f7b1ee8ae3293a481fbb5259aa886a0670fb4c"
+          "sha256": "3a795e71bee1392109fa7279de7a3ce388c5e7b5029c12615f0e2ade77206640"
+        },
+        {
+          "path": "assets/brand/canvast-hero.svg",
+          "size": 4021,
+          "mode": 420,
+          "sha256": "81dd02df41cf62a3797670e89801c9ed59f39fdfc004acf80606665beb17fbc5"
         },
         {
           "path": "assets/brand/canvast-logo.svg",
@@ -120,9 +127,9 @@
         },
         {
           "path": "assets/brand/README.md",
-          "size": 1373,
+          "size": 1581,
           "mode": 420,
-          "sha256": "7fed64c18c231b2befef28d1c933a90794db1a4627a655ebda6f8584e65e4608"
+          "sha256": "aa9271a8245d0d62f2495ccf51f54b0d906e67aff5bb40ef05809701c07a918a"
         },
         {
           "path": "canvast.sh",
@@ -222,9 +229,9 @@
         },
         {
           "path": "eval-matrix/paired-enhanced-probes.ts",
-          "size": 39555,
+          "size": 43402,
           "mode": 420,
-          "sha256": "2c21e6580558657a0ff98e64b779e18fa61a068cd93ea1040e09c2db89fa9467"
+          "sha256": "f3b9f07789d55dd6a617a9dccfc33ea56cd60d09db2a8a30af50f490d85a9009"
         },
         {
           "path": "eval-matrix/paired-enhanced-progress.ts",
@@ -300,9 +307,9 @@
         },
         {
           "path": "eval-matrix/paired-launch.ts",
-          "size": 9363,
+          "size": 9823,
           "mode": 420,
-          "sha256": "c9db73936c4c7406e3ec60ca9fb56f9c912d859a3bb18830f081273b9e99317e"
+          "sha256": "c57a3ec75c50165e13a8ed5162519464ae28db8fc69bc515954abeb3684dfe6b"
         },
         {
           "path": "eval-matrix/paired-owned-handle-evidence.ts",
@@ -324,9 +331,9 @@
         },
         {
           "path": "eval-matrix/paired-public-artifact.ts",
-          "size": 8683,
+          "size": 9732,
           "mode": 420,
-          "sha256": "629cbc259c8f1f5c22bf36b7920027c86a12ffe97b686487fc5c3f4fd514cfe0"
+          "sha256": "223c4a1d4d400aa8ffc3a8288edebb2cf65a97889f07fa04ada942e5f106e714"
         },
         {
           "path": "eval-matrix/paired-resume.ts",
@@ -384,9 +391,9 @@
         },
         {
           "path": "eval-matrix/runner-command.ts",
-          "size": 23876,
+          "size": 24352,
           "mode": 420,
-          "sha256": "19a6b99924a6f3e3097fa7f8bd4f4342754350d7dab6be4bec8ab932aaab9816"
+          "sha256": "aa573ce4a1745f82753b9fea376aba0d4bda135ab967652a791d368bc0fa28e0"
         },
         {
           "path": "eval-matrix/runner-types.ts",
@@ -798,15 +805,15 @@
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTest.swift",
-          "size": 14400,
+          "size": 15149,
           "mode": 420,
-          "sha256": "5d31310302e0238fc6d7541aae8e700e625d48ca24098154d76f0e3a3f9073d4"
+          "sha256": "8b269a08e4bdf2f99eaafbb56b7d47b9e3bf07f52c2c5d4bc61ab06fd71748cc"
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestActionLifecycleTests.swift",
-          "size": 48629,
+          "size": 49455,
           "mode": 420,
-          "sha256": "7ae77ecb7887fa7741168ffaef0ce080052da5900080233b18a2c7fe26912cb5"
+          "sha256": "ec2885a5b6843de7f43ff8674973a55c6cce8e5061961bb2fbb9ef94d6ae797d"
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestActionSettlementTests.swift",
@@ -834,9 +841,9 @@
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestRuntimeTests.swift",
-          "size": 18254,
+          "size": 34610,
           "mode": 420,
-          "sha256": "3eb4b118fe74c772a15dcd6aca8e8de5c805e4c9b898358a8eae68714903d1a9"
+          "sha256": "27ed76c5d5359e40a5d08c0c99c58a5355fb508ce1ee95d1b76f5afc9c724d69"
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestSafetyPlanningTests.swift",
@@ -846,15 +853,15 @@
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestSettingsTests.swift",
-          "size": 25939,
+          "size": 28774,
           "mode": 420,
-          "sha256": "bd957d55f76b58a95d9a75d01032b7d1c36d352f4c850481876925df82a8b483"
+          "sha256": "6d0497c6874d742dd43c59473acdb061a48ac810781f9e8391c4f5b0436d49f1"
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestSupport.swift",
-          "size": 24966,
+          "size": 25896,
           "mode": 420,
-          "sha256": "a645270f88a03ee981ae8a9d7bc8177fb6599501a7a1d5abd3af1c46dea4453c"
+          "sha256": "146f2cae3bde8c5955234c80af171503ad53021aad6aee4e4275a367db9f341d"
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestViewportTests.swift",
@@ -870,21 +877,21 @@
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel.swift",
-          "size": 40172,
+          "size": 42209,
           "mode": 420,
-          "sha256": "d020859eb9b6fbbb529aafa5c4f506857f50d2bd447fa92e5d0de70c196809db"
+          "sha256": "0aa822405612963001dd6536d29c71aa500529a0701527dbdc2130afb64d2234"
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+Actions.swift",
-          "size": 21191,
+          "size": 23490,
           "mode": 420,
-          "sha256": "342d3a3ef0f3fc0b8c23ad71f1445fbf07991d2cf1f244e0de0f80399759ae0d"
+          "sha256": "ad6b31cb022e6a4189eb28b4e6ed2d35312cde2c6d6a29611b1fb2436ed4728d"
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+Bridge.swift",
-          "size": 22587,
+          "size": 22964,
           "mode": 420,
-          "sha256": "af8536e62668144b223b175c1c1773fe1f85d86d29d68d759e402da9a56e34ea"
+          "sha256": "52728195ece78b5e1e2880b21cf2fbbffd0bb40fcc610e3d56d0722993c01f33"
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+CanvasExport.swift",
@@ -894,9 +901,9 @@
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+Configuration.swift",
-          "size": 7048,
+          "size": 7074,
           "mode": 420,
-          "sha256": "454e670e6de91009844370a15cca5dc4692b1d616806722da48590c097c225ad"
+          "sha256": "930280b692200b37ebd9415a36990134a09b2d3eb03f769edad7b597e3db4e05"
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+DecodingUtilities.swift",
@@ -909,6 +916,12 @@
           "size": 16521,
           "mode": 420,
           "sha256": "a4bfed487b180a0aedc2ecad3984ba8cbe6001015d56f6a26e1fabaff13d3b0f"
+        },
+        {
+          "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+LiveSession.swift",
+          "size": 13826,
+          "mode": 420,
+          "sha256": "849f943a5d446048f1969511c61bb708dbb7f74f62c6910150185b42c11d5e03"
         },
         {
           "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+Navigation.swift",
@@ -978,9 +991,9 @@
         },
         {
           "path": "macos-app/Sources/CanvastApp/DesktopActionRegistry.swift",
-          "size": 37796,
+          "size": 37797,
           "mode": 420,
-          "sha256": "d70402ac10f368d47944a6f32d443e0dd94a9e4e79650e00060eb862519c0d0f"
+          "sha256": "ce13e484ed1235016880033bbb96a82a8d4007fa0a97f524ce4cb028c2e727af"
         },
         {
           "path": "macos-app/Sources/CanvastApp/DesktopBridgeAdapter.swift",
@@ -990,9 +1003,9 @@
         },
         {
           "path": "macos-app/Sources/CanvastApp/DesktopSessionModels.swift",
-          "size": 5277,
+          "size": 5604,
           "mode": 420,
-          "sha256": "fedcdaf5e44522252057d4262f089df64f6b701b9703bcd6fc9de6539f4a7d3d"
+          "sha256": "844e99a0e20b10ee58f0345a8235a4a6bc2bf3fc6361cb84d67b2290b3564907"
         },
         {
           "path": "macos-app/Sources/CanvastApp/DesktopTypes.swift",
@@ -1043,10 +1056,16 @@
           "sha256": "f5fb0e1f3a8142892ed092efb5955c1c2cc537003a89ad7bbdb9dade7fe8985f"
         },
         {
-          "path": "macos-app/Sources/CanvastApp/RunConsoleView.swift",
-          "size": 28465,
+          "path": "macos-app/Sources/CanvastApp/RunConsoleOutputViews.swift",
+          "size": 9255,
           "mode": 420,
-          "sha256": "8f8167ea05e49658d0333b93e16b43fadfd482d09807b85f0c87a4f51623d6e4"
+          "sha256": "95cc904a0b6a4c6a7b2ff284a22b487fa07d60ff33436f7ac5f18e71c3a26e69"
+        },
+        {
+          "path": "macos-app/Sources/CanvastApp/RunConsoleView.swift",
+          "size": 30632,
+          "mode": 420,
+          "sha256": "bea9643d8d28c44293c0451def9b6dd929493a1c25c0e978a01b7d41c272b021"
         },
         {
           "path": "macos-app/Sources/CanvastApp/RuntimeObservabilityViews.swift",
@@ -1068,9 +1087,9 @@
         },
         {
           "path": "macos-app/Sources/CanvastApp/SessionChatComponents.swift",
-          "size": 4573,
+          "size": 5651,
           "mode": 420,
-          "sha256": "aae221de8d0ac7f37726e8abcb247595ec86bf5435f8baf1f860a8c8108e95b9"
+          "sha256": "2f32150e18b7a845f5dab1787a80a66e476a91f9cc386ea8d91cf36d477efda5"
         },
         {
           "path": "macos-app/Sources/CanvastApp/SessionContinuityView.swift",
@@ -1080,9 +1099,9 @@
         },
         {
           "path": "macos-app/Sources/CanvastApp/SessionWorkspaceView.swift",
-          "size": 30912,
+          "size": 33775,
           "mode": 420,
-          "sha256": "54c708f32f88a5868ec45eb32b1e65cd52af055d3f86ee207132cf53e0493729"
+          "sha256": "76a004a0e48c982718897523d3d3b8f050678cdf54f7cb897869b765cf60e34d"
         },
         {
           "path": "macos-app/Sources/CanvastApp/SidecarDispatchDecisionView.swift",
@@ -1104,9 +1123,9 @@
         },
         {
           "path": "macos-app/Sources/CanvastApp/UserGuideSnapshotRenderer.swift",
-          "size": 21369,
+          "size": 24783,
           "mode": 420,
-          "sha256": "2879ed88e83afae712bdeff0f963d297d5e7faf434df6466c11ffc2bb1ff27a7"
+          "sha256": "37346638d76ea9a1d8791323341b8c04b1b594d634d5325fee5195e93c176aec"
         },
         {
           "path": "macos-app/Sources/CanvastApp/WorkspaceComponents.swift",
@@ -1134,9 +1153,9 @@
         },
         {
           "path": "macos-app/Sources/CanvastAppCore/CanvastBridge.swift",
-          "size": 31424,
+          "size": 38099,
           "mode": 420,
-          "sha256": "c32fa5fba7bc119fd890fb52d746e3e5c50ea26d253c3df9474a3fecd0ddde46"
+          "sha256": "567ace24d755fc956958130758611275791acb099f4d88bfae99bb215009c983"
         },
         {
           "path": "macos-app/Sources/CanvastAppCore/CanvastConnectionTester.swift",
@@ -1230,9 +1249,9 @@
         },
         {
           "path": "package.json",
-          "size": 8951,
+          "size": 9031,
           "mode": 420,
-          "sha256": "1c45302dd3d542756dea9298884869d971f2a3f199520c710cd6f536601f5814"
+          "sha256": "31e48df27055380c46f839476f5ac3e622396cc859860b3dd0567fdd5f9b7771"
         },
         {
           "path": "scripts/accept-canvast-tui-keys.exp",
@@ -1266,9 +1285,9 @@
         },
         {
           "path": "scripts/build-public-repo.mjs",
-          "size": 21277,
+          "size": 21321,
           "mode": 420,
-          "sha256": "8cdfb8f719b31dc6d53aa31ba71b06f47dd0987f4117caa25a1d2191ab5ac74f"
+          "sha256": "90744840773416fc99b882264bdefc10c380019d3d3054c1289b664b86702328"
         },
         {
           "path": "scripts/canvas-export-portable-artifact.mjs",
@@ -1296,9 +1315,9 @@
         },
         {
           "path": "scripts/check-delivery-readiness.mjs",
-          "size": 28485,
+          "size": 29271,
           "mode": 420,
-          "sha256": "fb61281ab23819aa14172afa5e280d528b84f56284260ed6f2d65181de8ac373"
+          "sha256": "61868e8b784cb3beac235126e2f8914076ef62cc1e55776e4ca550102cd473d6"
         },
         {
           "path": "scripts/check-doc-links.mjs",
@@ -1386,15 +1405,15 @@
         },
         {
           "path": "scripts/effectiveness-render.mjs",
-          "size": 31111,
+          "size": 37206,
           "mode": 420,
-          "sha256": "00ecbeef06809f4fc86c18314011f288461ac4f1bdc1ab2925f456914dd86030"
+          "sha256": "0fc4be62facd0412cf15bd646890215c0ae5debd050e586abd09c7ae3e5e7747"
         },
         {
           "path": "scripts/effectiveness-summary.mjs",
-          "size": 38025,
+          "size": 38883,
           "mode": 420,
-          "sha256": "ab15275065c5907d98ef77e9318f70bab7f6048fb080543fbc851229ca60127f"
+          "sha256": "6362c55bd5938057f277d59a2e3997948aff7271f43a4d37ce9ba8adfcee7afe"
         },
         {
           "path": "scripts/export-canvas.mjs",
@@ -1416,9 +1435,9 @@
         },
         {
           "path": "scripts/generate-effectiveness-evidence.mjs",
-          "size": 37053,
+          "size": 41095,
           "mode": 420,
-          "sha256": "43d33523f802fdecae83162d315f4969cf42bff886fd3a0c99412838b11598a1"
+          "sha256": "90e7c7889990ff4f49b4b24298231c97b16edb0b95fe78b71c95ffa31943f81e"
         },
         {
           "path": "scripts/generate-macos-app-icon.mjs",
@@ -1584,15 +1603,15 @@
         },
         {
           "path": "scripts/public-release-guards.mjs",
-          "size": 33004,
+          "size": 33000,
           "mode": 420,
-          "sha256": "c9ed57751efb3da1cde1fb3d880d84afa8727926a1bb3acb3ce1e4667af03461"
+          "sha256": "44ca8af52b4fbf04c35e6cef33e7fb72fd97a1654ee196e7b6628ba10a09f452"
         },
         {
           "path": "scripts/public-repo-policy.mjs",
-          "size": 29527,
+          "size": 32492,
           "mode": 420,
-          "sha256": "20f7ea8fa20d0ec100c2423a4f0972fd2003697952580f076b75cb0bd38a25c0"
+          "sha256": "c9b263d0b2331c3bdf93bae4421d68eb00b0908449a003749fffae2ae17e9f91"
         },
         {
           "path": "scripts/public-runtime-shutdown-probe.mjs",
@@ -1620,9 +1639,15 @@
         },
         {
           "path": "scripts/release-artifacts.mjs",
-          "size": 29818,
+          "size": 31261,
           "mode": 420,
-          "sha256": "a1e79e5bd96adff42a7775e5eb75613efe802d4058df75e6bd942c135dfec932"
+          "sha256": "619e608895174aac469c70c5620eaf6d9e3c879f30fabc723deb8fca6bf2f247"
+        },
+        {
+          "path": "scripts/release-impact-evidence.mjs",
+          "size": 27380,
+          "mode": 420,
+          "sha256": "5b89e7b2d095072a3285d73a7ed477c5001b2c7133f93b2a1727c919f401475f"
         },
         {
           "path": "scripts/release-manifest.mjs",
@@ -1638,15 +1663,15 @@
         },
         {
           "path": "scripts/release-profile.mjs",
-          "size": 6441,
+          "size": 6489,
           "mode": 420,
-          "sha256": "90d4aee6dee8550c8f179c779fc38ecdbc105084cd0ae2e613d168252195ca45"
+          "sha256": "687298cf6fef4ff9a03ec8a183620d45ebdb25133d123bbd2c29fe708c45a1b5"
         },
         {
           "path": "scripts/release-source-policy.mjs",
-          "size": 2760,
+          "size": 2795,
           "mode": 420,
-          "sha256": "6a8998a200de5cffc9d07aee93f03ef54ef20c3c87d8c863901e65f5271bc1a1"
+          "sha256": "fc267f2ef73421ceef2bdae9e1ebb6a73748282e296300222a058357b33f6afe"
         },
         {
           "path": "scripts/release-ui-attestation.mjs",
@@ -1710,9 +1735,9 @@
         },
         {
           "path": "scripts/source-manifest.mjs",
-          "size": 15563,
+          "size": 20985,
           "mode": 420,
-          "sha256": "0a4ab95b80a53a56f76a64b2003cefd78a6434a0b8e79d9622e1a775ef7d2df4"
+          "sha256": "b4fd310a2cfabed6646576dc13a6a960e3988f54836d0ad4a1c560678c7290a8"
         },
         {
           "path": "scripts/store-live-secret.mjs",
@@ -1746,9 +1771,9 @@
         },
         {
           "path": "scripts/update-artifact-index.mjs",
-          "size": 33999,
+          "size": 36271,
           "mode": 420,
-          "sha256": "82b5374adff3b87fcd563ee82e6bfb28b997e4b05b2979767b58e9197d7d3aa3"
+          "sha256": "c0871d7b187963e4d1635f71dfc28d6c07d07df1af9a24a8ee6f0b3ca3056e17"
         },
         {
           "path": "scripts/update-closure-record.mjs",
@@ -1776,9 +1801,9 @@
         },
         {
           "path": "scripts/verify-brand-assets.mjs",
-          "size": 7090,
+          "size": 7149,
           "mode": 420,
-          "sha256": "81c4f846171e662c423a36beb910119e540dd3f01b9b69e54fbf9c394764c6b0"
+          "sha256": "b1cc2b932bb871722e76a00b50eb6d9d0c56d0d5ecbe2b0390bfbf362abdde8e"
         },
         {
           "path": "scripts/verify-frontend.sh",
@@ -1824,9 +1849,9 @@
         },
         {
           "path": "scripts/verify-public-release.mjs",
-          "size": 51707,
+          "size": 53897,
           "mode": 420,
-          "sha256": "b0b69b522c1f866b8adcddf3ccaf2c9563a3e539177dec4d9df0605c2c3f18fe"
+          "sha256": "80c0e7bf6ba2e4a43dda7cd0df765908d78e2a8a370682c699ab7f1aa9e93572"
         },
         {
           "path": "scripts/verify-tui-screenshot-provenance.mjs",
@@ -2814,9 +2839,9 @@
         },
         {
           "path": "tests/helpers/effectiveness-evidence-fixture.ts",
-          "size": 26225,
+          "size": 26314,
           "mode": 420,
-          "sha256": "48b609ccf5f4e48075bc6da142b6576c3f83158469802bc1d24c772c5fc0c9e0"
+          "sha256": "bb0fc54eccc30eaa65a27efcb7e1bc70681573afd7adb8f0524c56f0849e0fc5"
         },
         {
           "path": "tests/helpers/pi-runner.ts",
@@ -3132,9 +3157,9 @@
         },
         {
           "path": "tests/unit/delivery-readiness-gate.test.ts",
-          "size": 20221,
+          "size": 22159,
           "mode": 420,
-          "sha256": "12853526d406c35c75a13075e88d1c0a5c07b47edd1a3a38f9ac56b7fa41b6a8"
+          "sha256": "3f1af540e7a57e0ed40bb862307214c64007272318ee9eca99cadf98fa2118e7"
         },
         {
           "path": "tests/unit/desktop-action-project-lifecycle.test.ts",
@@ -3156,9 +3181,9 @@
         },
         {
           "path": "tests/unit/effectiveness-evidence.test.ts",
-          "size": 40389,
+          "size": 40908,
           "mode": 420,
-          "sha256": "2510b0804c6887eda84b3ab72c786fe94e7e7ac866aa61599c5500163d008876"
+          "sha256": "ac3e81d529e8a01de73c06f28583693f97f3ade7d125f9b3a68dc029201122d2"
         },
         {
           "path": "tests/unit/enhanced-evidence.test.ts",
@@ -3222,9 +3247,9 @@
         },
         {
           "path": "tests/unit/installed-gui-acceptance.test.ts",
-          "size": 21722,
+          "size": 21790,
           "mode": 420,
-          "sha256": "33f89caa6c8abe4e0b893b55a686373b70b37f22b99fcc551e6676291446dbac"
+          "sha256": "9d72f9a6be0b08b02630b1608a9b4b6f733a112206fef3a6638f6652abc6f12c"
         },
         {
           "path": "tests/unit/intent-signals.test.ts",
@@ -3294,9 +3319,9 @@
         },
         {
           "path": "tests/unit/macos-observability-mount.test.ts",
-          "size": 2629,
+          "size": 2663,
           "mode": 420,
-          "sha256": "28209a683a33f1cff61c515d29fc9a90204ad08bacae4143d45f6662d576c3c0"
+          "sha256": "6677b01e8bac35a6c3ec076bf6071bc8b68e68a050f33e2c1b3f20eda5b0376b"
         },
         {
           "path": "tests/unit/macos-screenshot-provenance.test.ts",
@@ -3492,27 +3517,27 @@
         },
         {
           "path": "tests/unit/public-release-guards.test.ts",
-          "size": 17173,
+          "size": 17395,
           "mode": 420,
-          "sha256": "4f1c8e783c478baa528ec191a6fd370f6ed9351ced634fd8869bbe793f4b6bf7"
+          "sha256": "808a6a084e0a56f0c55190664cfb12f4261299c1239c744628d3f2be2702dc6b"
         },
         {
           "path": "tests/unit/public-release-verifier.test.ts",
-          "size": 68654,
+          "size": 69056,
           "mode": 420,
-          "sha256": "2202ac2109fee483c1231092002af5b92765f3247a1b0a764e9e3ed1010a4ae3"
+          "sha256": "3b6ce0fd283979a9fafe730512f822c31c33107b33a8836ecf90fd9af615ce96"
         },
         {
           "path": "tests/unit/public-repo-build.test.ts",
-          "size": 31601,
+          "size": 32007,
           "mode": 420,
-          "sha256": "e739b98785a30582e10067624df72a374d3e08279afd520fce299940be438cd8"
+          "sha256": "fd5016db77c9a0115449593759ed52c3ddded79344a55ff7bcf458feb2a2f798"
         },
         {
           "path": "tests/unit/public-repo-policy.test.ts",
-          "size": 36421,
+          "size": 36524,
           "mode": 420,
-          "sha256": "17656ad217e4e45c68fcd202f36c55783b00578349340d1d33d4fc9b55a782b3"
+          "sha256": "d5d9a4c2512b58c1087e0477c648fdd75ea5f7c3f391b3aa85584cbb2906d5b5"
         },
         {
           "path": "tests/unit/release-apple-ceiling-args.test.ts",
@@ -3528,21 +3553,21 @@
         },
         {
           "path": "tests/unit/release-artifacts.test.ts",
-          "size": 55005,
+          "size": 55487,
           "mode": 420,
-          "sha256": "a3b077dcb4cdba0b2a05230fbdaf7753ecc44c1d82bb1705911a0f9382f84b87"
+          "sha256": "45c17bde279539e08e855290c96bf1352d00fc184481375d63cb8f744ebf24db"
         },
         {
           "path": "tests/unit/release-manifest.test.ts",
-          "size": 39121,
+          "size": 42100,
           "mode": 420,
-          "sha256": "fd5a8867e5129c593a731145e895533971dbc9ef8a042767869440d1be4a7ca0"
+          "sha256": "01900ad3f6d4ba06d5987988d89144a46ed694d7c7b5241e078defaf3fe5c0d9"
         },
         {
           "path": "tests/unit/release-profile.test.ts",
-          "size": 4001,
+          "size": 4049,
           "mode": 420,
-          "sha256": "6d699f4aa54b34a5e1f4b1d023de33ac7b940dbc907c7a42a90faf005222cafd"
+          "sha256": "6aa75f63523b8faf75408b18ed80acca6b26e75d51a48fe1ca9d8e3ca5220f7b"
         },
         {
           "path": "tests/unit/release-ui-attestation.test.ts",
@@ -3864,9 +3889,9 @@
         },
         {
           "path": "tests/unit/update-artifact-index.test.ts",
-          "size": 23227,
+          "size": 23452,
           "mode": 420,
-          "sha256": "c128d947e9dc51e6a285cd01174f5991075cf6f061ae36bc9b5b06b177b44f91"
+          "sha256": "41cff3c73d23887f13ab72b3fdf21f933815a10025b2fef06721fc782bd499b2"
         },
         {
           "path": "tests/unit/update-closure-record.test.ts",
@@ -3894,9 +3919,9 @@
         },
         {
           "path": "tests/unit/validate-live-env.test.ts",
-          "size": 5427,
+          "size": 5425,
           "mode": 420,
-          "sha256": "1af000331305dbfd3f231d102c56d00fe392da2015113bbbee701f2e517000f4"
+          "sha256": "beb060bf04e14fc187fadd3359c5809f3d7245ee3e4b9aa0688f4bd67d8aebc3"
         },
         {
           "path": "tests/unit/verify-live-script.test.ts",
@@ -3950,7 +3975,7 @@
           "path": "THIRD_PARTY_NOTICES.md",
           "size": 7875,
           "mode": 420,
-          "sha256": "00d2e6f2117e15b6d07c55da39e87a647898408a78e1fff111d3cc91fd252cd9"
+          "sha256": "848a2449c5429ac413dfaf4f8c26ae8864c90f493eaafc93284383932a018e10"
         },
         {
           "path": "tsconfig.json",
@@ -3974,8 +3999,8 @@
     }
   },
   "impactAssessment": {
-    "macosUiAffected": true,
-    "installedAppAffected": true,
+    "macosUiAffected": false,
+    "installedAppAffected": false,
     "llmEvaluationAffected": false,
     "agentRuntimeAffected": false,
     "nodeRuntimeAffected": false,
@@ -3987,12 +4012,12 @@
       "path": "assets/brand/asset-manifest.json",
       "classification": "release-presentation",
       "previous": {
-        "sha256": "f026d653f0ef5c9b46572b1992f7b1ee8ae3293a481fbb5259aa886a0670fb4c",
-        "size": 1591,
+        "sha256": "3a795e71bee1392109fa7279de7a3ce388c5e7b5029c12615f0e2ade77206640",
+        "size": 1938,
         "mode": 420
       },
       "current": {
-        "sha256": "3a795e71bee1392109fa7279de7a3ce388c5e7b5029c12615f0e2ade77206640",
+        "sha256": "aeae9de5dfcf178c23264fc834194fee7a2f834b7f0b7c55300b4f8d532ef28a",
         "size": 1938,
         "mode": 420
       }
@@ -4000,352 +4025,14 @@
     {
       "path": "assets/brand/canvast-hero.svg",
       "classification": "release-presentation",
-      "previous": null,
-      "current": {
+      "previous": {
         "sha256": "81dd02df41cf62a3797670e89801c9ed59f39fdfc004acf80606665beb17fbc5",
         "size": 4021,
         "mode": 420
-      }
-    },
-    {
-      "path": "assets/brand/README.md",
-      "classification": "release-presentation",
-      "previous": {
-        "sha256": "7fed64c18c231b2befef28d1c933a90794db1a4627a655ebda6f8584e65e4608",
-        "size": 1373,
-        "mode": 420
       },
       "current": {
-        "sha256": "aa9271a8245d0d62f2495ccf51f54b0d906e67aff5bb40ef05809701c07a918a",
-        "size": 1581,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTest.swift",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "5d31310302e0238fc6d7541aae8e700e625d48ca24098154d76f0e3a3f9073d4",
-        "size": 14400,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "8b269a08e4bdf2f99eaafbb56b7d47b9e3bf07f52c2c5d4bc61ab06fd71748cc",
-        "size": 15149,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestActionLifecycleTests.swift",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "7ae77ecb7887fa7741168ffaef0ce080052da5900080233b18a2c7fe26912cb5",
-        "size": 48629,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "ec2885a5b6843de7f43ff8674973a55c6cce8e5061961bb2fbb9ef94d6ae797d",
-        "size": 49455,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestRuntimeTests.swift",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "3eb4b118fe74c772a15dcd6aca8e8de5c805e4c9b898358a8eae68714903d1a9",
-        "size": 18254,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "27ed76c5d5359e40a5d08c0c99c58a5355fb508ce1ee95d1b76f5afc9c724d69",
-        "size": 34610,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestSettingsTests.swift",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "bd957d55f76b58a95d9a75d01032b7d1c36d352f4c850481876925df82a8b483",
-        "size": 25939,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "6d0497c6874d742dd43c59473acdb061a48ac810781f9e8391c4f5b0436d49f1",
-        "size": 28774,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/CanvastAppSelfTestSupport.swift",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "a645270f88a03ee981ae8a9d7bc8177fb6599501a7a1d5abd3af1c46dea4453c",
-        "size": 24966,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "146f2cae3bde8c5955234c80af171503ad53021aad6aee4e4275a367db9f341d",
-        "size": 25896,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "d020859eb9b6fbbb529aafa5c4f506857f50d2bd447fa92e5d0de70c196809db",
-        "size": 40172,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "0aa822405612963001dd6536d29c71aa500529a0701527dbdc2130afb64d2234",
-        "size": 42209,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+Actions.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "342d3a3ef0f3fc0b8c23ad71f1445fbf07991d2cf1f244e0de0f80399759ae0d",
-        "size": 21191,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "ad6b31cb022e6a4189eb28b4e6ed2d35312cde2c6d6a29611b1fb2436ed4728d",
-        "size": 23490,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+Bridge.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "af8536e62668144b223b175c1c1773fe1f85d86d29d68d759e402da9a56e34ea",
-        "size": 22587,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "52728195ece78b5e1e2880b21cf2fbbffd0bb40fcc610e3d56d0722993c01f33",
-        "size": 22964,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+Configuration.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "454e670e6de91009844370a15cca5dc4692b1d616806722da48590c097c225ad",
-        "size": 7048,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "930280b692200b37ebd9415a36990134a09b2d3eb03f769edad7b597e3db4e05",
-        "size": 7074,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/CanvastDesktopModel+LiveSession.swift",
-      "classification": "macos-ui-product",
-      "previous": null,
-      "current": {
-        "sha256": "849f943a5d446048f1969511c61bb708dbb7f74f62c6910150185b42c11d5e03",
-        "size": 13826,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/DesktopActionRegistry.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "d70402ac10f368d47944a6f32d443e0dd94a9e4e79650e00060eb862519c0d0f",
-        "size": 37796,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "ce13e484ed1235016880033bbb96a82a8d4007fa0a97f524ce4cb028c2e727af",
-        "size": 37797,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/DesktopSessionModels.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "fedcdaf5e44522252057d4262f089df64f6b701b9703bcd6fc9de6539f4a7d3d",
-        "size": 5277,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "844e99a0e20b10ee58f0345a8235a4a6bc2bf3fc6361cb84d67b2290b3564907",
-        "size": 5604,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/RunConsoleOutputViews.swift",
-      "classification": "macos-ui-product",
-      "previous": null,
-      "current": {
-        "sha256": "95cc904a0b6a4c6a7b2ff284a22b487fa07d60ff33436f7ac5f18e71c3a26e69",
-        "size": 9255,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/RunConsoleView.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "8f8167ea05e49658d0333b93e16b43fadfd482d09807b85f0c87a4f51623d6e4",
-        "size": 28465,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "bea9643d8d28c44293c0451def9b6dd929493a1c25c0e978a01b7d41c272b021",
-        "size": 30632,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/SessionChatComponents.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "aae221de8d0ac7f37726e8abcb247595ec86bf5435f8baf1f860a8c8108e95b9",
-        "size": 4573,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "2f32150e18b7a845f5dab1787a80a66e476a91f9cc386ea8d91cf36d477efda5",
-        "size": 5651,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/SessionWorkspaceView.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "54c708f32f88a5868ec45eb32b1e65cd52af055d3f86ee207132cf53e0493729",
-        "size": 30912,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "76a004a0e48c982718897523d3d3b8f050678cdf54f7cb897869b765cf60e34d",
-        "size": 33775,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastApp/UserGuideSnapshotRenderer.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "2879ed88e83afae712bdeff0f963d297d5e7faf434df6466c11ffc2bb1ff27a7",
-        "size": 21369,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "37346638d76ea9a1d8791323341b8c04b1b594d634d5325fee5195e93c176aec",
-        "size": 24783,
-        "mode": 420
-      }
-    },
-    {
-      "path": "macos-app/Sources/CanvastAppCore/CanvastBridge.swift",
-      "classification": "macos-ui-product",
-      "previous": {
-        "sha256": "c32fa5fba7bc119fd890fb52d746e3e5c50ea26d253c3df9474a3fecd0ddde46",
-        "size": 31424,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "567ace24d755fc956958130758611275791acb099f4d88bfae99bb215009c983",
-        "size": 38099,
-        "mode": 420
-      }
-    },
-    {
-      "path": "package.json",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "1c45302dd3d542756dea9298884869d971f2a3f199520c710cd6f536601f5814",
-        "size": 8951,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "31e48df27055380c46f839476f5ac3e622396cc859860b3dd0567fdd5f9b7771",
-        "size": 9031,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/build-public-repo.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "8cdfb8f719b31dc6d53aa31ba71b06f47dd0987f4117caa25a1d2191ab5ac74f",
-        "size": 21277,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "90744840773416fc99b882264bdefc10c380019d3d3054c1289b664b86702328",
-        "size": 21321,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/check-delivery-readiness.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "fb61281ab23819aa14172afa5e280d528b84f56284260ed6f2d65181de8ac373",
-        "size": 28485,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "61868e8b784cb3beac235126e2f8914076ef62cc1e55776e4ca550102cd473d6",
-        "size": 29271,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/effectiveness-render.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "00ecbeef06809f4fc86c18314011f288461ac4f1bdc1ab2925f456914dd86030",
-        "size": 31111,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "f49fa3467553968f8e51add89f7012a0031b886a4232aeae289430ac0dda3106",
-        "size": 36547,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/effectiveness-summary.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "ab15275065c5907d98ef77e9318f70bab7f6048fb080543fbc851229ca60127f",
-        "size": 38025,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "8b91a9e1423cad004897acc1740eabc4f6a7246d7e8b662e21ec42e21df9138e",
-        "size": 38729,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/generate-effectiveness-evidence.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "43d33523f802fdecae83162d315f4969cf42bff886fd3a0c99412838b11598a1",
-        "size": 37053,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "daf34ecbf27347bba3eb34b2c5a8737eb4f0b25b28e03c8310f1ff9dff6e22eb",
-        "size": 40357,
+        "sha256": "7e35d8ffdf2ecc8605d22ac17b39da2468525516a8f57b69ee3a4fd79f8b4654",
+        "size": 4750,
         "mode": 420
       }
     },
@@ -4353,205 +4040,13 @@
       "path": "scripts/public-release-guards.mjs",
       "classification": "release-tooling",
       "previous": {
-        "sha256": "c9ed57751efb3da1cde1fb3d880d84afa8727926a1bb3acb3ce1e4667af03461",
-        "size": 33004,
-        "mode": 420
-      },
-      "current": {
         "sha256": "44ca8af52b4fbf04c35e6cef33e7fb72fd97a1654ee196e7b6628ba10a09f452",
         "size": 33000,
         "mode": 420
-      }
-    },
-    {
-      "path": "scripts/public-repo-policy.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "20f7ea8fa20d0ec100c2423a4f0972fd2003697952580f076b75cb0bd38a25c0",
-        "size": 29527,
-        "mode": 420
       },
       "current": {
-        "sha256": "c9b263d0b2331c3bdf93bae4421d68eb00b0908449a003749fffae2ae17e9f91",
-        "size": 32492,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/release-artifacts.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "a1e79e5bd96adff42a7775e5eb75613efe802d4058df75e6bd942c135dfec932",
-        "size": 29818,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "619e608895174aac469c70c5620eaf6d9e3c879f30fabc723deb8fca6bf2f247",
-        "size": 31261,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/release-impact-evidence.mjs",
-      "classification": "release-tooling",
-      "previous": null,
-      "current": {
-        "sha256": "5b89e7b2d095072a3285d73a7ed477c5001b2c7133f93b2a1727c919f401475f",
-        "size": 27380,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/release-profile.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "90d4aee6dee8550c8f179c779fc38ecdbc105084cd0ae2e613d168252195ca45",
-        "size": 6441,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "687298cf6fef4ff9a03ec8a183620d45ebdb25133d123bbd2c29fe708c45a1b5",
-        "size": 6489,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/release-source-policy.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "6a8998a200de5cffc9d07aee93f03ef54ef20c3c87d8c863901e65f5271bc1a1",
-        "size": 2760,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "fc267f2ef73421ceef2bdae9e1ebb6a73748282e296300222a058357b33f6afe",
-        "size": 2795,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/source-manifest.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "0a4ab95b80a53a56f76a64b2003cefd78a6434a0b8e79d9622e1a775ef7d2df4",
-        "size": 15563,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "b4fd310a2cfabed6646576dc13a6a960e3988f54836d0ad4a1c560678c7290a8",
-        "size": 20985,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/update-artifact-index.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "82b5374adff3b87fcd563ee82e6bfb28b997e4b05b2979767b58e9197d7d3aa3",
-        "size": 33999,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "c0871d7b187963e4d1635f71dfc28d6c07d07df1af9a24a8ee6f0b3ca3056e17",
-        "size": 36271,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/verify-brand-assets.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "81c4f846171e662c423a36beb910119e540dd3f01b9b69e54fbf9c394764c6b0",
-        "size": 7090,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "b1cc2b932bb871722e76a00b50eb6d9d0c56d0d5ecbe2b0390bfbf362abdde8e",
-        "size": 7149,
-        "mode": 420
-      }
-    },
-    {
-      "path": "scripts/verify-public-release.mjs",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "b0b69b522c1f866b8adcddf3ccaf2c9563a3e539177dec4d9df0605c2c3f18fe",
-        "size": 51707,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "80c0e7bf6ba2e4a43dda7cd0df765908d78e2a8a370682c699ab7f1aa9e93572",
-        "size": 53897,
-        "mode": 420
-      }
-    },
-    {
-      "path": "tests/helpers/effectiveness-evidence-fixture.ts",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "48b609ccf5f4e48075bc6da142b6576c3f83158469802bc1d24c772c5fc0c9e0",
-        "size": 26225,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "bb0fc54eccc30eaa65a27efcb7e1bc70681573afd7adb8f0524c56f0849e0fc5",
-        "size": 26314,
-        "mode": 420
-      }
-    },
-    {
-      "path": "tests/unit/delivery-readiness-gate.test.ts",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "12853526d406c35c75a13075e88d1c0a5c07b47edd1a3a38f9ac56b7fa41b6a8",
-        "size": 20221,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "3f1af540e7a57e0ed40bb862307214c64007272318ee9eca99cadf98fa2118e7",
-        "size": 22159,
-        "mode": 420
-      }
-    },
-    {
-      "path": "tests/unit/effectiveness-evidence.test.ts",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "2510b0804c6887eda84b3ab72c786fe94e7e7ac866aa61599c5500163d008876",
-        "size": 40389,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "ac3e81d529e8a01de73c06f28583693f97f3ade7d125f9b3a68dc029201122d2",
-        "size": 40908,
-        "mode": 420
-      }
-    },
-    {
-      "path": "tests/unit/installed-gui-acceptance.test.ts",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "33f89caa6c8abe4e0b893b55a686373b70b37f22b99fcc551e6676291446dbac",
-        "size": 21722,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "9d72f9a6be0b08b02630b1608a9b4b6f733a112206fef3a6638f6652abc6f12c",
-        "size": 21790,
-        "mode": 420
-      }
-    },
-    {
-      "path": "tests/unit/macos-observability-mount.test.ts",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "28209a683a33f1cff61c515d29fc9a90204ad08bacae4143d45f6662d576c3c0",
-        "size": 2629,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "6677b01e8bac35a6c3ec076bf6071bc8b68e68a050f33e2c1b3f20eda5b0376b",
-        "size": 2663,
+        "sha256": "efe4e64440d61fbf79e9d35a65c8a644d6ecf8062190748696e18796b708e89d",
+        "size": 33273,
         "mode": 420
       }
     },
@@ -4559,13 +4054,13 @@
       "path": "tests/unit/public-release-guards.test.ts",
       "classification": "focused-test",
       "previous": {
-        "sha256": "4f1c8e783c478baa528ec191a6fd370f6ed9351ced634fd8869bbe793f4b6bf7",
-        "size": 17173,
+        "sha256": "808a6a084e0a56f0c55190664cfb12f4261299c1239c744628d3f2be2702dc6b",
+        "size": 17395,
         "mode": 420
       },
       "current": {
-        "sha256": "808a6a084e0a56f0c55190664cfb12f4261299c1239c744628d3f2be2702dc6b",
-        "size": 17395,
+        "sha256": "01eb76e5e53a7da416226f8d13d31492088c5d2044b4f1a58d70f77495b3cce3",
+        "size": 17660,
         "mode": 420
       }
     },
@@ -4573,13 +4068,13 @@
       "path": "tests/unit/public-release-verifier.test.ts",
       "classification": "focused-test",
       "previous": {
-        "sha256": "2202ac2109fee483c1231092002af5b92765f3247a1b0a764e9e3ed1010a4ae3",
-        "size": 68654,
+        "sha256": "3b6ce0fd283979a9fafe730512f822c31c33107b33a8836ecf90fd9af615ce96",
+        "size": 69056,
         "mode": 420
       },
       "current": {
-        "sha256": "3b6ce0fd283979a9fafe730512f822c31c33107b33a8836ecf90fd9af615ce96",
-        "size": 69056,
+        "sha256": "adc4d482cf3ee78a49fe1e897b38edfd554adefefbe5c8b3f80663df3241a353",
+        "size": 69430,
         "mode": 420
       }
     },
@@ -4587,97 +4082,13 @@
       "path": "tests/unit/public-repo-build.test.ts",
       "classification": "focused-test",
       "previous": {
-        "sha256": "e739b98785a30582e10067624df72a374d3e08279afd520fce299940be438cd8",
-        "size": 31601,
-        "mode": 420
-      },
-      "current": {
         "sha256": "fd5016db77c9a0115449593759ed52c3ddded79344a55ff7bcf458feb2a2f798",
         "size": 32007,
         "mode": 420
-      }
-    },
-    {
-      "path": "tests/unit/public-repo-policy.test.ts",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "17656ad217e4e45c68fcd202f36c55783b00578349340d1d33d4fc9b55a782b3",
-        "size": 36421,
-        "mode": 420
       },
       "current": {
-        "sha256": "d5d9a4c2512b58c1087e0477c648fdd75ea5f7c3f391b3aa85584cbb2906d5b5",
-        "size": 36524,
-        "mode": 420
-      }
-    },
-    {
-      "path": "tests/unit/release-artifacts.test.ts",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "a3b077dcb4cdba0b2a05230fbdaf7753ecc44c1d82bb1705911a0f9382f84b87",
-        "size": 55005,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "45c17bde279539e08e855290c96bf1352d00fc184481375d63cb8f744ebf24db",
-        "size": 55487,
-        "mode": 420
-      }
-    },
-    {
-      "path": "tests/unit/release-manifest.test.ts",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "fd5a8867e5129c593a731145e895533971dbc9ef8a042767869440d1be4a7ca0",
-        "size": 39121,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "01900ad3f6d4ba06d5987988d89144a46ed694d7c7b5241e078defaf3fe5c0d9",
-        "size": 42100,
-        "mode": 420
-      }
-    },
-    {
-      "path": "tests/unit/release-profile.test.ts",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "6d699f4aa54b34a5e1f4b1d023de33ac7b940dbc907c7a42a90faf005222cafd",
-        "size": 4001,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "6aa75f63523b8faf75408b18ed80acca6b26e75d51a48fe1ca9d8e3ca5220f7b",
-        "size": 4049,
-        "mode": 420
-      }
-    },
-    {
-      "path": "tests/unit/update-artifact-index.test.ts",
-      "classification": "focused-test",
-      "previous": {
-        "sha256": "c128d947e9dc51e6a285cd01174f5991075cf6f061ae36bc9b5b06b177b44f91",
-        "size": 23227,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "41cff3c73d23887f13ab72b3fdf21f933815a10025b2fef06721fc782bd499b2",
-        "size": 23452,
-        "mode": 420
-      }
-    },
-    {
-      "path": "THIRD_PARTY_NOTICES.md",
-      "classification": "release-tooling",
-      "previous": {
-        "sha256": "00d2e6f2117e15b6d07c55da39e87a647898408a78e1fff111d3cc91fd252cd9",
-        "size": 7875,
-        "mode": 420
-      },
-      "current": {
-        "sha256": "848a2449c5429ac413dfaf4f8c26ae8864c90f493eaafc93284383932a018e10",
-        "size": 7875,
+        "sha256": "c9ce5822552f2b8c04405bc5ac8ed2d13b1f2fafe703860335f0673a9a1ddad9",
+        "size": 32353,
         "mode": 420
       }
     }
@@ -4686,58 +4097,36 @@
     "evidenceProjection": {
       "command": "node scripts/generate-effectiveness-evidence.mjs verify --readme README.md",
       "status": "passed",
-      "completedAt": "2026-09-18T17:04:45.468Z",
+      "completedAt": "2026-09-19T00:54:21.929Z",
       "sourceManifest": {
         "path": "release/source-manifest.json",
-        "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980",
-        "generatedAt": "2026-09-18T16:57:37.180Z",
-        "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6"
-      }
-    },
-    "swiftBuild": {
-      "command": "swift build --package-path macos-app",
-      "status": "passed",
-      "completedAt": "2026-09-18T17:04:45.468Z",
-      "sourceManifest": {
-        "path": "release/source-manifest.json",
-        "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980",
-        "generatedAt": "2026-09-18T16:57:37.180Z",
-        "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6"
-      }
-    },
-    "appSelfTest": {
-      "command": "swift run --package-path macos-app CanvastApp --self-test",
-      "status": "passed",
-      "completedAt": "2026-09-18T17:04:45.468Z",
-      "sourceManifest": {
-        "path": "release/source-manifest.json",
-        "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980",
-        "generatedAt": "2026-09-18T16:57:37.180Z",
-        "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6"
+        "sha256": "21d449413b331d12a7c946aa85cabebb1f92649cf7eb4dd210a9d7c19bad48d3",
+        "generatedAt": "2026-09-19T00:29:43.530Z",
+        "sourceTreeSha256": "f45631367ad84bd58780afc622b9511919d2fb1e6d395f6f0d253e2e28bbe5fa"
       }
     }
   },
   "inheritedEvaluationEvidence": {
     "pairedEvaluation": {
       "path": "eval-matrix/artifacts/paired-evaluation-latest.json",
-      "sha256": "2462587f5fffe162d1f1474d9113f7a6ffd9157aff3a4abea050f9714548cb02",
-      "generatedAt": "2026-09-16T08:45:42.366Z",
-      "sourceManifestSha256": "cbcae4896c9e36d18bd1984f995102f9a3a19e55d298213e13893f4568b2ec79",
-      "sourceTreeSha256": "ae34a963971e574ff99983a87b0fa17c027682586576f81d088ff66df6057234"
+      "sha256": "895b37bce8dc59bd43b197901b5400ac7a36a0222fe9d6d924dd31f8aa61ad07",
+      "generatedAt": "2026-09-18T23:13:38.797Z",
+      "sourceManifestSha256": "55587d20e78575efa3b97229387021d2e5698f236beef1f37f2bad9792dd4d2e",
+      "sourceTreeSha256": "7b584540d5e2ed98f4e844c00ce839bb049f21a6161b1a56e381e0f61a4bb077"
     },
     "pairedSmoke": {
       "path": "eval-matrix/artifacts/paired-smoke-latest.json",
-      "sha256": "abb760ba462a694304f11310683afad3b776939def38a892fd3ca55a933e0a6b",
-      "generatedAt": "2026-09-16T07:12:54.517Z",
-      "sourceManifestSha256": "cbcae4896c9e36d18bd1984f995102f9a3a19e55d298213e13893f4568b2ec79",
-      "sourceTreeSha256": "ae34a963971e574ff99983a87b0fa17c027682586576f81d088ff66df6057234"
+      "sha256": "b4b02fff8a4cf13b5c14c5939a90fada28a809925dd55a27571f0c459628d122",
+      "generatedAt": "2026-09-18T22:34:19.357Z",
+      "sourceManifestSha256": "55587d20e78575efa3b97229387021d2e5698f236beef1f37f2bad9792dd4d2e",
+      "sourceTreeSha256": "7b584540d5e2ed98f4e844c00ce839bb049f21a6161b1a56e381e0f61a4bb077"
     },
     "effectivenessSummary": {
       "path": "release/artifacts/effectiveness-summary.json",
-      "sha256": "d74e70392cea0cf1bf889340a4c350da9c3f9c57f6dd387806e785a8092b6621",
-      "generatedAt": "2026-09-16T08:45:42.366Z",
-      "sourceManifestSha256": "cbcae4896c9e36d18bd1984f995102f9a3a19e55d298213e13893f4568b2ec79",
-      "sourceTreeSha256": "ae34a963971e574ff99983a87b0fa17c027682586576f81d088ff66df6057234"
+      "sha256": "66583fe0cb6a6349a7eb59b51ec9c98df44827d98e049d13151fca78023efbfc",
+      "generatedAt": "2026-09-18T23:13:38.797Z",
+      "sourceManifestSha256": "55587d20e78575efa3b97229387021d2e5698f236beef1f37f2bad9792dd4d2e",
+      "sourceTreeSha256": "7b584540d5e2ed98f4e844c00ce839bb049f21a6161b1a56e381e0f61a4bb077"
     }
   }
 }

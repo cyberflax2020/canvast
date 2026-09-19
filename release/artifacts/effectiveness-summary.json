@@ -2,33 +2,33 @@
   "schemaVersion": 1,
   "kind": "canvast-effectiveness-summary",
   "status": "passed",
-  "generatedAt": "2026-09-16T08:45:42.366Z",
+  "generatedAt": "2026-09-18T23:13:38.797Z",
   "inputs": {
     "pairedEvaluation": {
       "path": "eval-matrix/artifacts/paired-evaluation-latest.json",
-      "sha256": "2462587f5fffe162d1f1474d9113f7a6ffd9157aff3a4abea050f9714548cb02",
-      "generatedAt": "2026-09-16T08:45:42.366Z"
+      "sha256": "895b37bce8dc59bd43b197901b5400ac7a36a0222fe9d6d924dd31f8aa61ad07",
+      "generatedAt": "2026-09-18T23:13:38.797Z"
     },
     "sourceManifest": {
       "path": "release/source-manifest.json",
-      "sha256": "cbcae4896c9e36d18bd1984f995102f9a3a19e55d298213e13893f4568b2ec79",
-      "sourceTreeSha256": "ae34a963971e574ff99983a87b0fa17c027682586576f81d088ff66df6057234",
-      "generatedAt": "2026-09-16T07:06:15.375Z"
+      "sha256": "55587d20e78575efa3b97229387021d2e5698f236beef1f37f2bad9792dd4d2e",
+      "sourceTreeSha256": "7b584540d5e2ed98f4e844c00ce839bb049f21a6161b1a56e381e0f61a4bb077",
+      "generatedAt": "2026-09-18T22:34:18.920Z"
     },
     "smokeArtifact": {
       "path": "eval-matrix/artifacts/paired-smoke-latest.json",
-      "sha256": "abb760ba462a694304f11310683afad3b776939def38a892fd3ca55a933e0a6b",
-      "generatedAt": "2026-09-16T07:12:54.517Z"
+      "sha256": "b4b02fff8a4cf13b5c14c5939a90fada28a809925dd55a27571f0c459628d122",
+      "generatedAt": "2026-09-18T22:34:19.357Z"
     },
     "modelBackendAttestation": {
       "path": "release/artifacts/model-backend-attestation.json",
-      "sha256": "e66b0b48ce3babeab9ffbb03d1b11f35ed4f652a3853cac6be13a362d037794a",
-      "attestedAt": "2026-09-18T13:56:17.000Z"
+      "sha256": "df8743783591e8239b062f87d46927728f19ae2dd5fa20962293ffbcafa3a5e4",
+      "attestedAt": "2026-09-19T00:00:00.000Z"
     }
   },
   "document": {
     "path": "docs/EFFECTIVENESS_EVIDENCE.md",
-    "sha256": "75278be99c031fa876ae0834056deca4368424c734adc5ca9245049b84b35f2c"
+    "sha256": "ef1e02b56bdf0d966e904565b541e0ada14907673135f11c12c37ec49be450d5"
   },
   "comparisonOutcome": {
     "status": "inconclusive",
@@ -45,11 +45,13 @@
   "modelComparability": {
     "strictSameModelVerified": false,
     "status": "configured_same_model_but_reference_upstream_revision_unobserved",
+    "configuredModel": "deepseek-v4-flash",
+    "configuredProvider": "deepseek",
     "ownerAttestation": {
-      "attestedAt": "2026-09-18T13:56:17.000Z",
+      "attestedAt": "2026-09-19T00:00:00.000Z",
       "attestedBy": "project owner (github.com/cyberflax2020)",
-      "statement": "Both sides of the paired evaluation ran against the same DeepSeek API model, deepseek-v4-pro. The Canvast side connected to the DeepSeek API directly; the reference toolchain (Claude Code 2.1.233) connected through the local compatibility proxy scripts/anthropic-openai-proxy.mjs, which performs Anthropic-to-OpenAI protocol translation only and forwards to the same DeepSeek account, endpoint, and model. The project owner manually confirms this same-backend configuration for every included run.",
-      "statementZh": "配对评估的两侧均运行相同的 DeepSeek API 模型 deepseek-v4-pro。Canvast 侧直接连接 DeepSeek API；参考工具链（Claude Code 2.1.233）通过本地兼容代理 scripts/anthropic-openai-proxy.mjs 接入，该代理仅执行 Anthropic 到 OpenAI 的协议翻译，并转发至相同的 DeepSeek 账户、端点与模型。项目所有者人工确认每一次纳入运行均为上述同后端配置。",
+      "statement": "Both sides of the paired evaluation ran against the same DeepSeek API model, deepseek-v4-flash. The Canvast side connected to the DeepSeek API directly; the reference toolchain (Claude Code) connected through the local compatibility proxy scripts/anthropic-openai-proxy.mjs, which performs Anthropic-to-OpenAI protocol translation only and forwards to the same DeepSeek account, endpoint, and model. The project owner manually confirms this same-backend configuration for every included run.",
+      "statementZh": "配对评估的两侧均运行相同的 DeepSeek API 模型 deepseek-v4-flash。Canvast 侧直接连接 DeepSeek API；参考工具链（Claude Code）通过本地兼容代理 scripts/anthropic-openai-proxy.mjs 接入，该代理仅执行 Anthropic 到 OpenAI 的协议翻译，并转发至相同的 DeepSeek 账户、端点与模型。项目所有者人工确认每一次纳入运行均为上述同后端配置。",
       "scope": "This human attestation closes the strictSameModelVerified concern for publication. Machine strict-revision observation remains unavailable through the reference compatibility proxy; this attestation supplements, not replaces, the machine check, which continues to report strictSameModelVerified=false.",
       "scopeZh": "本人工确认用于终结发布流程中的 strictSameModelVerified 悬案。通过参考工具链的兼容代理仍无法进行机器级严格 revision 观测；本确认为机器检查的补充而非替代，机器检查继续报告 strictSameModelVerified=false。"
     }
@@ -77,10 +79,10 @@
       "referenceOnlyPassed": 0
     },
     "latencyMs": {
-      "canvastMedian": 61138.5,
-      "referenceMedian": 40736.5,
-      "difference": 20402,
-      "ratio": 1.5008
+      "canvastMedian": 24610,
+      "referenceMedian": 9719,
+      "difference": 14891,
+      "ratio": 2.5322
     },
     "exactSignTest": {
       "discordantPairs": 0,

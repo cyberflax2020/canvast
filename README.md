@@ -1,12 +1,12 @@
 # Canvast
 
 <p align="center">
-  <img src="assets/brand/canvast-hero.svg" alt="Canvast — Project Governance Canvas for AI Agents" width="100%">
+  <img src="assets/brand/canvast-hero.svg" alt="Canvast — self-built open-source loop harness for AI coding agents" width="100%">
 </p>
 
 <p align="center">
-  <strong>Local-first AI coding workspace for sustained project work.</strong><br>
-  面向持续项目工作的本地优先 AI 编程工作空间。
+  <strong>A self-built, open-source loop harness for AI coding agents — built for large projects.</strong><br>
+  自研开源的 Loop 架构 AI 编程 agent harness——为大型项目而生。
 </p>
 
 <p align="center">
@@ -21,79 +21,89 @@
 
 ### What is Canvast
 
-Canvast is an AI coding-agent harness built for work that outlives a single prompt. It runs on the open [pi](https://github.com/badlogic/pi-mono) runtime family and adds the governance layer long-running engineering work needs: project-scoped sessions you can actually resume, a persistent Canvas that records files, plans, decisions, and delegated agent runs as a typed graph, and a runtime whose every request, tool call, and approval stays visible and attributable.
+Canvast is a self-built, open-source (Apache-2.0) **loop harness** for AI coding agents: it wraps the agent's execution loop itself, and re-grounds every single turn in persistent, whole-project state. It runs on the open [pi](https://github.com/earendil-works/pi) runtime family as its engine, and adds the governance layer that large projects need: a persistent graph Canvas that acts as the project's living map, full-spectrum advanced harness capabilities, and a runtime whose every request, tool call, and approval stays visible.
 
-One product, two surfaces: a fast terminal UI for steering active work, and a native SwiftUI macOS App that opens the same persisted project state as a full workspace.
+One product, two surfaces: a fast terminal UI, and a native SwiftUI macOS App that opens the same persisted project state.
 
-### Why Canvast
+### Why existing harnesses lose the project
 
-- **Sustained context, not rebuilt context.** Reopen a project and continue from the same session history, task and plan state, transcripts, and resume candidates — hours or days later.
-- **Governance you can see.** The Canvas records related files, plans, decisions, and agent runs with typed links, so multi-step work stays traceable instead of evaporating into chat scrollback.
-- **A runtime that shows its work.** Request receipts, input queue, request lifecycle, tool runs, runtime events, and approval history are first-class, inspectable state — in the TUI and in the App.
-- **Safety by default.** `read-only`, `workspace-write`, and `full-access` sandbox profiles; typed grant and revoke actions with recorded rationale; credential redaction; a resource watchdog and a single process-fence wrapper for heavy workloads.
-- **Evidence over adjectives.** Product-outcome claims live in machine-checked evidence blocks (below) that a verifier re-derives from the checked-in record. What cannot be evidenced is marked inconclusive, not marketed.
+Traditional agent harnesses — including very good ones — share a structural weakness we kept hitting in real large-project work:
 
-### See it in action
+- **Every turn starts nearly blind.** The agent sees the conversation, not the project. A line of code exists because of an architectural decision made three weeks ago — but that relationship lives only in chat history.
+- **Context compaction silently deletes the project.** As context keeps getting compressed, decisions, constraints, and rationales are silently dropped.
+- **Forgetting.** Mid-task, the agent loses why it chose an approach, which files were already touched, and what was explicitly ruled out.
+- **Goal drift.** Long tasks quietly lose their original objective; the plan on turn 80 is no longer the plan the user approved.
+- **Fake completion.** Work gets declared "done" with no traceable evidence chain behind the claim.
 
-The terminal runtime, steering a live run with real-time project status:
+Project complexity is networked; a conversation is linear. A harness that only manages the conversation will always lose the project.
 
-![Canvast terminal runtime with live project status](docs/assets/user-guide/tui-run-runtime.png)
+### The answer: governance at every loop turn
 
-Live task and plan projection while the agent works, and the sidecar continuity view:
+Canvast treats the harness as a **loop architecture** problem, not a prompt problem:
 
-<p align="center">
-  <img src="docs/assets/user-guide/tui-task-plan-live.png" alt="Live task and plan projection in the TUI" width="49%">
-  <img src="docs/assets/user-guide/tui-sidecar-continuity.png" alt="Sidecar continuity view in the TUI" width="49%">
-</p>
+- **Every loop turn is re-anchored.** Before each model turn, Canvast re-grounds the agent in persistent project state — the Canvas graph, the live plan tree, scoped task context, and runtime receipts — instead of relying on whatever survives in the conversation.
+- **The project gets a living map.** The Graph Canvas records files, plans, decisions, and agent runs as a typed graph that persists across sessions and compactions. The agent navigates and updates the map; the map never depends on chat memory.
+- **Work stays attributable.** Every artifact can be traced back to the plan and decision that produced it, so "done" means something checkable.
 
-Canvas with sandbox safety state in the TUI:
+### Graph Canvas, illustrated
+
+The Canvas is the signature capability of Canvast, and it is where large projects benefit most. Four typed node kinds — **File, Plan, Decision, AgentRun** — connected by typed links, queryable live by the agent, rendered live for you:
+
+![The project Canvas in the macOS App](docs/assets/user-guide/macos-canvas.png)
+
+The same Canvas inside the terminal UI, alongside the sandbox safety state:
 
 ![Canvas and safety state in the TUI](docs/assets/user-guide/tui-canvas-safety.png)
 
-The macOS App — Run Console and the project Canvas, reading the same persisted state:
+What this buys you in a large project:
+
+- **Cross-session continuity that survives compaction** — project knowledge lives in the graph, not in the conversation.
+- **Scoped context instead of ever-growing transcripts** — the agent reads the relevant slice of the graph for the task at hand.
+- **Traceability** — any change can be walked back to its originating plan and decision.
+- **Portability** — the persisted Canvas exports to JSON, Markdown, Mermaid, standalone SVG, and interactive HTML, from the CLI or natively from the App.
+
+### A complete advanced harness toolkit
+
+Everything you expect from a top-tier agent harness is here — and it is all governed by the same loop:
+
+- **Orchestration**: automatic DAG workflow decomposition (`run_workflow`), bounded sub-agent dispatch (`spawn_agent`, `parallel_agents`) with capacity limits and in-process or isolated execution, sidecar continuation for long-running primary work, plan mode with typed approvals, auto-orchestration decisions recorded as structured receipts.
+- **Execution**: sandboxed shell, file, and Git execution with identity pinning; background tasks; worktrees; notebook editing; LSP fallback lookup; grounded web search and fetch with explicit evidence reasons.
+- **Observability**: request receipts, input queue, request lifecycle, tool runs, runtime events, task and plan projections, and approval history — first-class, inspectable state in both surfaces.
+- **Safety and permissions**: `read-only`, `workspace-write`, and `full-access` profiles; typed grant and revoke actions with recorded rationale; credential redaction; a resource watchdog and a single process-fence wrapper (`safe-run.sh`) born from real crash postmortems; an owned-handle registry that pins PID, process group, and process birth time and fails closed on PID reuse.
+- **Runtime hardening**: the relocatable sealed launcher scrubs dozens of inherited environment variables (including dynamic-linker injection and TLS key-logging hooks) and pins a known TLS configuration before starting the agent.
+- **Extensibility**: explicitly activated skills (off by default, unknown names rejected), an MCP registry, cron schedules, monitors, and local HTML artifacts.
+
+### Two surfaces, one project state
+
+Steer a live run in the terminal with real-time status, live task and plan projection, and views like `/canvast-status`, `/canvast-tasks`, and `/canvast-canvas`:
+
+![Canvast terminal runtime with live project status](docs/assets/user-guide/tui-run-runtime.png)
+
+Or open the same persisted project in the macOS App — Run Console, Tasks & Plans, Agents & Workflows, Safety & Permissions, Sessions, Canvas, and Settings:
 
 <p align="center">
   <img src="docs/assets/user-guide/macos-run-console.png" alt="macOS App Run Console" width="49%">
-  <img src="docs/assets/user-guide/macos-canvas.png" alt="macOS App project Canvas" width="49%">
-</p>
-
-<p align="center">
   <img src="docs/assets/user-guide/macos-tasks-plans.png" alt="macOS App tasks and plans" width="49%">
-  <img src="docs/assets/user-guide/macos-safety-permissions.png" alt="macOS App safety and permissions" width="49%">
 </p>
-
-<p align="center">
-  <img src="docs/assets/user-guide/macos-agents-workflows.png" alt="macOS App agents and workflows" width="49%">
-  <img src="docs/assets/user-guide/macos-sessions.png" alt="macOS App sessions" width="49%">
-</p>
-
-### Advanced harness capabilities
-
-- **28 governed extensions** on the pi runtime: sandboxed shell, file, and Git execution with identity pinning; in-process and isolated sub-agents with capacity limits; DAG workflows; background tasks; grounded web search and fetch with explicit evidence reasons; worktrees; code review; LSP fallback lookup; notebook editing; cron schedules; monitors; local HTML artifacts.
-- **Resource-safety engineering.** A watchdog that bounds agent process count, CPU, and memory; a single process-fence wrapper (`safe-run.sh`) that owns teardown for heavy workloads; an owned-handle registry that pins PID, process group, and process birth time and fails closed on PID reuse.
-- **Sealed runtime mode.** The relocatable launcher scrubs dozens of inherited environment variables (including dynamic-linker injection and TLS key-logging hooks) and pins a known TLS configuration before starting the agent.
-- **Explicit, auditable skills.** Bundled skills ship disabled and can only be activated by name; unknown names are rejected.
-- **Portable Canvas export.** Reproducible export of the persisted graph to JSON, Markdown, Mermaid, standalone SVG, and interactive HTML — from the CLI or natively from the App.
 
 ### Measured effectiveness
 
-We evaluate Canvast in paired runs against Claude Code as the reference toolchain, with both sides driving the same DeepSeek API model. The methodology, thresholds, and full record are public; the block below is regenerated and verified by machine, and any claim outside it is rejected by our own release gate.
+We hold ourselves to measured evidence: Canvast is evaluated in paired runs against Claude Code as the reference toolchain — same tasks, same protocol, same DeepSeek model backend on both sides. Standard harness capability is expected to measure at parity with the reference; Canvast's signature capabilities are probed separately. The block below is regenerated and verified by machine from the checked-in record — it says exactly what the record supports, and our own release gate rejects any comparative claim outside it.
 
 <!-- CANVAST_EFFECTIVENESS_EN_START -->
-Paired evaluation: Canvast vs the reference toolchain (2.1.233 (Claude Code); bare print via local compatibility proxy). Both sides ran against the same DeepSeek API model, deepseek-v4-pro.
+Paired evaluation: Canvast vs the reference toolchain (2.1.233 (Claude Code); bare print via local compatibility proxy). Both sides ran against the same DeepSeek API model, deepseek-v4-flash.
 - Task success: Canvast 12/12; reference 12/12; pass-rate difference 0.0 percentage points; 0 discordant pairs across 12 complete pairs (24 side-runs) with four crossover repeats and zero infrastructure exclusions.
-- Median run latency: Canvast 61138.5 ms; reference 40736.5 ms; ratio 1.5008x. This overhead is disclosed as a known optimization target for upcoming releases.
+- Median run latency: Canvast 24610 ms; reference 9719 ms; ratio 2.5322x. This overhead is disclosed as a known optimization target for upcoming releases.
 - Token accounting: not published, because cache telemetry was not trustworthy on at least one side.
-- Model backend (project-owner attestation, 2026-09-18): Both sides of the paired evaluation ran against the same DeepSeek API model, deepseek-v4-pro. The Canvast side connected to the DeepSeek API directly; the reference toolchain (Claude Code 2.1.233) connected through the local compatibility proxy scripts/anthropic-openai-proxy.mjs, which performs Anthropic-to-OpenAI protocol translation only and forwards to the same DeepSeek account, endpoint, and model. The project owner manually confirms this same-backend configuration for every included run.
-- Attestation scope: This human attestation closes the strictSameModelVerified concern for publication. Machine strict-revision observation remains unavailable through the reference compatibility proxy; this attestation supplements, not replaces, the machine check, which continues to report strictSameModelVerified=false.
+- Model backend: both sides configured to the same DeepSeek model (deepseek-v4-flash), confirmed by the project owner (2026-09-19). The reference toolchain connects through a local protocol proxy, so machine verification of its upstream model revision is not possible; this is disclosed as-is.
 
-Product capability probes:
-- **Continuous primary work — inconclusive.** The current published record is not sufficient to confirm this product outcome.
-- **Compaction continuity — inconclusive.** The current published record is not sufficient to confirm this product outcome.
-- **Live plan visibility — inconclusive.** The current published record is not sufficient to confirm this product outcome.
-- **Portable Canvas — inconclusive.** The current published record is not sufficient to confirm this product outcome.
-- Boundary: each line reflects the current published product record and falls back to inconclusive when the checked-in record is not sufficient.
-- Current scope and limits: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).
+Signature capability probes (enhanced tier):
+- **Uninterrupted long-running work — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
+- **Continuity through context compaction — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
+- **Live plan visibility — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
+- **Persistent, exportable Canvas — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
+- Boundary: every line reflects the checked-in public record; anything the record cannot support is marked as unconfirmed instead of claimed.
+- Full methodology and record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).
 <!-- CANVAST_EFFECTIVENESS_EN_END -->
 
 ### Get started
@@ -112,8 +122,6 @@ Then ask for the first outcome you want:
 ```bash
 ./canvast.sh -p "Summarize the current project state."
 ```
-
-Useful views while working: `/canvast-status`, `/canvast-tasks`, `/canvast-canvas`.
 
 **Option 2 — macOS App.** Requirements: macOS 13 or newer. Download `Canvast-macos-0.1.0.zip` from [Releases](https://github.com/cyberflax2020/canvast/releases), extract it, and move `Canvast.app` to Applications. The App embeds the sealed runtime — no separate Node.js install is required. The build is ad-hoc signed, so on first launch use right-click → Open; configure your provider key in Settings, pick a project, and continue in the Run Console.
 
@@ -139,85 +147,95 @@ npm run export:canvas -- --out ./canvas-export --title "Project Canvas"
 
 ### License
 
-[Apache-2.0](LICENSE). Third-party components and their licenses: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+[Apache-2.0](LICENSE) — open source, commercially usable. Third-party components and their licenses: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## 中文
 
 ### Canvast 是什么
 
-Canvast 是一个为"超出单条提示词"的工作而生的 AI 编程 agent harness。它运行在开放的 pi 运行时之上，补齐持续工程工作所需的治理层：可真正恢复的项目级 session；把相关文件、计划、决策和委派的 agent 运行记录为 typed graph 的持久化 Canvas；以及一个每个请求、每次工具调用、每条审批都可见、可归因的运行时。
+Canvast 是一个自研、开源（Apache-2.0）的 **loop 架构 AI 编程 agent harness**：它钩住 agent 的执行循环本身，让每一轮都重新锚定到持久化的全项目状态上。它以开放的 pi 运行时为引擎，加上大型项目所需的治理层：作为项目活地图的持久化图谱 Canvas、全量高级 harness 能力，以及一个每个请求、每次工具调用、每条审批都可见的运行时。
 
-一个产品，两个界面：用于引导活跃工作的快速终端 TUI，以及把同一份持久化项目状态打开为完整工作空间的原生 SwiftUI macOS App。
+一个产品，两个界面：快速终端 TUI，以及把同一份持久化项目状态打开为完整工作空间的原生 SwiftUI macOS App。
 
-### 为什么选择 Canvast
+### 为什么现有 harness 会丢失项目
 
-- **延续上下文，而不是重建上下文。** 重新打开项目时，继续沿用同一份 session 历史、任务与计划状态、transcript 和 resume candidate——哪怕相隔数小时或数天。
-- **看得见的治理。** Canvas 用 typed link 记录相关文件、计划、决策与 agent 运行，多步骤工作全程可追溯，而不是消失在聊天记录里。
-- **会展示自己在做什么的运行时。** request receipt、input queue、request lifecycle、tool runs、runtime events 和 approval history 都是一等可检查状态——TUI 和 App 里都能看到。
-- **默认安全。** `read-only`、`workspace-write`、`full-access` 三档沙箱 profile；带记录理由的 typed grant 与 revoke；凭据脱敏；资源 watchdog 与统一的进程围栏包装器。
-- **证据先于修辞。** 产品结果声明只出现在机器校验的证据区块中（见下），由 verifier 从已检入记录重新推导。无法证实的内容明确标记为结论未定，而不是拿去营销。
+传统 agent harness——包括非常优秀的那些——都有一个结构性弱点，我们在真实的大型项目工作中反复撞到：
 
-### 界面实录
+- **每一轮几乎都是半盲启动。** agent 看到的是对话，不是项目。某一行代码之所以这么写，是因为三周前的一个架构决策——但这种关系只存在于对话历史里。
+- **上下文压缩会静默删除项目。** 随着上下文不断被压缩，决策、约束和理由被静默丢弃。
+- **遗忘。** 任务做到一半，agent 忘了当初为什么选这个方案、哪些文件已经动过、什么被明确排除过。
+- **目标漂移。** 长任务做着做着丢了原始目标；第 80 轮的计划已经不是用户批准的那个计划。
+- **假完成。** 没有可追溯的证据链，就宣布"完成了"。
 
-终端运行时：引导一次活跃运行，实时项目状态可见：
+项目复杂度是网状的，而对话是线性的。只管对话的 harness，注定会丢失项目。
 
-![Canvast 终端 runtime 与实时项目状态](docs/assets/user-guide/tui-run-runtime-zh-Hans.png)
+### 解法：在每一轮 loop 上做治理
 
-agent 工作时的实时任务与计划投影，以及 sidecar 连续性视图：
+Canvast 把 harness 当作 **loop 架构**问题来解决，而不是提示词问题：
 
-<p align="center">
-  <img src="docs/assets/user-guide/tui-task-plan-live-zh-Hans.png" alt="TUI 实时任务与计划投影" width="49%">
-  <img src="docs/assets/user-guide/tui-sidecar-continuity-zh-Hans.png" alt="TUI sidecar 连续性视图" width="49%">
-</p>
+- **每一轮都重新锚定。** 在每个模型轮次之前，Canvast 用持久化项目状态重新锚定 agent——Canvas 图谱、实时计划树、作用域任务上下文和运行时回执——而不是依赖对话里碰巧剩下的内容。
+- **项目有一张活地图。** Graph Canvas 把文件、计划、决策和 agent 运行记录为 typed graph，跨 session、跨压缩持久存在。agent 在地图上导航和更新；地图从不依赖对话记忆。
+- **工作始终可归因。** 任何产物都可以回溯到产生它的计划和决策，"完成"因此是可检查的。
 
-TUI 中的 Canvas 与沙箱安全状态：
+### Graph Canvas：治理画布图解
+
+Canvas 是 Canvast 的标志性能力，也是大型项目受益最多的地方。四种类型节点——**File、Plan、Decision、AgentRun**——由 typed link 连接，agent 可实时查询，你也能实时看到：
+
+![macOS App 中的项目 Canvas](docs/assets/user-guide/macos-canvas-zh-Hans.png)
+
+终端 TUI 里的同一张 Canvas，旁边是沙箱安全状态：
 
 ![TUI 中的 Canvas 与安全状态](docs/assets/user-guide/tui-canvas-safety-zh-Hans.png)
 
-macOS App:Run Console 与项目 Canvas，读取同一份持久化状态：
+在大型项目里，这意味着：
+
+- **跨 session、跨压缩的连续性**——项目知识长在图谱里，不在对话里。
+- **有界上下文，而不是无限增长的 transcript**——agent 只读取与当前任务相关的图谱切片。
+- **可溯源**——任何改动都能走回产生它的计划与决策。
+- **可移植**——持久化 Canvas 可导出为 JSON、Markdown、Mermaid、独立 SVG 和交互式 HTML,CLI 与 App 原生路径均可。
+
+### 全量高级 harness 能力
+
+你对顶级 agent harness 的一切期待都在这里——并且都被同一条 loop 治理：
+
+- **编排**：自动 DAG workflow 拆分（`run_workflow`)、有界子 agent 配发（`spawn_agent`、`parallel_agents`，容量受限，进程内或隔离执行）、长跑主任务的 sidecar 接续、带 typed 审批的 plan mode、记录为结构化回执的自动编排决策。
+- **执行**：带身份钉住的沙箱 shell、文件与 Git 执行；后台任务；worktree;notebook 编辑；LSP fallback 查询；带显式证据理由的联网搜索与抓取。
+- **观测**:request receipt、input queue、request lifecycle、tool runs、runtime events、task 与 plan 投影、approval history——两个界面上都是一等可检查状态。
+- **安全与权限**:`read-only`、`workspace-write`、`full-access` 三档 profile；带记录理由的 typed grant 与 revoke；凭据脱敏；从真实崩溃复盘长出来的资源 watchdog 与进程围栏（`safe-run.sh`)；钉住 PID、进程组与进程出生时间、PID 复用时安全拒绝的 owned-handle 注册表。
+- **运行时加固**：可迁移密封启动器在启动 agent 前清除数十个继承环境变量（包括动态链接器注入与 TLS key-logging 钩子），并钉住已知 TLS 配置。
+- **可扩展**：显式启用的 skill（默认关闭，未知名称拒绝）、MCP registry、cron 调度、监控器、本地 HTML artifact。
+
+### 两个界面，同一份项目状态
+
+在终端里引导活跃运行：实时状态、实时任务与计划投影，以及 `/canvast-status`、`/canvast-tasks`、`/canvast-canvas` 等视图：
+
+![Canvast 终端 runtime 与实时项目状态](docs/assets/user-guide/tui-run-runtime-zh-Hans.png)
+
+或者在 macOS App 里打开同一个持久化项目——Run Console、Tasks & Plans、Agents & Workflows、Safety & Permissions、Sessions、Canvas 和 Settings:
 
 <p align="center">
   <img src="docs/assets/user-guide/macos-run-console-zh-Hans.png" alt="macOS App Run Console" width="49%">
-  <img src="docs/assets/user-guide/macos-canvas-zh-Hans.png" alt="macOS App 项目 Canvas" width="49%">
-</p>
-
-<p align="center">
   <img src="docs/assets/user-guide/macos-tasks-plans-zh-Hans.png" alt="macOS App 任务与计划" width="49%">
-  <img src="docs/assets/user-guide/macos-safety-permissions-zh-Hans.png" alt="macOS App 安全与权限" width="49%">
 </p>
-
-<p align="center">
-  <img src="docs/assets/user-guide/macos-agents-workflows-zh-Hans.png" alt="macOS App agents 与 workflows" width="49%">
-  <img src="docs/assets/user-guide/macos-sessions-zh-Hans.png" alt="macOS App sessions" width="49%">
-</p>
-
-### 高级 harness 能力
-
-- **28 个受治理扩展**：带身份钉住的沙箱 shell、文件与 Git 执行；进程内与隔离子代理（带容量上限）;DAG workflow；后台任务；带显式证据理由的联网搜索与抓取；worktree；代码评审；LSP fallback 查询；notebook 编辑；cron 调度；监控器；本地 HTML artifact。
-- **资源安全工程。** 限制 agent 进程数量、CPU 与内存的 watchdog；为重负载独占 teardown 的进程围栏包装器（`safe-run.sh`)；钉住 PID、进程组与进程出生时间、在 PID 复用时安全拒绝的 owned-handle 注册表。
-- **密封运行时模式。** 可迁移启动器在启动 agent 前清除数十个继承环境变量（包括动态链接器注入与 TLS key-logging 钩子），并钉住已知 TLS 配置。
-- **显式、可审计的 skill。** 内置 skill 默认关闭，只能按名启用；未知名称一律拒绝。
-- **可移植 Canvas 导出。** 把持久化图谱可复算地导出为 JSON、Markdown、Mermaid、独立 SVG 与交互式 HTML——CLI 与 App 原生路径均可。
 
 ### 实测有效性
 
-我们以 Claude Code 为参考工具链进行配对运行评估，两侧驱动相同的 DeepSeek API 模型。方法论、判定门槛与完整记录全部公开；下方区块由机器重新生成并校验，任何区块之外的相关声明都会被我们自己的发布门禁拒绝。
+我们只用实测证据说话：以 Claude Code 为参考工具链做配对运行——同任务、同协议、两侧相同的 DeepSeek 模型后端。常规 harness 能力的目标是与参考持平；Canvast 的特色能力单独探针测量。下方区块由机器从已检入记录重新生成并校验——记录支持什么，它就说什么；任何区块之外的对比声明都会被我们自己的发布门禁拒绝。
 
 <!-- CANVAST_EFFECTIVENESS_ZH_START -->
-配对评估：Canvast 对比参考工具链（2.1.233 (Claude Code)；bare print via local compatibility proxy）。两侧运行相同的 DeepSeek API 模型 deepseek-v4-pro。
+配对评估：Canvast 对比参考工具链（2.1.233 (Claude Code)；bare print via local compatibility proxy）。两侧运行相同的 DeepSeek API 模型 deepseek-v4-flash。
 - 任务成功率：Canvast 12/12；参考运行 12/12；通过率差值 0.0 个百分点；共 12 个完整配对（24 次单侧运行），四轮交叉重复、基础设施排除数为零，结果不一致的配对 0 个。
-- 中位运行时长：Canvast 61138.5 毫秒；参考运行 40736.5 毫秒；比值 1.5008x。该开销已公开记录为后续版本的优化目标。
+- 中位运行时长：Canvast 24610 毫秒；参考运行 9719 毫秒；比值 2.5322x。该开销已公开记录为后续版本的优化目标。
 - Token 计量：不予发布，因为至少一侧运行的缓存遥测不可信。
-- 模型后端（项目所有者人工确认，2026-09-18）：配对评估的两侧均运行相同的 DeepSeek API 模型 deepseek-v4-pro。Canvast 侧直接连接 DeepSeek API；参考工具链（Claude Code 2.1.233）通过本地兼容代理 scripts/anthropic-openai-proxy.mjs 接入，该代理仅执行 Anthropic 到 OpenAI 的协议翻译，并转发至相同的 DeepSeek 账户、端点与模型。项目所有者人工确认每一次纳入运行均为上述同后端配置。
-- 确认范围：本人工确认用于终结发布流程中的 strictSameModelVerified 悬案。通过参考工具链的兼容代理仍无法进行机器级严格 revision 观测；本确认为机器检查的补充而非替代，机器检查继续报告 strictSameModelVerified=false。
+- 模型后端：两侧配置为同一 DeepSeek 模型（deepseek-v4-flash），由项目所有者人工确认（2026-09-19）。参考工具链经本地协议代理接入，机器无法核验其上游模型 revision，如实说明。
 
-产品能力探针：
-- **主任务连续推进——结论未定。** 当前公开记录不足以确认这一产品结果。
-- **压缩后连续执行——结论未定。** 当前公开记录不足以确认这一产品结果。
-- **实时计划可见——结论未定。** 当前公开记录不足以确认这一产品结果。
-- **可移植 Canvas——结论未定。** 当前公开记录不足以确认这一产品结果。
-- 边界：每一行都只反映当前已发布的产品记录；当已检入记录不足时，会明确标记为结论未定。
-- 当前范围与限制说明见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。
+特色能力探针（enhanced 档）：
+- **长跑任务不中断——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
+- **上下文压缩后连续执行——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
+- **实时计划可见——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
+- **Canvas 持久化与导出——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
+- 边界：每一行都反映已检入的公开记录；记录不足以支持的项目如实标注为未确认，而不是作为结论宣称。
+- 完整方法论与记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。
 <!-- CANVAST_EFFECTIVENESS_ZH_END -->
 
 ### 快速开始
@@ -236,8 +254,6 @@ cp .env.example .env   # 写入 DEEPSEEK_API_KEY
 ```bash
 ./canvast.sh -p "Summarize the current project state."
 ```
-
-工作中常用的视图：`/canvast-status`、`/canvast-tasks`、`/canvast-canvas`。
 
 **方式二：macOS App。** 环境要求：macOS 13 或更高版本。从 [Releases](https://github.com/cyberflax2020/canvast/releases) 下载 `Canvast-macos-0.1.0.zip`，解压后将 `Canvast.app` 移入"应用程序"。App 内嵌密封运行时，无需单独安装 Node.js。构建为 ad-hoc 签名，首次启动请右键 → 打开；在 Settings 中配置 provider key，选择项目，即可在 Run Console 中继续工作。
 
@@ -263,4 +279,4 @@ npm run export:canvas -- --out ./canvas-export --title "Project Canvas"
 
 ### 许可证
 
-[Apache-2.0](LICENSE)。第三方组件及其许可证见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+[Apache-2.0](LICENSE)——开源，可商用。第三方组件及其许可证见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

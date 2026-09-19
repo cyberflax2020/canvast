@@ -591,6 +591,19 @@ function validateModelComparability(artifact, runs) {
       fail(`modelComparability.${field} does not match recomputed run evidence`);
     }
   }
+  const configuredModels = new Set();
+  const configuredProviders = new Set();
+  for (const run of Array.isArray(runs) ? runs : []) {
+    const model = isRecord(run) && isRecord(run.model) ? run.model : {};
+    if (typeof model.configuredUpstreamModel === "string" && model.configuredUpstreamModel) {
+      configuredModels.add(model.configuredUpstreamModel);
+    }
+    if (typeof model.configuredUpstreamProvider === "string" && model.configuredUpstreamProvider) {
+      configuredProviders.add(model.configuredUpstreamProvider);
+    }
+  }
+  recomputed.configuredModel = configuredModels.size === 1 ? [...configuredModels][0] : null;
+  recomputed.configuredProvider = configuredProviders.size === 1 ? [...configuredProviders][0] : null;
   return recomputed;
 }
 

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
   "kind": "canvast-public-tree",
-  "generatedAt": "2026-09-18T17:04:46.582Z",
+  "generatedAt": "2026-09-19T00:55:20.465Z",
   "algorithm": "sha256",
   "sourceManifest": {
     "path": "release/source-manifest.json",
-    "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980"
+    "sha256": "21d449413b331d12a7c946aa85cabebb1f92649cf7eb4dd210a9d7c19bad48d3"
   },
   "policy": {
     "path": "scripts/public-repo-policy.mjs",
@@ -55,8 +55,8 @@
     }
   ],
   "fileCount": 387,
-  "totalBytes": 11157233,
-  "treeSha256": "fa1eb3d0cb8a857d0e07f944b65fc11021d7dc21d5c298582344afae1102f89c",
+  "totalBytes": 11194695,
+  "treeSha256": "41ebb8005279ba7047c11b30b7b2b48dbe2260ff0a22a7208ee8100193c1b390",
   "files": [
     {
       "path": ".env.example",
@@ -96,12 +96,12 @@
     {
       "path": "assets/brand/asset-manifest.json",
       "size": 1938,
-      "sha256": "3a795e71bee1392109fa7279de7a3ce388c5e7b5029c12615f0e2ade77206640"
+      "sha256": "aeae9de5dfcf178c23264fc834194fee7a2f834b7f0b7c55300b4f8d532ef28a"
     },
     {
       "path": "assets/brand/canvast-hero.svg",
-      "size": 4021,
-      "sha256": "81dd02df41cf62a3797670e89801c9ed59f39fdfc004acf80606665beb17fbc5"
+      "size": 4750,
+      "sha256": "7e35d8ffdf2ecc8605d22ac17b39da2468525516a8f57b69ee3a4fd79f8b4654"
     },
     {
       "path": "assets/brand/canvast-logo.svg",
@@ -200,33 +200,33 @@
     },
     {
       "path": "docs/assets/user-guide/macos-agents-workflows-zh-Hans.png",
-      "size": 166945,
-      "sha256": "86f6521d8cf85ce13e52d6a76831b7fa0ffc38b67c8f8aeb0fa4fb32bd375073"
+      "size": 167040,
+      "sha256": "d4ecb90e9ffe0d52dc4a536e2dfcdef74047f7717478d48ede9b02791c71b40f"
     },
     {
       "path": "docs/assets/user-guide/macos-agents-workflows.png",
-      "size": 167996,
-      "sha256": "78f0429798a68e2d2786b89e7d5c1ca6b3b6ef93cf218fad4b28cbc229aae593"
+      "size": 168085,
+      "sha256": "124ace1577641e7626f6668a5d98d5b969aaf7ff343d2dcb84fde5ae93e4e7c6"
     },
     {
       "path": "docs/assets/user-guide/macos-canvas-zh-Hans.png",
-      "size": 181260,
-      "sha256": "a1d49a491888591e4b6df4484973c196d386ff62f3f216ef2118a7bea8759cbb"
+      "size": 181101,
+      "sha256": "d6682b3d6fd0f93288149d06ed1e3a6989ac288e53fe9b6e478d6376624119d2"
     },
     {
       "path": "docs/assets/user-guide/macos-canvas.png",
-      "size": 180386,
-      "sha256": "8548b46f2ebf7aeed0d7b67ef7de37006b6e821c76841bc461093852816a4a11"
+      "size": 180248,
+      "sha256": "129833e3eae772af3c2de9cd91b48d6109e56078b3b9cea1b1ddf43ee0e940db"
     },
     {
       "path": "docs/assets/user-guide/macos-context-zh-Hans.png",
-      "size": 145588,
-      "sha256": "3e770315d58b6b8e5205a903c1343194550f835e645689c3f249b019fab6eeea"
+      "size": 145651,
+      "sha256": "6ebb94c063b4d3b2b2ca3912818ada7a4949acaf06394881ff354e70fd9e1637"
     },
     {
       "path": "docs/assets/user-guide/macos-context.png",
-      "size": 153156,
-      "sha256": "9c1944592ca6426d21948528230210efaa7c7c42169dd1f4d7abd2ba273d711f"
+      "size": 153240,
+      "sha256": "221a25f8dc19a49994854beb0f64bcd0fbc9b1f47f03a58e907a15ba46ae3ce2"
     },
     {
       "path": "docs/assets/user-guide/macos-onboarding-zh-Hans.png",
@@ -240,33 +240,33 @@
     },
     {
       "path": "docs/assets/user-guide/macos-run-console-zh-Hans.png",
-      "size": 172300,
-      "sha256": "8c4c82685b1614d61a88299b20d3fee4be46687f4cf9111af16692cd21ba5459"
+      "size": 172391,
+      "sha256": "aeaff6a6e9d334bb2646106c6ddee511eebb3b6aa92b91f947d558857fe6fcc4"
     },
     {
       "path": "docs/assets/user-guide/macos-run-console.png",
-      "size": 174504,
-      "sha256": "926460ac2d3b103ddfbe6129d08972cf05f6482a7df3ed2d9ff5461cd76bd30a"
+      "size": 174589,
+      "sha256": "3e2f5954bfe0cac6cbd6783ff093597f8b55d085c5e358dce81ac1f3ba7fa2e2"
     },
     {
       "path": "docs/assets/user-guide/macos-safety-permissions-zh-Hans.png",
-      "size": 172438,
-      "sha256": "a9f2d1cd8b710a714cbc0629aed01d38535f7f32765e91b9aa8e1034917a9030"
+      "size": 172465,
+      "sha256": "17c25bc2838160f05c2d7e6528dadf282fc20328fb26b6f056cf3abb4264eba2"
     },
     {
       "path": "docs/assets/user-guide/macos-safety-permissions.png",
-      "size": 178223,
-      "sha256": "c8b4dab75ad88e72b12b1ea463ec71f42e4a8362ee534934e48a1e281d84dc9b"
+      "size": 178256,
+      "sha256": "a57ede72b9d9e5f183070d9b9920d4e3f4e9f7dc83023762d3be259543975873"
     },
     {
       "path": "docs/assets/user-guide/macos-sessions-zh-Hans.png",
-      "size": 183539,
-      "sha256": "18e0460a2e0be01a0d7fe121e2954ca03511f3cafe6a2beb52209a5212621023"
+      "size": 183437,
+      "sha256": "85ef5d3a39a77d67029bfac24f89a58b46128ecfd80bc190dbca9c9ebaa001ab"
     },
     {
       "path": "docs/assets/user-guide/macos-sessions.png",
-      "size": 191334,
-      "sha256": "0fa76c710d04463b738f7b6068a87f7dea5883cebd071500edc0b9e557e5a636"
+      "size": 191089,
+      "sha256": "00b1e8fada79839b8e7e751c39f96b5a746f9cc509926de9fce325089fff95bd"
     },
     {
       "path": "docs/assets/user-guide/macos-settings-api-key-zh-Hans.png",
@@ -280,68 +280,68 @@
     },
     {
       "path": "docs/assets/user-guide/macos-tasks-plans-zh-Hans.png",
-      "size": 201706,
-      "sha256": "f00febefb3cae6ba2950aa7e0c0feaf0390fc07b023b1ff58686d7273c9e2944"
+      "size": 201714,
+      "sha256": "0e7bccf2603209c4792ccb657f4e26f6a8260ed6ecb74e9fd19170219b67feb8"
     },
     {
       "path": "docs/assets/user-guide/macos-tasks-plans.png",
-      "size": 206011,
-      "sha256": "4e20108d0b10fac3d7e1aaeb5c24373672326ef39b466857c890125ffc382c70"
+      "size": 206101,
+      "sha256": "cdc1fafe8af2340b1b761988683a417515dc3652f1bd557f16ec70eeac9c456c"
     },
     {
       "path": "docs/assets/user-guide/macos-tools-zh-Hans.png",
-      "size": 238213,
-      "sha256": "fa4186eb69d0271a4a40bcd08f458532ec912ae663d026d1d47349b9f02fa78c"
+      "size": 239743,
+      "sha256": "020581de5ee83f8c50bdbce4aa4f8ea29f43801c653bce4285194ec15c292be4"
     },
     {
       "path": "docs/assets/user-guide/macos-tools.png",
-      "size": 248237,
-      "sha256": "2c885b8abd6c7dc58ac6ebfb53acf1c022de45b46219504a8b0b94f7c6b9a98e"
+      "size": 249719,
+      "sha256": "495ff395e714b68f023ba241648ff1f8d28ac9d261a7a2333e91821651022593"
     },
     {
       "path": "docs/assets/user-guide/tui-canvas-safety-zh-Hans.png",
-      "size": 234964,
-      "sha256": "2b678a8d2256051621a5a892ddcd10fb0fa73b09dc4996f309e597e6256a4488"
+      "size": 235008,
+      "sha256": "d1b28d0cad09d205c99ca0215da672bf8ae583b3fcee15c7a49cf192abe5e07f"
     },
     {
       "path": "docs/assets/user-guide/tui-canvas-safety.png",
-      "size": 234242,
-      "sha256": "eaa8e9f7516d403ff73f5d19826783817f5619e493cd79326f1175c4008b05a5"
+      "size": 234548,
+      "sha256": "592cbb7cdbabb9ac685b22f3feb620cfda3d63130612f6342ee7445b20fcdb8c"
     },
     {
       "path": "docs/assets/user-guide/tui-run-runtime-zh-Hans.png",
-      "size": 230720,
-      "sha256": "2aac08ea2a270b748d42a63f40361bb1e09aa485eb6dbd0d869ef2fe7126e4f6"
+      "size": 230908,
+      "sha256": "7f927377ef996f15b045996de2193dc2803e369670d029e8680ed55c3c897d19"
     },
     {
       "path": "docs/assets/user-guide/tui-run-runtime.png",
-      "size": 230465,
-      "sha256": "972f8e3fd3f622853f0aa78d4a4bba2ed515b2084006c394f95898c8b203cdfb"
+      "size": 230328,
+      "sha256": "1053af8ae05d8df8c94187b7f2184bcf37c612adbbd1afe464c8f2ed7827c7ad"
     },
     {
       "path": "docs/assets/user-guide/tui-sidecar-continuity-zh-Hans.png",
-      "size": 212674,
-      "sha256": "cec9ea9f5ce7c54d1e4520facfb294e0573e87abd8d821b4303d9da987e03579"
+      "size": 212202,
+      "sha256": "739a679139c7248f783788970d443fa575a8a9568433320418e495feee2b45e3"
     },
     {
       "path": "docs/assets/user-guide/tui-sidecar-continuity.png",
-      "size": 212448,
-      "sha256": "ff0e022ad1a20a9f025c1043a918fd6d74c5cbef9b7769ff1ea724e80b951a50"
+      "size": 211660,
+      "sha256": "05c384cf63b841aa454c33e5e9746a57a11d3f10a75a0666e3ff4293e3f47949"
     },
     {
       "path": "docs/assets/user-guide/tui-task-plan-live-zh-Hans.png",
-      "size": 272275,
-      "sha256": "5e9f9ea20fbd4e0213560b617b220b75944167d74fb651ccbb9080001bfbc298"
+      "size": 272120,
+      "sha256": "fc6cf9f16d3c65cdb1554fc1c1cbce1c851a0a5b82c21f737a14ad794dafbf54"
     },
     {
       "path": "docs/assets/user-guide/tui-task-plan-live.png",
-      "size": 271845,
-      "sha256": "853cd02085d41dcc8788fcee0c30500bf00dcb6638e9deebd15ebe063865932c"
+      "size": 271892,
+      "sha256": "1521ca95a78cf388480e8d1ba88034345bd428505d1ead005fe101dd4f117703"
     },
     {
       "path": "docs/EFFECTIVENESS_EVIDENCE.md",
-      "size": 8378,
-      "sha256": "75278be99c031fa876ae0834056deca4368424c734adc5ca9245049b84b35f2c"
+      "size": 8676,
+      "sha256": "ef1e02b56bdf0d966e904565b541e0ada14907673135f11c12c37ec49be450d5"
     },
     {
       "path": "docs/guides/configuration.md",
@@ -370,13 +370,13 @@
     },
     {
       "path": "eval-matrix/artifacts/paired-evaluation-latest.json",
-      "size": 613787,
-      "sha256": "2462587f5fffe162d1f1474d9113f7a6ffd9157aff3a4abea050f9714548cb02"
+      "size": 642277,
+      "sha256": "895b37bce8dc59bd43b197901b5400ac7a36a0222fe9d6d924dd31f8aa61ad07"
     },
     {
       "path": "eval-matrix/artifacts/paired-smoke-latest.json",
-      "size": 461010,
-      "sha256": "abb760ba462a694304f11310683afad3b776939def38a892fd3ca55a933e0a6b"
+      "size": 480801,
+      "sha256": "b4b02fff8a4cf13b5c14c5939a90fada28a809925dd55a27571f0c459628d122"
     },
     {
       "path": "eval-matrix/paired-evidence-contract.mjs",
@@ -945,18 +945,18 @@
     },
     {
       "path": "README.md",
-      "size": 18829,
-      "sha256": "395ce1122423528a1eccd493dd0a994e7d3deb04cc4bcc0908a00a4856bcf605"
+      "size": 21093,
+      "sha256": "b3ba63ee275abe28883e5296aadd880cfcba8899993a707539522ed18bc4f111"
     },
     {
       "path": "README.zh-CN.md",
-      "size": 4434,
-      "sha256": "5a6c9d607ed6571af41e314f43588231ceeb68dc6983a8c8cdc31865581e6bee"
+      "size": 5256,
+      "sha256": "16b0b7854c084b35dc28151de7b6b2553aa8555d9b26eb5e830f0ba4b1d90f03"
     },
     {
       "path": "release/artifacts/canvas-portable.json",
       "size": 2546,
-      "sha256": "e4be102dedc3424c89d9d1a95877f2d4d06672eb89b1014d3e5cd5cb188e670d"
+      "sha256": "4e67cb40ee0584aca5049166cb818d8360a8ebe600998add99fc50959628fa08"
     },
     {
       "path": "release/artifacts/canvas-portable/canvas-graph-export.json",
@@ -990,23 +990,23 @@
     },
     {
       "path": "release/artifacts/effectiveness-summary.json",
-      "size": 6380,
-      "sha256": "d74e70392cea0cf1bf889340a4c350da9c3f9c57f6dd387806e785a8092b6621"
+      "size": 6445,
+      "sha256": "66583fe0cb6a6349a7eb59b51ec9c98df44827d98e049d13151fca78023efbfc"
     },
     {
       "path": "release/artifacts/macos-ui-impact.json",
-      "size": 167612,
-      "sha256": "c69bc681377bd095079e17ef8b4ed67aedcb3f157ffcf0db419463683fba95da"
+      "size": 148737,
+      "sha256": "1627fa2e1843ef7f973dfc3422988597319674e4261ccf1a9d9c002a214a99d9"
     },
     {
       "path": "release/artifacts/model-backend-attestation.json",
-      "size": 2180,
-      "sha256": "e66b0b48ce3babeab9ffbb03d1b11f35ed4f652a3853cac6be13a362d037794a"
+      "size": 2168,
+      "sha256": "df8743783591e8239b062f87d46927728f19ae2dd5fa20962293ffbcafa3a5e4"
     },
     {
       "path": "release/artifacts/screenshots.json",
       "size": 12583,
-      "sha256": "ab6bcc43350f9a9dcb0a15b66f8495f2c4edc36f87a92dc2f36e81e6a454ab97"
+      "sha256": "fa357919411c6848fcecdf4aada785c3729e1aa79d5d82bb7c3882143c525e99"
     },
     {
       "path": "release/license-inventory.json",
@@ -1016,7 +1016,7 @@
     {
       "path": "release/source-manifest.json",
       "size": 127339,
-      "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980"
+      "sha256": "21d449413b331d12a7c946aa85cabebb1f92649cf7eb4dd210a9d7c19bad48d3"
     },
     {
       "path": "scripts/assert-resource-baseline.mjs",
@@ -1050,13 +1050,13 @@
     },
     {
       "path": "scripts/effectiveness-render.mjs",
-      "size": 36547,
-      "sha256": "f49fa3467553968f8e51add89f7012a0031b886a4232aeae289430ac0dda3106"
+      "size": 37206,
+      "sha256": "0fc4be62facd0412cf15bd646890215c0ae5debd050e586abd09c7ae3e5e7747"
     },
     {
       "path": "scripts/effectiveness-summary.mjs",
-      "size": 38729,
-      "sha256": "8b91a9e1423cad004897acc1740eabc4f6a7246d7e8b662e21ec42e21df9138e"
+      "size": 38883,
+      "sha256": "6362c55bd5938057f277d59a2e3997948aff7271f43a4d37ce9ba8adfcee7afe"
     },
     {
       "path": "scripts/export-canvas.mjs",
@@ -1070,8 +1070,8 @@
     },
     {
       "path": "scripts/generate-effectiveness-evidence.mjs",
-      "size": 40357,
-      "sha256": "daf34ecbf27347bba3eb34b2c5a8737eb4f0b25b28e03c8310f1ff9dff6e22eb"
+      "size": 41095,
+      "sha256": "90e7c7889990ff4f49b4b24298231c97b16edb0b95fe78b71c95ffa31943f81e"
     },
     {
       "path": "scripts/generate-macos-app-icon.mjs",
@@ -1130,8 +1130,8 @@
     },
     {
       "path": "scripts/public-release-guards.mjs",
-      "size": 33000,
-      "sha256": "44ca8af52b4fbf04c35e6cef33e7fb72fd97a1654ee196e7b6628ba10a09f452"
+      "size": 33273,
+      "sha256": "efe4e64440d61fbf79e9d35a65c8a644d6ecf8062190748696e18796b708e89d"
     },
     {
       "path": "scripts/public-repo-policy.mjs",
@@ -1996,8 +1996,8 @@
   ],
   "payload": {
     "fileCount": 362,
-    "totalBytes": 9648110,
-    "treeSha256": "a04f20ee22fc8a65a67c6d280bea9032cbcc952a3ec9eea9f55c9970374bcd38",
+    "totalBytes": 9656113,
+    "treeSha256": "1350df4be08e51bcfec78a25dca1bedf8644f6639156315555dafff5bb553a03",
     "files": [
       {
         "path": ".env.example",
@@ -2007,12 +2007,12 @@
       {
         "path": "assets/brand/asset-manifest.json",
         "size": 1938,
-        "sha256": "3a795e71bee1392109fa7279de7a3ce388c5e7b5029c12615f0e2ade77206640"
+        "sha256": "aeae9de5dfcf178c23264fc834194fee7a2f834b7f0b7c55300b4f8d532ef28a"
       },
       {
         "path": "assets/brand/canvast-hero.svg",
-        "size": 4021,
-        "sha256": "81dd02df41cf62a3797670e89801c9ed59f39fdfc004acf80606665beb17fbc5"
+        "size": 4750,
+        "sha256": "7e35d8ffdf2ecc8605d22ac17b39da2468525516a8f57b69ee3a4fd79f8b4654"
       },
       {
         "path": "assets/brand/canvast-logo.svg",
@@ -2091,33 +2091,33 @@
       },
       {
         "path": "docs/assets/user-guide/macos-agents-workflows-zh-Hans.png",
-        "size": 166945,
-        "sha256": "86f6521d8cf85ce13e52d6a76831b7fa0ffc38b67c8f8aeb0fa4fb32bd375073"
+        "size": 167040,
+        "sha256": "d4ecb90e9ffe0d52dc4a536e2dfcdef74047f7717478d48ede9b02791c71b40f"
       },
       {
         "path": "docs/assets/user-guide/macos-agents-workflows.png",
-        "size": 167996,
-        "sha256": "78f0429798a68e2d2786b89e7d5c1ca6b3b6ef93cf218fad4b28cbc229aae593"
+        "size": 168085,
+        "sha256": "124ace1577641e7626f6668a5d98d5b969aaf7ff343d2dcb84fde5ae93e4e7c6"
       },
       {
         "path": "docs/assets/user-guide/macos-canvas-zh-Hans.png",
-        "size": 181260,
-        "sha256": "a1d49a491888591e4b6df4484973c196d386ff62f3f216ef2118a7bea8759cbb"
+        "size": 181101,
+        "sha256": "d6682b3d6fd0f93288149d06ed1e3a6989ac288e53fe9b6e478d6376624119d2"
       },
       {
         "path": "docs/assets/user-guide/macos-canvas.png",
-        "size": 180386,
-        "sha256": "8548b46f2ebf7aeed0d7b67ef7de37006b6e821c76841bc461093852816a4a11"
+        "size": 180248,
+        "sha256": "129833e3eae772af3c2de9cd91b48d6109e56078b3b9cea1b1ddf43ee0e940db"
       },
       {
         "path": "docs/assets/user-guide/macos-context-zh-Hans.png",
-        "size": 145588,
-        "sha256": "3e770315d58b6b8e5205a903c1343194550f835e645689c3f249b019fab6eeea"
+        "size": 145651,
+        "sha256": "6ebb94c063b4d3b2b2ca3912818ada7a4949acaf06394881ff354e70fd9e1637"
       },
       {
         "path": "docs/assets/user-guide/macos-context.png",
-        "size": 153156,
-        "sha256": "9c1944592ca6426d21948528230210efaa7c7c42169dd1f4d7abd2ba273d711f"
+        "size": 153240,
+        "sha256": "221a25f8dc19a49994854beb0f64bcd0fbc9b1f47f03a58e907a15ba46ae3ce2"
       },
       {
         "path": "docs/assets/user-guide/macos-onboarding-zh-Hans.png",
@@ -2131,33 +2131,33 @@
       },
       {
         "path": "docs/assets/user-guide/macos-run-console-zh-Hans.png",
-        "size": 172300,
-        "sha256": "8c4c82685b1614d61a88299b20d3fee4be46687f4cf9111af16692cd21ba5459"
+        "size": 172391,
+        "sha256": "aeaff6a6e9d334bb2646106c6ddee511eebb3b6aa92b91f947d558857fe6fcc4"
       },
       {
         "path": "docs/assets/user-guide/macos-run-console.png",
-        "size": 174504,
-        "sha256": "926460ac2d3b103ddfbe6129d08972cf05f6482a7df3ed2d9ff5461cd76bd30a"
+        "size": 174589,
+        "sha256": "3e2f5954bfe0cac6cbd6783ff093597f8b55d085c5e358dce81ac1f3ba7fa2e2"
       },
       {
         "path": "docs/assets/user-guide/macos-safety-permissions-zh-Hans.png",
-        "size": 172438,
-        "sha256": "a9f2d1cd8b710a714cbc0629aed01d38535f7f32765e91b9aa8e1034917a9030"
+        "size": 172465,
+        "sha256": "17c25bc2838160f05c2d7e6528dadf282fc20328fb26b6f056cf3abb4264eba2"
       },
       {
         "path": "docs/assets/user-guide/macos-safety-permissions.png",
-        "size": 178223,
-        "sha256": "c8b4dab75ad88e72b12b1ea463ec71f42e4a8362ee534934e48a1e281d84dc9b"
+        "size": 178256,
+        "sha256": "a57ede72b9d9e5f183070d9b9920d4e3f4e9f7dc83023762d3be259543975873"
       },
       {
         "path": "docs/assets/user-guide/macos-sessions-zh-Hans.png",
-        "size": 183539,
-        "sha256": "18e0460a2e0be01a0d7fe121e2954ca03511f3cafe6a2beb52209a5212621023"
+        "size": 183437,
+        "sha256": "85ef5d3a39a77d67029bfac24f89a58b46128ecfd80bc190dbca9c9ebaa001ab"
       },
       {
         "path": "docs/assets/user-guide/macos-sessions.png",
-        "size": 191334,
-        "sha256": "0fa76c710d04463b738f7b6068a87f7dea5883cebd071500edc0b9e557e5a636"
+        "size": 191089,
+        "sha256": "00b1e8fada79839b8e7e751c39f96b5a746f9cc509926de9fce325089fff95bd"
       },
       {
         "path": "docs/assets/user-guide/macos-settings-api-key-zh-Hans.png",
@@ -2171,68 +2171,68 @@
       },
       {
         "path": "docs/assets/user-guide/macos-tasks-plans-zh-Hans.png",
-        "size": 201706,
-        "sha256": "f00febefb3cae6ba2950aa7e0c0feaf0390fc07b023b1ff58686d7273c9e2944"
+        "size": 201714,
+        "sha256": "0e7bccf2603209c4792ccb657f4e26f6a8260ed6ecb74e9fd19170219b67feb8"
       },
       {
         "path": "docs/assets/user-guide/macos-tasks-plans.png",
-        "size": 206011,
-        "sha256": "4e20108d0b10fac3d7e1aaeb5c24373672326ef39b466857c890125ffc382c70"
+        "size": 206101,
+        "sha256": "cdc1fafe8af2340b1b761988683a417515dc3652f1bd557f16ec70eeac9c456c"
       },
       {
         "path": "docs/assets/user-guide/macos-tools-zh-Hans.png",
-        "size": 238213,
-        "sha256": "fa4186eb69d0271a4a40bcd08f458532ec912ae663d026d1d47349b9f02fa78c"
+        "size": 239743,
+        "sha256": "020581de5ee83f8c50bdbce4aa4f8ea29f43801c653bce4285194ec15c292be4"
       },
       {
         "path": "docs/assets/user-guide/macos-tools.png",
-        "size": 248237,
-        "sha256": "2c885b8abd6c7dc58ac6ebfb53acf1c022de45b46219504a8b0b94f7c6b9a98e"
+        "size": 249719,
+        "sha256": "495ff395e714b68f023ba241648ff1f8d28ac9d261a7a2333e91821651022593"
       },
       {
         "path": "docs/assets/user-guide/tui-canvas-safety-zh-Hans.png",
-        "size": 234964,
-        "sha256": "2b678a8d2256051621a5a892ddcd10fb0fa73b09dc4996f309e597e6256a4488"
+        "size": 235008,
+        "sha256": "d1b28d0cad09d205c99ca0215da672bf8ae583b3fcee15c7a49cf192abe5e07f"
       },
       {
         "path": "docs/assets/user-guide/tui-canvas-safety.png",
-        "size": 234242,
-        "sha256": "eaa8e9f7516d403ff73f5d19826783817f5619e493cd79326f1175c4008b05a5"
+        "size": 234548,
+        "sha256": "592cbb7cdbabb9ac685b22f3feb620cfda3d63130612f6342ee7445b20fcdb8c"
       },
       {
         "path": "docs/assets/user-guide/tui-run-runtime-zh-Hans.png",
-        "size": 230720,
-        "sha256": "2aac08ea2a270b748d42a63f40361bb1e09aa485eb6dbd0d869ef2fe7126e4f6"
+        "size": 230908,
+        "sha256": "7f927377ef996f15b045996de2193dc2803e369670d029e8680ed55c3c897d19"
       },
       {
         "path": "docs/assets/user-guide/tui-run-runtime.png",
-        "size": 230465,
-        "sha256": "972f8e3fd3f622853f0aa78d4a4bba2ed515b2084006c394f95898c8b203cdfb"
+        "size": 230328,
+        "sha256": "1053af8ae05d8df8c94187b7f2184bcf37c612adbbd1afe464c8f2ed7827c7ad"
       },
       {
         "path": "docs/assets/user-guide/tui-sidecar-continuity-zh-Hans.png",
-        "size": 212674,
-        "sha256": "cec9ea9f5ce7c54d1e4520facfb294e0573e87abd8d821b4303d9da987e03579"
+        "size": 212202,
+        "sha256": "739a679139c7248f783788970d443fa575a8a9568433320418e495feee2b45e3"
       },
       {
         "path": "docs/assets/user-guide/tui-sidecar-continuity.png",
-        "size": 212448,
-        "sha256": "ff0e022ad1a20a9f025c1043a918fd6d74c5cbef9b7769ff1ea724e80b951a50"
+        "size": 211660,
+        "sha256": "05c384cf63b841aa454c33e5e9746a57a11d3f10a75a0666e3ff4293e3f47949"
       },
       {
         "path": "docs/assets/user-guide/tui-task-plan-live-zh-Hans.png",
-        "size": 272275,
-        "sha256": "5e9f9ea20fbd4e0213560b617b220b75944167d74fb651ccbb9080001bfbc298"
+        "size": 272120,
+        "sha256": "fc6cf9f16d3c65cdb1554fc1c1cbce1c851a0a5b82c21f737a14ad794dafbf54"
       },
       {
         "path": "docs/assets/user-guide/tui-task-plan-live.png",
-        "size": 271845,
-        "sha256": "853cd02085d41dcc8788fcee0c30500bf00dcb6638e9deebd15ebe063865932c"
+        "size": 271892,
+        "sha256": "1521ca95a78cf388480e8d1ba88034345bd428505d1ead005fe101dd4f117703"
       },
       {
         "path": "docs/EFFECTIVENESS_EVIDENCE.md",
-        "size": 8378,
-        "sha256": "75278be99c031fa876ae0834056deca4368424c734adc5ca9245049b84b35f2c"
+        "size": 8676,
+        "sha256": "ef1e02b56bdf0d966e904565b541e0ada14907673135f11c12c37ec49be450d5"
       },
       {
         "path": "docs/guides/configuration.md",
@@ -2816,13 +2816,13 @@
       },
       {
         "path": "README.md",
-        "size": 18829,
-        "sha256": "395ce1122423528a1eccd493dd0a994e7d3deb04cc4bcc0908a00a4856bcf605"
+        "size": 21093,
+        "sha256": "b3ba63ee275abe28883e5296aadd880cfcba8899993a707539522ed18bc4f111"
       },
       {
         "path": "README.zh-CN.md",
-        "size": 4434,
-        "sha256": "5a6c9d607ed6571af41e314f43588231ceeb68dc6983a8c8cdc31865581e6bee"
+        "size": 5256,
+        "sha256": "16b0b7854c084b35dc28151de7b6b2553aa8555d9b26eb5e830f0ba4b1d90f03"
       },
       {
         "path": "release/license-inventory.json",
@@ -2832,7 +2832,7 @@
       {
         "path": "release/source-manifest.json",
         "size": 127339,
-        "sha256": "eb79d638fb8aed4d3a1e450e6c245db1c81325c598b57ebf89fd527f674eb980"
+        "sha256": "21d449413b331d12a7c946aa85cabebb1f92649cf7eb4dd210a9d7c19bad48d3"
       },
       {
         "path": "scripts/assert-resource-baseline.mjs",
@@ -2866,13 +2866,13 @@
       },
       {
         "path": "scripts/effectiveness-render.mjs",
-        "size": 36547,
-        "sha256": "f49fa3467553968f8e51add89f7012a0031b886a4232aeae289430ac0dda3106"
+        "size": 37206,
+        "sha256": "0fc4be62facd0412cf15bd646890215c0ae5debd050e586abd09c7ae3e5e7747"
       },
       {
         "path": "scripts/effectiveness-summary.mjs",
-        "size": 38729,
-        "sha256": "8b91a9e1423cad004897acc1740eabc4f6a7246d7e8b662e21ec42e21df9138e"
+        "size": 38883,
+        "sha256": "6362c55bd5938057f277d59a2e3997948aff7271f43a4d37ce9ba8adfcee7afe"
       },
       {
         "path": "scripts/export-canvas.mjs",
@@ -2886,8 +2886,8 @@
       },
       {
         "path": "scripts/generate-effectiveness-evidence.mjs",
-        "size": 40357,
-        "sha256": "daf34ecbf27347bba3eb34b2c5a8737eb4f0b25b28e03c8310f1ff9dff6e22eb"
+        "size": 41095,
+        "sha256": "90e7c7889990ff4f49b4b24298231c97b16edb0b95fe78b71c95ffa31943f81e"
       },
       {
         "path": "scripts/generate-macos-app-icon.mjs",
@@ -2946,8 +2946,8 @@
       },
       {
         "path": "scripts/public-release-guards.mjs",
-        "size": 33000,
-        "sha256": "44ca8af52b4fbf04c35e6cef33e7fb72fd97a1654ee196e7b6628ba10a09f452"
+        "size": 33273,
+        "sha256": "efe4e64440d61fbf79e9d35a65c8a644d6ecf8062190748696e18796b708e89d"
       },
       {
         "path": "scripts/public-repo-policy.mjs",

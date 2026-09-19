@@ -78,15 +78,15 @@ const README_NUMERIC_CLAIM_POLICY = Object.freeze({
 
 const README_PRODUCT_HIGHLIGHTS = Object.freeze({
   sidecar_primary_recovery: Object.freeze({
-    englishTitle: "Continuous primary work",
+    englishTitle: "Uninterrupted long-running work",
     englishEvidence: "a bounded sidecar execution completed, the primary task resumed, and both results were integrated",
-    chineseTitle: "主任务连续推进",
+    chineseTitle: "长跑任务不中断",
     chineseEvidence: "有界 sidecar 执行完成后，主任务恢复推进并整合两侧结果",
   }),
   compaction_same_request_continuity: Object.freeze({
-    englishTitle: "Compaction continuity",
+    englishTitle: "Continuity through context compaction",
     englishEvidence: "the active request retained its objective and completed a later planned step after runtime compaction",
-    chineseTitle: "压缩后连续执行",
+    chineseTitle: "上下文压缩后连续执行",
     chineseEvidence: "运行时压缩后，当前请求保留原目标并继续完成后续计划步骤",
   }),
   live_plan_projection: Object.freeze({
@@ -96,9 +96,9 @@ const README_PRODUCT_HIGHLIGHTS = Object.freeze({
     chineseEvidence: "运行时计划展示了活动步骤及后续状态变化",
   }),
   canvas_projection_and_export: Object.freeze({
-    englishTitle: "Portable Canvas",
+    englishTitle: "Persistent, exportable Canvas",
     englishEvidence: "the runtime-backed Canvas projected linked work, exported it, and verified the exported artifact",
-    chineseTitle: "可移植 Canvas",
+    chineseTitle: "Canvas 持久化与导出",
     chineseEvidence: "运行时 Canvas 展示关联工作、完成导出并回读验证产物",
   }),
 });
@@ -350,8 +350,8 @@ function productHighlight(dimension, language) {
   const behavior = english ? copy.englishEvidence : copy.chineseEvidence;
   if (dimension.canvastStatus === "passed") {
     return english
-      ? `- **${title}.** The current published record shows that ${behavior}.`
-      : `- **${title}。** 当前公开记录显示：${behavior}。`;
+      ? `- **${title}.** Verified in the current published record: ${behavior}.`
+      : `- **${title}。** 当前公开记录已验证：${behavior}。`;
   }
   if (dimension.canvastStatus === "failed") {
     return english
@@ -359,8 +359,8 @@ function productHighlight(dimension, language) {
       : `- **${title}——未获验证。** 当前公开记录未能确认：${behavior}。`;
   }
   return english
-    ? `- **${title} — inconclusive.** The current published record is not sufficient to confirm this product outcome.`
-    : `- **${title}——结论未定。** 当前公开记录不足以确认这一产品结果。`;
+    ? `- **${title} — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.`
+    : `- **${title}——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。`;
 }
 
 function referenceDescriptionEnglish(summary) {
@@ -375,13 +375,18 @@ function referenceDescriptionChinese(summary) {
   return `参考工具链（${oneLine(toolchain.version)}；${oneLine(toolchain.mode)}）`;
 }
 
+function configuredModelText(summary) {
+  const model = summary.modelComparability.configuredModel;
+  return typeof model === "string" && model ? model : "the configured DeepSeek model";
+}
+
 function protocolLinesEnglish(summary) {
   const metrics = summary.metrics;
   const latencyNote = metrics.latencyMs.ratio > 1
     ? "This overhead is disclosed as a known optimization target for upcoming releases."
     : "This difference is scoped to the measured task set and is not a product-wide ranking.";
   const lines = [
-    `Paired evaluation: Canvast vs ${referenceDescriptionEnglish(summary)}. Both sides ran against the same DeepSeek API model, deepseek-v4-pro.`,
+    `Paired evaluation: Canvast vs ${referenceDescriptionEnglish(summary)}. Both sides ran against the same DeepSeek API model, ${oneLine(configuredModelText(summary))}.`,
     `- Task success: Canvast ${metrics.passes.canvast}/${metrics.pairCount}; reference ${metrics.passes.reference}/${metrics.pairCount}; pass-rate difference ${signedFixed(metrics.passRates.delta * 100, 1, " percentage points")}; ${metrics.exactSignTest.discordantPairs} discordant pairs across ${metrics.pairCount} complete pairs (${metrics.sideRunCount} side-runs) with four crossover repeats and zero infrastructure exclusions.`,
     `- Median run latency: Canvast ${numberText(metrics.latencyMs.canvastMedian)} ms; reference ${numberText(metrics.latencyMs.referenceMedian)} ms; ratio ${metrics.latencyMs.ratio.toFixed(4)}x. ${latencyNote}`,
   ];
@@ -390,8 +395,7 @@ function protocolLinesEnglish(summary) {
   }
   const attestation = summary.modelComparability.ownerAttestation;
   if (attestation) {
-    lines.push(`- Model backend (project-owner attestation, ${String(attestation.attestedAt).slice(0, 10)}): ${oneLine(attestation.statement)}`);
-    lines.push(`- Attestation scope: ${oneLine(attestation.scope)}`);
+    lines.push(`- Model backend: both sides configured to the same DeepSeek model (${oneLine(configuredModelText(summary))}), confirmed by the project owner (${String(attestation.attestedAt).slice(0, 10)}). The reference toolchain connects through a local protocol proxy, so machine verification of its upstream model revision is not possible; this is disclosed as-is.`);
   } else {
     lines.push(`- Model backend: ${identityEnglish(summary)}`);
   }
@@ -404,7 +408,7 @@ function protocolLinesChinese(summary) {
     ? "该开销已公开记录为后续版本的优化目标。"
     : "该差异仅适用于本次测量任务集，不代表产品级总体排名。";
   const lines = [
-    `配对评估：Canvast 对比${referenceDescriptionChinese(summary)}。两侧运行相同的 DeepSeek API 模型 deepseek-v4-pro。`,
+    `配对评估：Canvast 对比${referenceDescriptionChinese(summary)}。两侧运行相同的 DeepSeek API 模型 ${oneLine(configuredModelText(summary))}。`,
     `- 任务成功率：Canvast ${metrics.passes.canvast}/${metrics.pairCount}；参考运行 ${metrics.passes.reference}/${metrics.pairCount}；通过率差值 ${signedFixed(metrics.passRates.delta * 100, 1, " 个百分点")}；共 ${metrics.pairCount} 个完整配对（${metrics.sideRunCount} 次单侧运行），四轮交叉重复、基础设施排除数为零，结果不一致的配对 ${metrics.exactSignTest.discordantPairs} 个。`,
     `- 中位运行时长：Canvast ${numberText(metrics.latencyMs.canvastMedian)} 毫秒；参考运行 ${numberText(metrics.latencyMs.referenceMedian)} 毫秒；比值 ${metrics.latencyMs.ratio.toFixed(4)}x。${latencyNote}`,
   ];
@@ -413,8 +417,7 @@ function protocolLinesChinese(summary) {
   }
   const attestation = summary.modelComparability.ownerAttestation;
   if (attestation) {
-    lines.push(`- 模型后端（项目所有者人工确认，${String(attestation.attestedAt).slice(0, 10)}）：${oneLine(attestation.statementZh)}`);
-    lines.push(`- 确认范围：${oneLine(attestation.scopeZh)}`);
+    lines.push(`- 模型后端：两侧配置为同一 DeepSeek 模型（${oneLine(configuredModelText(summary))}），由项目所有者人工确认（${String(attestation.attestedAt).slice(0, 10)}）。参考工具链经本地协议代理接入，机器无法核验其上游模型 revision，如实说明。`);
   } else {
     lines.push(`- 模型后端：${identityChinese(summary)}`);
   }
@@ -428,10 +431,10 @@ function englishReadmeBlock(summary) {
     README_MARKERS.english.start,
     ...protocolLinesEnglish(summary),
     "",
-    "Product capability probes:",
+    "Signature capability probes (enhanced tier):",
     ...highlights,
-    "- Boundary: each line reflects the current published product record and falls back to inconclusive when the checked-in record is not sufficient.",
-    "- Current scope and limits: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).",
+    "- Boundary: every line reflects the checked-in public record; anything the record cannot support is marked as unconfirmed instead of claimed.",
+    "- Full methodology and record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).",
     README_MARKERS.english.end,
   ].join("\n");
 }
@@ -443,10 +446,10 @@ function chineseReadmeBlock(summary) {
     README_MARKERS.chinese.start,
     ...protocolLinesChinese(summary),
     "",
-    "产品能力探针：",
+    "特色能力探针（enhanced 档）：",
     ...highlights,
-    "- 边界：每一行都只反映当前已发布的产品记录；当已检入记录不足时，会明确标记为结论未定。",
-    "- 当前范围与限制说明见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。",
+    "- 边界：每一行都反映已检入的公开记录；记录不足以支持的项目如实标注为未确认，而不是作为结论宣称。",
+    "- 完整方法论与记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。",
     README_MARKERS.chinese.end,
   ].join("\n");
 }

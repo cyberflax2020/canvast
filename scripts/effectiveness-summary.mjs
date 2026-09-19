@@ -854,6 +854,8 @@ export function buildEffectivenessSummary({
     modelComparability: {
       strictSameModelVerified: result.modelComparability.strictSameModelVerified === true,
       status: result.modelComparability.status || "unknown",
+      configuredModel: result.modelComparability.configuredModel || null,
+      configuredProvider: result.modelComparability.configuredProvider || null,
       ownerAttestation: attestation
         ? {
           attestedAt: attestation.document.attestedAt,

@@ -10,11 +10,11 @@ This public document reports product outcomes recomputed from a provenance-verif
 
 The measurement is bounded by the checked-in source snapshot, formal paired artifact, release smoke prerequisite, canonical real-repository tasks, and README projection that are verified together.
 
-- Current published record generated: 2026-09-16T08:45:42.366Z.
-- Source snapshot: `release/source-manifest.json`; raw SHA-256 `cbcae4896c9e36d18bd1984f995102f9a3a19e55d298213e13893f4568b2ec79`.
-- Formal paired measurement: `eval-matrix/artifacts/paired-evaluation-latest.json`; raw SHA-256 `2462587f5fffe162d1f1474d9113f7a6ffd9157aff3a4abea050f9714548cb02`.
-- Release smoke prerequisite: `eval-matrix/artifacts/paired-smoke-latest.json`; raw SHA-256 `abb760ba462a694304f11310683afad3b776939def38a892fd3ca55a933e0a6b`.
-- Model-backend attestation: `release/artifacts/model-backend-attestation.json`; attested 2026-09-18 by project owner (github.com/cyberflax2020).
+- Current published record generated: 2026-09-18T23:13:38.797Z.
+- Source snapshot: `release/source-manifest.json`; raw SHA-256 `55587d20e78575efa3b97229387021d2e5698f236beef1f37f2bad9792dd4d2e`.
+- Formal paired measurement: `eval-matrix/artifacts/paired-evaluation-latest.json`; raw SHA-256 `895b37bce8dc59bd43b197901b5400ac7a36a0222fe9d6d924dd31f8aa61ad07`.
+- Release smoke prerequisite: `eval-matrix/artifacts/paired-smoke-latest.json`; raw SHA-256 `b4b02fff8a4cf13b5c14c5939a90fada28a809925dd55a27571f0c459628d122`.
+- Model-backend attestation: `release/artifacts/model-backend-attestation.json`; attested 2026-09-19 by project owner (github.com/cyberflax2020).
 - Scope: 12 complete pairs (24 side-runs) across the canonical real-repository tasks, using four crossover repeats and zero infrastructure exclusions.
 - Reference definition: each reference run is the paired baseline execution recorded in the formal artifact. It is shown only as measurement context within this scope.
 
@@ -25,18 +25,18 @@ The following product outcomes are regenerated from the validated run matrix rat
 - Canvast pass rate: 12/12 (100.0%).
 - Reference pass rate: 12/12 (100.0%).
 - Pass-rate difference: 0.0 percentage points.
-- Median latency: Canvast 61138.5 ms; reference 40736.5 ms; difference +20402 ms; ratio 1.5008x.
+- Median latency: Canvast 24610 ms; reference 9719 ms; difference +14891 ms; ratio 2.5322x.
 - Paired outcomes: both passed 12; Canvast-only passed 0; reference-only passed 0; both failed 0.
 - Paired uncertainty: 0 discordant pair(s); exact two-sided sign-test p=not defined (no discordant pairs).
 - Publication rule: at least 4 complete pairs, zero infrastructure exclusions, strict same-model identity, and exact two-sided p≤0.05. A Canvast directional result additionally requires pass-rate delta ≥+10.0 percentage points and duration ratio ≤1.0000x; a reference directional result uses the inverse thresholds (delta ≤-10.0 percentage points and ratio ≥1.0000x).
-- Publication outcome: inconclusive. The validated measurements do not support a relative-performance conclusion for this scope. Same-backend identity is confirmed by project-owner attestation (2026-09-18); machine strict-revision observation remains unavailable through the reference compatibility proxy.
+- Publication outcome: inconclusive. The validated measurements do not support a relative-performance conclusion for this scope. Same-backend identity is confirmed by project-owner attestation (2026-09-19); machine strict-revision observation remains unavailable through the reference compatibility proxy.
 
 Paired product outcome probes:
 
-- **Continuous primary work — inconclusive.** The current published record is not sufficient to confirm this product outcome.
-- **Compaction continuity — inconclusive.** The current published record is not sufficient to confirm this product outcome.
-- **Live plan visibility — inconclusive.** The current published record is not sufficient to confirm this product outcome.
-- **Portable Canvas — inconclusive.** The current published record is not sufficient to confirm this product outcome.
+- **Uninterrupted long-running work — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
+- **Continuity through context compaction — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
+- **Live plan visibility — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
+- **Persistent, exportable Canvas — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
 
 Token accounting:
 
@@ -65,11 +65,11 @@ Verify the checked-in public record with `npm run verify:public`, or run `node s
 
 本次测量由已检入的源码快照、正式配对产物、发布冒烟前置条件、规范真实仓库任务，以及共同校验的 README 投影限定。
 
-- 当前公开记录生成时间：2026-09-16T08:45:42.366Z。
-- 源码快照：`release/source-manifest.json`；原始 SHA-256 为 `cbcae4896c9e36d18bd1984f995102f9a3a19e55d298213e13893f4568b2ec79`。
-- 正式配对测量：`eval-matrix/artifacts/paired-evaluation-latest.json`；原始 SHA-256 为 `2462587f5fffe162d1f1474d9113f7a6ffd9157aff3a4abea050f9714548cb02`。
-- 发布冒烟前置产物：`eval-matrix/artifacts/paired-smoke-latest.json`；原始 SHA-256 为 `abb760ba462a694304f11310683afad3b776939def38a892fd3ca55a933e0a6b`。
-- 模型后端人工确认：`release/artifacts/model-backend-attestation.json`；由 project owner (github.com/cyberflax2020) 于 2026-09-18 确认。
+- 当前公开记录生成时间：2026-09-18T23:13:38.797Z。
+- 源码快照：`release/source-manifest.json`；原始 SHA-256 为 `55587d20e78575efa3b97229387021d2e5698f236beef1f37f2bad9792dd4d2e`。
+- 正式配对测量：`eval-matrix/artifacts/paired-evaluation-latest.json`；原始 SHA-256 为 `895b37bce8dc59bd43b197901b5400ac7a36a0222fe9d6d924dd31f8aa61ad07`。
+- 发布冒烟前置产物：`eval-matrix/artifacts/paired-smoke-latest.json`；原始 SHA-256 为 `b4b02fff8a4cf13b5c14c5939a90fada28a809925dd55a27571f0c459628d122`。
+- 模型后端人工确认：`release/artifacts/model-backend-attestation.json`；由 project owner (github.com/cyberflax2020) 于 2026-09-19 确认。
 - 范围：规范真实仓库任务共 12 个完整配对（24 次单侧运行），采用四轮交叉重复且基础设施排除数为零。
 - 参考定义：每次参考运行都是正式产物中记录的配对基线执行，仅作为本测量范围内的上下文。
 
@@ -80,18 +80,18 @@ Verify the checked-in public record with `npm run verify:public`, or run `node s
 - Canvast 通过率：12/12（100.0%）。
 - 参考运行通过率：12/12（100.0%）。
 - 通过率差值：0.0 个百分点。
-- 中位时延：Canvast 61138.5 毫秒；参考运行 40736.5 毫秒；差值 +20402 毫秒；比值 1.5008x。
+- 中位时延：Canvast 24610 毫秒；参考运行 9719 毫秒；差值 +14891 毫秒；比值 2.5322x。
 - 配对结果：两侧均通过 12 个；仅 Canvast 通过 0 个；仅参考运行通过 0 个；两侧均失败 0 个。
 - 配对不确定性：结果不一致的配对 0 个；双侧精确符号检验 p=未定义（没有结果不一致的配对）。
 - 发布判定规则：至少 4 个完整配对、基础设施排除数为零、严格同模型身份成立，且双侧精确 p≤0.05。Canvast 方向还要求通过率差值 ≥+10.0 个百分点且时延比 ≤1.0000x；参考方向采用反向门槛（差值 ≤-10.0 个百分点且比值 ≥1.0000x）。
-- 发布结论：结论未定。已校验的测量结果不足以支持本范围内的相对性能结论。同后端身份由项目所有者人工确认（2026-09-18）；通过参考工具链的兼容代理无法进行机器级严格 revision 观测。
+- 发布结论：结论未定。已校验的测量结果不足以支持本范围内的相对性能结论。同后端身份由项目所有者人工确认（2026-09-19）；通过参考工具链的兼容代理无法进行机器级严格 revision 观测。
 
 配对产品结果探针：
 
-- **主任务连续推进——结论未定。** 当前公开记录不足以确认这一产品结果。
-- **压缩后连续执行——结论未定。** 当前公开记录不足以确认这一产品结果。
-- **实时计划可见——结论未定。** 当前公开记录不足以确认这一产品结果。
-- **可移植 Canvas——结论未定。** 当前公开记录不足以确认这一产品结果。
+- **长跑任务不中断——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
+- **上下文压缩后连续执行——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
+- **实时计划可见——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
+- **Canvas 持久化与导出——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
 
 Token 计量：
 

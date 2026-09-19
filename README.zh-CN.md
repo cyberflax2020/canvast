@@ -1,16 +1,25 @@
 # Canvast 中文指南
 
 <p align="center">
-  <img src="assets/brand/canvast-hero.svg" alt="Canvast — 面向 AI Agent 的项目治理画布" width="100%">
+  <img src="assets/brand/canvast-hero.svg" alt="Canvast — 自研开源 loop 架构 AI 编程 agent harness" width="100%">
 </p>
 
-Canvast 是一个面向持续项目工作的本地优先 AI 编程工作空间。它把项目级 session、持久化 Canvas，以及可见的运行时状态，对齐到 TUI 和 macOS App 两个界面中，让你回到项目时继续沿着同一条工作上下文推进，而不是重新拼装状态。
+Canvast 是一个自研、开源（Apache-2.0）的 loop 架构 AI 编程 agent harness：它钩住 agent 的执行循环本身，让每一轮都重新锚定到持久化的全项目状态上。它以 Graph Canvas 治理画布为标志性能力，为大型项目的持续工作而生。
 
 英文入口见 [README.md](README.md)。
 
-## 核心定位
+## 为什么做 Canvast
 
-Canvast 面向不是一条提示词就能结束的工作。它把请求状态、权限、Canvas 上下文、运行时可见性和 session 连续性固定在项目里，让长期工程任务保持可追踪、可恢复，并且能在终端与原生界面之间共享同一份项目状态。
+传统 agent harness 的结构性弱点：每一轮几乎都是半盲启动（agent 看到对话，看不到项目）；上下文不断被压缩，项目关系被静默删除；随之出现遗忘、目标漂移、没有证据链的"假完成"。项目复杂度是网状的，而对话是线性的——只管对话的 harness 注定丢失项目。
+
+Canvast 的解法是在每一轮 loop 上做治理：每个模型轮次之前，用持久化项目状态（Canvas 图谱、实时计划树、作用域任务上下文、运行时回执）重新锚定 agent。
+
+## 核心特色
+
+- **Graph Canvas 治理画布。** File、Plan、Decision、AgentRun 四类节点与 typed link 组成项目的活地图，跨 session、跨压缩持久存在；可查询、可溯源、可导出（JSON、Markdown、Mermaid、SVG、HTML）。
+- **全量高级 harness 能力。** 自动 DAG workflow 拆分、有界子 agent 配发、sidecar 接续、plan mode、沙箱执行、后台任务、worktree、联网工具、LSP fallback 等，全部被同一条 loop 治理。
+- **运行时透明。** request receipt、input queue、request lifecycle、tool runs、runtime events、approval history 都是一等可检查状态。
+- **安全与资源纪律。** 三档沙箱 profile、带理由记录的 typed grant/revoke、凭据脱敏、资源 watchdog 与进程围栏 safe-run、密封运行时环境净化。
 
 ## 界面实录
 
@@ -21,14 +30,9 @@ Canvast 面向不是一条提示词就能结束的工作。它把请求状态、
   <img src="docs/assets/user-guide/macos-canvas-zh-Hans.png" alt="macOS App 项目 Canvas" width="49%">
 </p>
 
-## 有效性证据
+## 实测有效性
 
-我们以 Claude Code 为参考工具链进行配对评估，两侧运行相同的 DeepSeek API 模型。完整的测评方法、判定门槛与实测结果见 [README.md 证据区块](README.md)（由机器重新生成并校验）与 [有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)；无法证实的结论会被明确标记为结论未定，而不是被省略。
-
-## 主要界面
-
-- TUI 适合最快开始工作、引导活动运行、查看 `/canvast-status`、`/canvast-tasks`、`/canvast-canvas` 等状态视图。
-- macOS App 打开同一份持久化项目状态，包含 Run Console、Tasks & Plans、Agents & Workflows、Safety & Permissions、Tools、Context、Sessions、Canvas 和 Settings。
+我们以 Claude Code 为参考工具链进行配对实测：同任务、同协议、两侧相同的 DeepSeek 模型后端。常规 harness 能力与参考持平，Canvast 特色能力单独探针测量。实测数据与方法论见 [README.md 证据区块](README.md)（由机器重新生成并校验）与 [有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)；记录不足以支持的项目会如实标注，而不是被省略。
 
 ## 快速开始
 

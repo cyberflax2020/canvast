@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "kind": "canvast-source-snapshot",
-  "generatedAt": "2026-09-18T16:57:37.180Z",
+  "generatedAt": "2026-09-19T00:29:43.530Z",
   "algorithm": "sha256",
   "scope": {
     "entries": [
@@ -75,8 +75,8 @@
     "sha256": "fc267f2ef73421ceef2bdae9e1ebb6a73748282e296300222a058357b33f6afe"
   },
   "fileCount": 650,
-  "totalBytes": 9712731,
-  "sourceTreeSha256": "00c7cee3985c2b249eeae57a277aa6d93ceb8f997f33f1ff274eb1d5373c74b6",
+  "totalBytes": 9722099,
+  "sourceTreeSha256": "f45631367ad84bd58780afc622b9511919d2fb1e6d395f6f0d253e2e28bbe5fa",
   "files": [
     {
       "path": ".env.example",
@@ -88,13 +88,13 @@
       "path": "assets/brand/asset-manifest.json",
       "size": 1938,
       "mode": 420,
-      "sha256": "3a795e71bee1392109fa7279de7a3ce388c5e7b5029c12615f0e2ade77206640"
+      "sha256": "aeae9de5dfcf178c23264fc834194fee7a2f834b7f0b7c55300b4f8d532ef28a"
     },
     {
       "path": "assets/brand/canvast-hero.svg",
-      "size": 4021,
+      "size": 4750,
       "mode": 420,
-      "sha256": "81dd02df41cf62a3797670e89801c9ed59f39fdfc004acf80606665beb17fbc5"
+      "sha256": "7e35d8ffdf2ecc8605d22ac17b39da2468525516a8f57b69ee3a4fd79f8b4654"
     },
     {
       "path": "assets/brand/canvast-logo.svg",
@@ -212,9 +212,9 @@
     },
     {
       "path": "eval-matrix/paired-enhanced-probes.ts",
-      "size": 39555,
+      "size": 43402,
       "mode": 420,
-      "sha256": "2c21e6580558657a0ff98e64b779e18fa61a068cd93ea1040e09c2db89fa9467"
+      "sha256": "f3b9f07789d55dd6a617a9dccfc33ea56cd60d09db2a8a30af50f490d85a9009"
     },
     {
       "path": "eval-matrix/paired-enhanced-progress.ts",
@@ -290,9 +290,9 @@
     },
     {
       "path": "eval-matrix/paired-launch.ts",
-      "size": 9363,
+      "size": 9823,
       "mode": 420,
-      "sha256": "c9db73936c4c7406e3ec60ca9fb56f9c912d859a3bb18830f081273b9e99317e"
+      "sha256": "c57a3ec75c50165e13a8ed5162519464ae28db8fc69bc515954abeb3684dfe6b"
     },
     {
       "path": "eval-matrix/paired-owned-handle-evidence.ts",
@@ -314,9 +314,9 @@
     },
     {
       "path": "eval-matrix/paired-public-artifact.ts",
-      "size": 8683,
+      "size": 9732,
       "mode": 420,
-      "sha256": "629cbc259c8f1f5c22bf36b7920027c86a12ffe97b686487fc5c3f4fd514cfe0"
+      "sha256": "223c4a1d4d400aa8ffc3a8288edebb2cf65a97889f07fa04ada942e5f106e714"
     },
     {
       "path": "eval-matrix/paired-resume.ts",
@@ -374,9 +374,9 @@
     },
     {
       "path": "eval-matrix/runner-command.ts",
-      "size": 23876,
+      "size": 24352,
       "mode": 420,
-      "sha256": "19a6b99924a6f3e3097fa7f8bd4f4342754350d7dab6be4bec8ab932aaab9816"
+      "sha256": "aa573ce4a1745f82753b9fea376aba0d4bda135ab967652a791d368bc0fa28e0"
     },
     {
       "path": "eval-matrix/runner-types.ts",
@@ -1388,15 +1388,15 @@
     },
     {
       "path": "scripts/effectiveness-render.mjs",
-      "size": 36547,
+      "size": 37206,
       "mode": 420,
-      "sha256": "f49fa3467553968f8e51add89f7012a0031b886a4232aeae289430ac0dda3106"
+      "sha256": "0fc4be62facd0412cf15bd646890215c0ae5debd050e586abd09c7ae3e5e7747"
     },
     {
       "path": "scripts/effectiveness-summary.mjs",
-      "size": 38729,
+      "size": 38883,
       "mode": 420,
-      "sha256": "8b91a9e1423cad004897acc1740eabc4f6a7246d7e8b662e21ec42e21df9138e"
+      "sha256": "6362c55bd5938057f277d59a2e3997948aff7271f43a4d37ce9ba8adfcee7afe"
     },
     {
       "path": "scripts/export-canvas.mjs",
@@ -1418,9 +1418,9 @@
     },
     {
       "path": "scripts/generate-effectiveness-evidence.mjs",
-      "size": 40357,
+      "size": 41095,
       "mode": 420,
-      "sha256": "daf34ecbf27347bba3eb34b2c5a8737eb4f0b25b28e03c8310f1ff9dff6e22eb"
+      "sha256": "90e7c7889990ff4f49b4b24298231c97b16edb0b95fe78b71c95ffa31943f81e"
     },
     {
       "path": "scripts/generate-macos-app-icon.mjs",
@@ -1586,9 +1586,9 @@
     },
     {
       "path": "scripts/public-release-guards.mjs",
-      "size": 33000,
+      "size": 33273,
       "mode": 420,
-      "sha256": "44ca8af52b4fbf04c35e6cef33e7fb72fd97a1654ee196e7b6628ba10a09f452"
+      "sha256": "efe4e64440d61fbf79e9d35a65c8a644d6ecf8062190748696e18796b708e89d"
     },
     {
       "path": "scripts/public-repo-policy.mjs",
@@ -3500,21 +3500,21 @@
     },
     {
       "path": "tests/unit/public-release-guards.test.ts",
-      "size": 17395,
+      "size": 17660,
       "mode": 420,
-      "sha256": "808a6a084e0a56f0c55190664cfb12f4261299c1239c744628d3f2be2702dc6b"
+      "sha256": "01eb76e5e53a7da416226f8d13d31492088c5d2044b4f1a58d70f77495b3cce3"
     },
     {
       "path": "tests/unit/public-release-verifier.test.ts",
-      "size": 69056,
+      "size": 69430,
       "mode": 420,
-      "sha256": "3b6ce0fd283979a9fafe730512f822c31c33107b33a8836ecf90fd9af615ce96"
+      "sha256": "adc4d482cf3ee78a49fe1e897b38edfd554adefefbe5c8b3f80663df3241a353"
     },
     {
       "path": "tests/unit/public-repo-build.test.ts",
-      "size": 32007,
+      "size": 32353,
       "mode": 420,
-      "sha256": "fd5016db77c9a0115449593759ed52c3ddded79344a55ff7bcf458feb2a2f798"
+      "sha256": "c9ce5822552f2b8c04405bc5ac8ed2d13b1f2fafe703860335f0673a9a1ddad9"
     },
     {
       "path": "tests/unit/public-repo-policy.test.ts",
@@ -3902,9 +3902,9 @@
     },
     {
       "path": "tests/unit/validate-live-env.test.ts",
-      "size": 5427,
+      "size": 5425,
       "mode": 420,
-      "sha256": "1af000331305dbfd3f231d102c56d00fe392da2015113bbbee701f2e517000f4"
+      "sha256": "beb060bf04e14fc187fadd3359c5809f3d7245ee3e4b9aa0688f4bd67d8aebc3"
     },
     {
       "path": "tests/unit/verify-live-script.test.ts",
