@@ -63,29 +63,29 @@
   <!-- right zone: governance canvas panel -->
   <rect class="panel" x="828" y="120" width="392" height="400" rx="18"/>
 
-  <!-- edges: node-boundary to node-boundary (no edge crosses a node) -->
-  <path class="edge" d="M962 215H1098"/>
-  <path class="edge" d="M1130 247V373"/>
-  <path class="edge" d="M1098 415H962"/>
-  <path class="edge" d="M930 373V247"/>
-  <path class="edge-active" d="M962 215H1098L1130 247V373"/>
+  <!-- edges: with an 8px gap from each node so no edge touches a node -->
+  <path class="edge" d="M968 210H1102"/>
+  <path class="edge" d="M1140 248V382"/>
+  <path class="edge" d="M1102 420H968"/>
+  <path class="edge" d="M930 382V248"/>
+  <path class="edge-active" d="M968 210H1102L1140 248V382"/>
 
   <!-- nodes: 2×2 grid, labels below each node -->
-  <circle class="n-file" cx="930" cy="215" r="32"/>
-  <circle class="dot-file" cx="930" cy="215" r="10"/>
-  <text class="node-label" x="930" y="274">File</text>
+  <circle class="n-file" cx="930" cy="210" r="30"/>
+  <circle class="dot-file" cx="930" cy="210" r="9"/>
+  <text class="node-label" x="930" y="266">File</text>
 
-  <circle class="n-plan" cx="1130" cy="215" r="32"/>
-  <circle class="dot-plan" cx="1130" cy="215" r="10"/>
-  <text class="node-label" x="1130" y="274">Plan</text>
+  <circle class="n-plan" cx="1140" cy="210" r="30"/>
+  <circle class="dot-plan" cx="1140" cy="210" r="9"/>
+  <text class="node-label" x="1140" y="266">Plan</text>
 
-  <circle class="n-decision" cx="930" cy="415" r="32"/>
-  <circle class="dot-decision" cx="930" cy="415" r="10"/>
-  <text class="node-label" x="930" y="474">Decision</text>
+  <circle class="n-decision" cx="930" cy="420" r="30"/>
+  <circle class="dot-decision" cx="930" cy="420" r="9"/>
+  <text class="node-label" x="930" y="476">Decision</text>
 
-  <circle class="n-agent" cx="1130" cy="415" r="32"/>
-  <circle class="dot-agent" cx="1130" cy="415" r="10"/>
-  <text class="node-label" x="1130" y="474">AgentRun</text>
+  <circle class="n-agent" cx="1140" cy="420" r="30"/>
+  <circle class="dot-agent" cx="1140" cy="420" r="9"/>
+  <text class="node-label" x="1140" y="476">AgentRun</text>
 
-  <text class="legend" x="1024" y="492" text-anchor="middle">typed nodes · typed links · persistent</text>
+  <text class="legend" x="1035" y="492" text-anchor="middle">typed nodes · typed links · persistent</text>
 </svg>
