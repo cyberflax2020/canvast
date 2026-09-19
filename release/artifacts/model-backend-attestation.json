@@ -11,8 +11,8 @@
   "generatedAt": "2026-09-19T08:28:40.679Z",
   "sourceManifest": {
     "path": "release/source-manifest.json",
-    "sha256": "3157626d298f7f71dc6a0e000570ac46462d1fc0927194b60adc0c0f63ee5a9b",
-    "generatedAt": "2026-09-19T08:28:40.494Z"
+    "sha256": "15433573f0131f1ee9cc1f2230ced8b84ff7cedc205f9c4bab9bef0076ca344c",
+    "generatedAt": "2026-09-19T05:13:08.575Z"
   },
   "evaluationArtifact": {
     "path": "eval-matrix/artifacts/paired-evaluation-latest.json",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "kind": "canvast-source-snapshot",
-  "generatedAt": "2026-09-19T16:58:41.367Z",
+  "generatedAt": "2026-09-19T17:35:23.600Z",
   "algorithm": "sha256",
   "scope": {
     "entries": [
@@ -75,8 +75,8 @@
     "sha256": "fc267f2ef73421ceef2bdae9e1ebb6a73748282e296300222a058357b33f6afe"
   },
   "fileCount": 650,
-  "totalBytes": 9726419,
-  "sourceTreeSha256": "25994163eaaa166bbf228bfa496cb6d10f34e6a435f2f60b9b5b6deb22721a61",
+  "totalBytes": 9727402,
+  "sourceTreeSha256": "daa014745c9ac47a569800d4332c1c3a526c48cde03b8c92700dc6aa74426861",
   "files": [
     {
       "path": ".env.example",
@@ -1832,9 +1832,9 @@
     },
     {
       "path": "scripts/verify-public-release.mjs",
-      "size": 53897,
+      "size": 54880,
       "mode": 420,
-      "sha256": "80c0e7bf6ba2e4a43dda7cd0df765908d78e2a8a370682c699ab7f1aa9e93572"
+      "sha256": "32b74980fd6a6a14966fcc463be1655d58ee6da342f6a6580ed3a0d6d7060320"
     },
     {
       "path": "scripts/verify-tui-screenshot-provenance.mjs",

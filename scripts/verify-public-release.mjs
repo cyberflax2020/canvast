@@ -212,6 +212,21 @@ function macosUiImpactSource(current) {
   }
   return cachedMacosUiImpact.evaluationSource;
 }
+let cachedMacosUiImpactAssessment;
+function macosUiImpactAssessment() {
+  if (cachedMacosUiImpactAssessment === undefined) {
+    try {
+      const impact = readJson(path.join(root, "release/artifacts/macos-ui-impact.json"), "macOS UI impact");
+      cachedMacosUiImpactAssessment = impact && typeof impact === "object"
+        && impact.impactAssessment && typeof impact.impactAssessment === "object"
+        ? impact.impactAssessment
+        : {};
+    } catch {
+      cachedMacosUiImpactAssessment = {};
+    }
+  }
+  return cachedMacosUiImpactAssessment;
+}
 function canonicalPortableGraph() {
   return {
     nodes: [
@@ -719,11 +734,20 @@ function verifyStandaloneEvidenceBindings(sourceManifestHash, sourceTreeHash, so
     const sourceManifest = evidenceSourceManifest(document);
     const directlyBound = sourceManifest?.path === "release/source-manifest.json" && sourceManifest?.sha256 === sourceManifestHash;
     let inheritedBound = false;
-    if (!directlyBound && evidencePath === "release/artifacts/effectiveness-summary.json") {
+    if (!directlyBound) {
       const impactSource = sourceDocument ? macosUiImpactSource(currentSource) : undefined;
-      inheritedBound = Boolean(impactSource
+      const boundToEvaluation = Boolean(impactSource
         && sourceManifest?.path === "release/source-manifest.json"
         && sourceManifest?.sha256 === impactSource.sha256);
+      if (boundToEvaluation) {
+        if (evidencePath === "release/artifacts/screenshots.json") {
+          const assessment = macosUiImpactAssessment();
+          inheritedBound = assessment.macosUiAffected === false && assessment.installedAppAffected === false;
+        } else if (evidencePath === "release/artifacts/effectiveness-summary.json"
+          || evidencePath === "release/artifacts/model-backend-attestation.json") {
+          inheritedBound = true;
+        }
+      }
     }
     if (!directlyBound && !inheritedBound) {
       errors.push(`${evidencePath} does not bind the public source manifest`);
