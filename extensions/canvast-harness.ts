@@ -671,6 +671,38 @@ export default function (pi: ExtensionAPI) {
     },
   });
 
+  pi.registerTool({
+    name: "compact_context",
+    label: "Compact Context / 压缩上下文",
+    description:
+      "Trigger a manual context compaction for the current session. The active plan, sub-agents, workflows, and tool-run state are preserved across the compact; a compaction summary replaces older turns. / 手动触发当前会话的上下文压缩：压缩后活动计划、子 agent、workflow 与工具运行状态得以保留，并以压缩摘要替换较早轮次。",
+    parameters: Type.Object({
+      customInstructions: Type.Optional(Type.String({
+        description: "Optional instructions for the compaction summary / 压缩摘要的可选指令",
+      })),
+    }),
+    async execute(_id: string, params: any, _signal: any, _onUpdate: any, ctx: any): Promise<any> {
+      if (typeof ctx?.compact !== "function") {
+        return { isError: true, content: [{ type: "text" as const, text: "Context compaction is not available on this runtime surface." }] };
+      }
+      try {
+        await new Promise<void>((resolve, reject) => {
+          const timeout = setTimeout(() => resolve(), 30_000);
+          ctx.compact({
+            ...(typeof params.customInstructions === "string" && params.customInstructions
+              ? { customInstructions: params.customInstructions }
+              : {}),
+            onComplete: () => { clearTimeout(timeout); resolve(); },
+            onError: (error: Error) => { clearTimeout(timeout); reject(error); },
+          });
+        });
+        return { content: [{ type: "text" as const, text: "Context compaction completed." }] };
+      } catch (error) {
+        return { isError: true, content: [{ type: "text" as const, text: `Context compaction failed: ${String(error)}` }] };
+      }
+    },
+  });
+
   // ─── Hook: inject Canvas Scoped View at agent start ─────────────────────
   pi.on("before_agent_start", async (event: any, ctx: any) => {
     const toolsChanged = ensureNativeLocalSearchTools(pi);

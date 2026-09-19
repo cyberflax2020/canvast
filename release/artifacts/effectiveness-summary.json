@@ -2,33 +2,33 @@
   "schemaVersion": 1,
   "kind": "canvast-effectiveness-summary",
   "status": "passed",
-  "generatedAt": "2026-09-18T23:13:38.797Z",
+  "generatedAt": "2026-09-19T05:54:02.583Z",
   "inputs": {
     "pairedEvaluation": {
       "path": "eval-matrix/artifacts/paired-evaluation-latest.json",
-      "sha256": "895b37bce8dc59bd43b197901b5400ac7a36a0222fe9d6d924dd31f8aa61ad07",
-      "generatedAt": "2026-09-18T23:13:38.797Z"
+      "sha256": "ab0e7e06d75dc5c6e2ef606f346e36b647df12d38f0da58809373345e33cfa5b",
+      "generatedAt": "2026-09-19T05:54:02.583Z"
     },
     "sourceManifest": {
       "path": "release/source-manifest.json",
-      "sha256": "55587d20e78575efa3b97229387021d2e5698f236beef1f37f2bad9792dd4d2e",
-      "sourceTreeSha256": "7b584540d5e2ed98f4e844c00ce839bb049f21a6161b1a56e381e0f61a4bb077",
-      "generatedAt": "2026-09-18T22:34:18.920Z"
+      "sha256": "15433573f0131f1ee9cc1f2230ced8b84ff7cedc205f9c4bab9bef0076ca344c",
+      "sourceTreeSha256": "0143a4cf563ba152afba228ba7867783cedd1b5b6926b91b6e9a362eac470a64",
+      "generatedAt": "2026-09-19T05:13:08.575Z"
     },
     "smokeArtifact": {
       "path": "eval-matrix/artifacts/paired-smoke-latest.json",
-      "sha256": "b4b02fff8a4cf13b5c14c5939a90fada28a809925dd55a27571f0c459628d122",
-      "generatedAt": "2026-09-18T22:34:19.357Z"
+      "sha256": "6cb0d1b9cb8a63cd2bd59e985b1242a5c7365b2293b6981e1225ea6034a12e69",
+      "generatedAt": "2026-09-19T05:13:09.385Z"
     },
     "modelBackendAttestation": {
       "path": "release/artifacts/model-backend-attestation.json",
-      "sha256": "e296cd2cd6ce0027b1a70e4b27f45d7329f08e2acc6a190524490c211980c66a",
+      "sha256": "dd5735f4c52ee59532e4bad9750046a9db17dcee432f1bd72ce1dd04c7a6d564",
       "attestedAt": "2026-09-19T00:00:00.000Z"
     }
   },
   "document": {
     "path": "docs/EFFECTIVENESS_EVIDENCE.md",
-    "sha256": "bea020536ceded272c536198d6d0b097c5f1c354f5e60f6953773cbc88be5fed"
+    "sha256": "691e52d7e2ca6595f29760b21cd648eb318ccaa9526ee252cc581cef93c72a56"
   },
   "comparisonOutcome": {
     "status": "inconclusive",
@@ -79,10 +79,10 @@
       "referenceOnlyPassed": 0
     },
     "latencyMs": {
-      "canvastMedian": 24610,
-      "referenceMedian": 9719,
-      "difference": 14891,
-      "ratio": 2.5322
+      "canvastMedian": 27294,
+      "referenceMedian": 12780,
+      "difference": 14514,
+      "ratio": 2.1357
     },
     "exactSignTest": {
       "discordantPairs": 0,
@@ -93,29 +93,37 @@
   "bilateralEnhancedProbes": {
     "summary": {
       "totalDimensions": 4,
-      "pass": 0,
+      "pass": 1,
       "tie": 0,
       "fail": 0,
-      "inconclusive": 4
+      "inconclusive": 3
     },
     "dimensions": [
       {
         "id": "sidecar_primary_recovery",
         "title": "Sidecar Continuation And Primary Recovery",
-        "verdict": "inconclusive",
-        "includedInClaim": false,
-        "canvastStatus": "inconclusive",
-        "referenceStatus": "inconclusive",
-        "rationale": "At least one repeat was missing structured evidence or disagreed with the others. / At least one repeat was missing structured evidence or disagreed with the others."
+        "verdict": "pass",
+        "includedInClaim": true,
+        "canvastStatus": "passed",
+        "canvastPassedRepeats": 4,
+        "canvastTotalRepeats": 4,
+        "referenceStatus": "failed",
+        "referencePassedRepeats": 0,
+        "referenceTotalRepeats": 4,
+        "rationale": "Every repeat directly observed the required behavior. / Every repeat completed and directly failed the required behavior."
       },
       {
         "id": "compaction_same_request_continuity",
         "title": "Compaction Same-Request Continuity",
         "verdict": "inconclusive",
         "includedInClaim": false,
-        "canvastStatus": "inconclusive",
-        "referenceStatus": "inconclusive",
-        "rationale": "At least one repeat was missing structured evidence or disagreed with the others. / At least one repeat was missing structured evidence or disagreed with the others."
+        "canvastStatus": "failed",
+        "canvastPassedRepeats": 0,
+        "canvastTotalRepeats": 4,
+        "referenceStatus": "failed",
+        "referencePassedRepeats": 0,
+        "referenceTotalRepeats": 4,
+        "rationale": "Every repeat completed and directly failed the required behavior. / Every repeat completed and directly failed the required behavior."
       },
       {
         "id": "live_plan_projection",
@@ -123,8 +131,12 @@
         "verdict": "inconclusive",
         "includedInClaim": false,
         "canvastStatus": "inconclusive",
-        "referenceStatus": "inconclusive",
-        "rationale": "At least one repeat was missing structured evidence or disagreed with the others. / At least one repeat was missing structured evidence or disagreed with the others."
+        "canvastPassedRepeats": 3,
+        "canvastTotalRepeats": 4,
+        "referenceStatus": "failed",
+        "referencePassedRepeats": 0,
+        "referenceTotalRepeats": 4,
+        "rationale": "At least one repeat was missing structured evidence or disagreed with the others. / Every repeat completed and directly failed the required behavior."
       },
       {
         "id": "canvas_projection_and_export",
@@ -132,8 +144,12 @@
         "verdict": "inconclusive",
         "includedInClaim": false,
         "canvastStatus": "inconclusive",
-        "referenceStatus": "inconclusive",
-        "rationale": "At least one repeat was missing structured evidence or disagreed with the others. / At least one repeat was missing structured evidence or disagreed with the others."
+        "canvastPassedRepeats": 2,
+        "canvastTotalRepeats": 4,
+        "referenceStatus": "failed",
+        "referencePassedRepeats": 0,
+        "referenceTotalRepeats": 4,
+        "rationale": "At least one repeat was missing structured evidence or disagreed with the others. / Every repeat completed and directly failed the required behavior."
       }
     ]
   }

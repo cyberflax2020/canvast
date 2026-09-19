@@ -689,14 +689,24 @@ function validateEnhancedCapabilityTrack(artifact) {
     if (reference.observableTaskId !== undefined && reference.observableTaskId !== derived.id) {
       fail("enhancedCapabilityTrack reference observableTaskId must match the dimension id");
     }
+    const canvastRepeats = Array.isArray(canvast.repeatObservations) ? canvast.repeatObservations : [];
+    const referenceRepeats = Array.isArray(reference.repeatObservations) ? reference.repeatObservations : [];
     return {
       id: derived.id,
       title: derived.title,
       verdict: derived.verdict,
       includedInClaim: derived.includedInClaim,
       rationale: expectedRationale,
-      canvast: { status: derived.canvastStatus },
-      reference: { status: derived.referenceStatus },
+      canvast: {
+        status: derived.canvastStatus,
+        passedRepeats: canvastRepeats.filter(repeat => repeat.status === "passed").length,
+        totalRepeats: canvastRepeats.length,
+      },
+      reference: {
+        status: derived.referenceStatus,
+        passedRepeats: referenceRepeats.filter(repeat => repeat.status === "passed").length,
+        totalRepeats: referenceRepeats.length,
+      },
     };
   });
   return {

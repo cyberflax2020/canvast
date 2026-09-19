@@ -73,7 +73,7 @@ Everything you expect from a top-tier agent harness is here — and it is all go
 - **Code intelligence**: LSP fallback lookup (definition, references, symbols, hover), a bounded structural repository map (`canvas_repomap`), and lightweight code review with structured findings.
 - **Search & web**: bounded file and content search, and grounded web search / fetch / research with explicit evidence reasons.
 - **Observability**: request receipts, input queue, request lifecycle, tool runs, runtime events, task and plan projections, approval history, and usage stats — first-class, inspectable state in both surfaces.
-- **Safety and permissions**: `read-only`, `workspace-write`, and `full-access` profiles; typed grant and revoke actions with recorded rationale; credential redaction; a resource watchdog and a single process-fence wrapper (`safe-run.sh`) born from real crash postmortems; an owned-handle registry that pins PID, process group, and process birth time and fails closed on PID reuse.
+- **Safety and permissions**: `read-only`, `workspace-write`, and `full-access` profiles; typed grant and revoke actions with recorded rationale; credential redaction; a resource watchdog and a single process-fence wrapper (`safe-run.sh`) for heavy workloads; an owned-handle registry that pins PID, process group, and process birth time and fails closed on PID reuse.
 - **Runtime hardening**: the relocatable sealed launcher scrubs dozens of inherited environment variables (including dynamic-linker injection and TLS key-logging hooks) and pins a known TLS configuration before starting the agent.
 - **Extensibility**: explicitly activated skills (off by default, unknown names rejected), an MCP registry, cron schedules, monitors, and local HTML artifacts.
 
@@ -92,16 +92,17 @@ Or open the same persisted project in the macOS App — Run Console, Tasks & Pla
 
 ### Measured effectiveness
 
-We hold ourselves to measured evidence: Canvast is evaluated in paired runs against Claude Code as the reference toolchain — same tasks, same protocol, same DeepSeek model backend on both sides. Standard harness capability is expected to measure at parity with the reference; Canvast's signature capabilities are probed separately. The block below is regenerated and verified by machine from the checked-in record — it says exactly what the record supports, and our own release gate rejects any comparative claim outside it.
+We hold ourselves to measured evidence. **Parity** — Canvast's full harness toolkit (orchestration, context management, planning, execution, observability, safety, extensibility) is benchmarked against Claude Code: same tasks, same protocol, same DeepSeek model backend on both sides. **Signature** — the Graph Canvas governance canvas is Canvast-specific and is probed separately. The block below is regenerated and verified by machine from the checked-in record — it says exactly what the record supports, and our own release gate rejects any comparative claim outside it.
 
 <!-- CANVAST_EFFECTIVENESS_EN_START -->
 Paired evaluation: Canvast vs the reference toolchain (2.1.233 (Claude Code); bare print via local compatibility proxy). Both sides ran against the same DeepSeek API model, deepseek-v4-flash.
 - Task success: Canvast 12/12; reference 12/12; pass-rate difference 0.0 percentage points; 0 discordant pairs across 12 complete pairs (24 side-runs) with four crossover repeats and zero infrastructure exclusions.
-- Median run latency: Canvast 24610 ms; reference 9719 ms; ratio 2.5322x. This overhead is disclosed as a known optimization target for upcoming releases.
+- Median run latency: Canvast 27294 ms; reference 12780 ms; ratio 2.1357x. This overhead is disclosed as a known optimization target for upcoming releases.
 - Model backend: both sides ran the same DeepSeek model, deepseek-v4-flash — confirmed by the Canvast project.
 
-Signature capabilities — Graph Canvas governance, live plan visibility, sidecar continuation, and compaction continuity — are integrated and governed by the same loop.
-Full methodology and quantified record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).
+Beyond parity, Canvast's signature capability is the Graph Canvas governance canvas — a persistent File / Plan / Decision / AgentRun graph with typed links, BFS traceability, and canvas-scoped context. Claude Code offers no equivalent typed project graph.
+- Machine-verified: Canvas projection and export worked in 2 of 4 measured repeats.
+Full methodology and record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).
 <!-- CANVAST_EFFECTIVENESS_EN_END -->
 
 ### Get started
@@ -115,13 +116,23 @@ Full methodology and quantified record: [Effectiveness Evidence](docs/EFFECTIVEN
    npm --version
    ```
 
-2. **Get an API key.** The default provider is DeepSeek. Create one at [platform.deepseek.com](https://platform.deepseek.com), then write it to a local `.env` file (one `KEY=value` per line — never commit it):
+2. **Configure `.env`.** The default provider is DeepSeek. Create a key at [platform.deepseek.com](https://platform.deepseek.com), then write a local `.env` file (one `KEY=value` per line — never commit it):
 
-   ```bash
-   echo 'DEEPSEEK_API_KEY=your-deepseek-api-key' > .env
+   ```text
+   # required
+   DEEPSEEK_API_KEY=your-deepseek-api-key
+
+   # optional — pick a model and reasoning level
+   CANVAST_MODEL=deepseek-v4-pro
+   CANVAST_THINKING=high
+
+   # optional — switch provider (each provider needs its own key)
+   # CANVAST_PROVIDER=anthropic
+   # ANTHROPIC_API_KEY=your-anthropic-api-key
+   # CANVAST_MODEL=claude-sonnet-5
    ```
 
-   For other providers, add `CANVAST_PROVIDER` and `CANVAST_MODEL` to the same `.env` (see [Configuration](docs/guides/configuration.md)).
+   Supported keys: `DEEPSEEK_API_KEY`, `ANTHROPIC_API_KEY`, `CANVAST_PROVIDER`, `CANVAST_MODEL`, `CANVAST_THINKING`, `CANVAST_SUBAGENT_MODEL` (see [Configuration](docs/guides/configuration.md)).
 
 3. **Run Canvast.** From a repository checkout, or after extracting `canvast-tui-0.1.0.tgz` from [Releases](https://github.com/cyberflax2020/canvast/releases):
 
@@ -218,7 +229,7 @@ Canvas 是 Canvast 的标志性能力，也是大型项目受益最多的地方�
 - **代码智能**：LSP fallback 查询（定义、引用、符号、hover）、有界的结构化仓库图谱（`canvas_repomap`）、轻量代码评审与结构化 findings。
 - **搜索与联网**：有界的文件与内容搜索；带显式证据理由的联网搜索/抓取/研究。
 - **观测**:request receipt、input queue、request lifecycle、tool runs、runtime events、task 与 plan 投影、approval history、usage stats——两个界面上都是一等可检查状态。
-- **安全与权限**:`read-only`、`workspace-write`、`full-access` 三档 profile；带记录理由的 typed grant 与 revoke；凭据脱敏；从真实崩溃复盘长出来的资源 watchdog 与进程围栏（`safe-run.sh`)；钉住 PID、进程组与进程出生时间、PID 复用时安全拒绝的 owned-handle 注册表。
+- **安全与权限**:`read-only`、`workspace-write`、`full-access` 三档 profile；带记录理由的 typed grant 与 revoke；凭据脱敏；面向重负载的资源 watchdog 与进程围栏（`safe-run.sh`)；钉住 PID、进程组与进程出生时间、PID 复用时安全拒绝的 owned-handle 注册表。
 - **运行时加固**：可迁移密封启动器在启动 agent 前清除数十个继承环境变量（包括动态链接器注入与 TLS key-logging 钩子），并钉住已知 TLS 配置。
 - **可扩展**：显式启用的 skill（默认关闭，未知名称拒绝）、MCP registry、cron 调度、监控器、本地 HTML artifact。
 
@@ -242,11 +253,12 @@ Canvas 是 Canvast 的标志性能力，也是大型项目受益最多的地方�
 <!-- CANVAST_EFFECTIVENESS_ZH_START -->
 配对评估：Canvast 对比参考工具链（2.1.233 (Claude Code)；bare print via local compatibility proxy）。两侧运行相同的 DeepSeek API 模型 deepseek-v4-flash。
 - 任务成功率：Canvast 12/12；参考运行 12/12；通过率差值 0.0 个百分点；共 12 个完整配对（24 次单侧运行），四轮交叉重复、基础设施排除数为零，结果不一致的配对 0 个。
-- 中位运行时长：Canvast 24610 毫秒；参考运行 9719 毫秒；比值 2.5322x。该开销已公开记录为后续版本的优化目标。
+- 中位运行时长：Canvast 27294 毫秒；参考运行 12780 毫秒；比值 2.1357x。该开销已公开记录为后续版本的优化目标。
 - 模型后端：两侧运行同一 DeepSeek 模型 deepseek-v4-flash，由 Canvast 项目确认。
 
-特色能力——Graph Canvas 治理、实时计划可见、sidecar 接续、上下文压缩连续——均已集成并受同一条 loop 治理。
-完整方法论与量化记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。
+对标之外，Canvast 的标志性特色是 Graph Canvas 治理画布——File / Plan / Decision / AgentRun 持久化图谱，带 typed link、BFS 可回溯与 Canvas 作用域上下文。Claude Code 没有对应的 typed 项目图谱。
+- 机器验证：Canvas 投影与导出在 4 次重复中 2 次通过。
+完整方法论与记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。
 <!-- CANVAST_EFFECTIVENESS_ZH_END -->
 
 ### 快速开始
@@ -260,13 +272,23 @@ Canvas 是 Canvast 的标志性能力，也是大型项目受益最多的地方�
    npm --version
    ```
 
-2. **获取 API key。** 默认 provider 为 DeepSeek，请在 [platform.deepseek.com](https://platform.deepseek.com) 创建，然后写入本地 `.env` 文件（每行一条 `KEY=value`，切勿提交进版本库）：
+2. **配置 `.env`。** 默认 provider 为 DeepSeek，请在 [platform.deepseek.com](https://platform.deepseek.com) 创建 key，然后写入本地 `.env` 文件（每行一条 `KEY=value`，切勿提交进版本库）：
 
-   ```bash
-   echo 'DEEPSEEK_API_KEY=你的-deepseek-api-key' > .env
+   ```text
+   # 必填
+   DEEPSEEK_API_KEY=你的-deepseek-api-key
+
+   # 可选——选择模型与推理强度
+   CANVAST_MODEL=deepseek-v4-pro
+   CANVAST_THINKING=high
+
+   # 可选——切换 provider（每个 provider 需要自己的 key）
+   # CANVAST_PROVIDER=anthropic
+   # ANTHROPIC_API_KEY=你的-anthropic-api-key
+   # CANVAST_MODEL=claude-sonnet-5
    ```
 
-   使用其他 provider 时，请在同一 `.env` 中追加 `CANVAST_PROVIDER` 与 `CANVAST_MODEL`（见 [配置指南](docs/guides/configuration.md)）。
+   支持的变量：`DEEPSEEK_API_KEY`、`ANTHROPIC_API_KEY`、`CANVAST_PROVIDER`、`CANVAST_MODEL`、`CANVAST_THINKING`、`CANVAST_SUBAGENT_MODEL`（见 [配置指南](docs/guides/configuration.md)）。
 
 3. **运行 Canvast。** 仓库 checkout，或从 [Releases](https://github.com/cyberflax2020/canvast/releases) 解压 `canvast-tui-0.1.0.tgz` 后：
 

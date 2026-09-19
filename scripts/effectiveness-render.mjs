@@ -416,24 +416,41 @@ function protocolLinesChinese(summary) {
   return lines;
 }
 
+function canvasMachineVerification(summary) {
+  const dimensions = summary.bilateralEnhancedProbes?.dimensions || [];
+  const canvas = dimensions.find(dimension => dimension.id === "canvas_projection_and_export");
+  if (!canvas || !Number.isInteger(canvas.canvastTotalRepeats) || canvas.canvastTotalRepeats <= 0) return null;
+  return { passed: canvas.canvastPassedRepeats || 0, total: canvas.canvastTotalRepeats };
+}
+
 function englishReadmeBlock(summary) {
+  const canvas = canvasMachineVerification(summary);
+  const canvasLine = canvas
+    ? `- Machine-verified: Canvas projection and export worked in ${canvas.passed} of ${canvas.total} measured repeats.`
+    : "";
   return [
     README_MARKERS.english.start,
     ...protocolLinesEnglish(summary),
     "",
-    "Signature capabilities — Graph Canvas governance, live plan visibility, sidecar continuation, and compaction continuity — are integrated and governed by the same loop.",
-    "Full methodology and quantified record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).",
+    "Beyond parity, Canvast's signature capability is the Graph Canvas governance canvas — a persistent File / Plan / Decision / AgentRun graph with typed links, BFS traceability, and canvas-scoped context. Claude Code offers no equivalent typed project graph.",
+    canvasLine,
+    "Full methodology and record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).",
     README_MARKERS.english.end,
   ].join("\n");
 }
 
 function chineseReadmeBlock(summary) {
+  const canvas = canvasMachineVerification(summary);
+  const canvasLine = canvas
+    ? `- 机器验证：Canvas 投影与导出在 ${canvas.total} 次重复中 ${canvas.passed} 次通过。`
+    : "";
   return [
     README_MARKERS.chinese.start,
     ...protocolLinesChinese(summary),
     "",
-    "特色能力——Graph Canvas 治理、实时计划可见、sidecar 接续、上下文压缩连续——均已集成并受同一条 loop 治理。",
-    "完整方法论与量化记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。",
+    "对标之外，Canvast 的标志性特色是 Graph Canvas 治理画布——File / Plan / Decision / AgentRun 持久化图谱，带 typed link、BFS 可回溯与 Canvas 作用域上下文。Claude Code 没有对应的 typed 项目图谱。",
+    canvasLine,
+    "完整方法论与记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。",
     README_MARKERS.chinese.end,
   ].join("\n");
 }

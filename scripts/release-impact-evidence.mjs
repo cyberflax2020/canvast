@@ -66,6 +66,13 @@ const MACOS_UI_PRODUCT_PATHS = new Set([
 
 const RELEASE_TOOLING_PATHS = new Set([
   "THIRD_PARTY_NOTICES.md",
+  "eval-matrix/paired-enhanced-probes.ts",
+  "eval-matrix/paired-evidence-contract.mjs",
+  "eval-matrix/paired-enhanced-track.ts",
+  "eval-matrix/paired-public-artifact.ts",
+  "eval-matrix/paired-runner.ts",
+  "eval-matrix/paired-launch.ts",
+  "eval-matrix/runner-command.ts",
   "package.json",
   "scripts/build-public-repo.mjs",
   "scripts/check-delivery-readiness.mjs",
@@ -357,8 +364,8 @@ function verifyChangedPaths(document, evaluationSource, currentSource) {
     throw new Error("macOS UI impact must include at least one macOS UI product source change");
   }
   if (classification === IMPACT_CLASSIFICATION_RELEASE_PRESENTATION
-    && !computed.some(entry => entry.classification === "release-presentation")) {
-    throw new Error("release-presentation impact must include at least one release presentation source change");
+    && !computed.some(entry => ["release-presentation", "release-tooling", "focused-test"].includes(entry.classification))) {
+    throw new Error("release-presentation impact must include at least one non-runtime source change");
   }
   return computed;
 }
