@@ -62,6 +62,8 @@ What this buys you in a large project:
 - **Traceability** — any change can be walked back to its originating plan and decision.
 - **Portability** — the persisted Canvas exports to JSON, Markdown, Mermaid, standalone SVG, and interactive HTML, from the CLI or natively from the App.
 
+**Bounded context, not ever-growing transcripts.** Every turn is assembled in fixed layers — system prompt, a Canvas-scoped slice of the graph, a rolling conversation window, and the task's files — plus a query-driven recall manifest that surfaces prior decisions and summaries on demand. Each layer is capped (the graph slice stops at BFS depth 2; recall injects at most a handful of records), so context stays flat no matter how large the project grows.
+
 ### A complete advanced harness toolkit
 
 Everything you expect from a top-tier agent harness is here — and it is all governed by the same loop:

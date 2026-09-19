@@ -17,6 +17,7 @@ Canvast 的解法是在每一轮 loop 上做治理：每个模型轮次之前，
 ## 核心特色
 
 - **Graph Canvas 治理画布。** File、Plan、Decision、AgentRun 四类节点与 typed link 组成项目的活地图，跨 session、跨压缩持久存在；可查询、可溯源、可导出（JSON、Markdown、Mermaid、SVG、HTML）。
+- **有界上下文，而非无限增长的对话。** 每一轮按固定层次组装：系统提示、Canvas 作用域切片、滚动对话窗口、任务文件，外加按需召回的历史摘要。每层都设上限（Canvas 切片止步于 BFS 深度 2，召回最多注入几条），项目再大上下文也不膨胀。
 - **全量高级 harness 能力。** 自动 DAG workflow 拆分、有界子 agent 配发、sidecar 接续、plan mode、沙箱执行、后台任务、worktree、联网工具、LSP fallback 等，全部被同一条 loop 治理。
 - **运行时透明。** request receipt、input queue、request lifecycle、tool runs、runtime events、approval history 都是一等可检查状态。
 - **安全与资源纪律。** 三档沙箱 profile、带理由记录的 typed grant/revoke、凭据脱敏、资源 watchdog 与进程围栏 safe-run、密封运行时环境净化。

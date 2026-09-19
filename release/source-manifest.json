@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "kind": "canvast-source-snapshot",
-  "generatedAt": "2026-09-19T10:29:50.336Z",
+  "generatedAt": "2026-09-19T16:58:41.367Z",
   "algorithm": "sha256",
   "scope": {
     "entries": [
@@ -75,8 +75,8 @@
     "sha256": "fc267f2ef73421ceef2bdae9e1ebb6a73748282e296300222a058357b33f6afe"
   },
   "fileCount": 650,
-  "totalBytes": 9726321,
-  "sourceTreeSha256": "ed21a8c8a39bed8240e1ecb7b9c525230cf30f54f54f675f34763d05b258b293",
+  "totalBytes": 9726419,
+  "sourceTreeSha256": "25994163eaaa166bbf228bfa496cb6d10f34e6a435f2f60b9b5b6deb22721a61",
   "files": [
     {
       "path": ".env.example",
@@ -1592,9 +1592,9 @@
     },
     {
       "path": "scripts/public-repo-policy.mjs",
-      "size": 32492,
+      "size": 32590,
       "mode": 420,
-      "sha256": "c9b263d0b2331c3bdf93bae4421d68eb00b0908449a003749fffae2ae17e9f91"
+      "sha256": "55e2f50f7b2c876f9e1b027e7dd23e64413513560cfc17ab9307701373949c13"
     },
     {
       "path": "scripts/public-runtime-shutdown-probe.mjs",

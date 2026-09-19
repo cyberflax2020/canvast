@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
   "kind": "canvast-public-tree",
-  "generatedAt": "2026-09-19T10:29:51.340Z",
+  "generatedAt": "2026-09-19T16:58:47.583Z",
   "algorithm": "sha256",
   "sourceManifest": {
     "path": "release/source-manifest.json",
-    "sha256": "cd72bc9a4a50680ebb9169d296840694d509d3c784454217f5cf7840e198c9b6"
+    "sha256": "aba835c118c6cd0ddecea949a3e93b698724f9244ef6168705a5667fc680862a"
   },
   "policy": {
     "path": "scripts/public-repo-policy.mjs",
-    "sha256": "c9b263d0b2331c3bdf93bae4421d68eb00b0908449a003749fffae2ae17e9f91"
+    "sha256": "55e2f50f7b2c876f9e1b027e7dd23e64413513560cfc17ab9307701373949c13"
   },
   "completeness": {
     "status": "complete",
@@ -54,9 +54,9 @@
       "kind": "public-release-verifier-tooling-overlay"
     }
   ],
-  "fileCount": 387,
-  "totalBytes": 11023513,
-  "treeSha256": "0eef619819352effee851f66e07b09ac498fed2f69861cf6f0a691ea68b8844e",
+  "fileCount": 388,
+  "totalBytes": 11035160,
+  "treeSha256": "df78f0c0ca8fd51375261a8cc75730526df132718f6bcd40e9f0e4d937164296",
   "files": [
     {
       "path": ".env.example",
@@ -182,6 +182,11 @@
       "path": "docs/architecture/canvas-and-traceability.md",
       "size": 11175,
       "sha256": "5a06bb9a18229df5efa1922ef804dadbc28a5d5b32ea1e9d27401b775c983735"
+    },
+    {
+      "path": "docs/architecture/canvas-context-scoping.md",
+      "size": 10344,
+      "sha256": "dfcdd1ae45e12e312ff7f4f5fc2a206bfef09ce55bb8a332442a55b495e1ce9c"
     },
     {
       "path": "docs/architecture/open-source-adoption-record.md",
@@ -945,18 +950,18 @@
     },
     {
       "path": "README.md",
-      "size": 24271,
-      "sha256": "4cc3b1e50fafcd959c940e2d1dc33700d6d97135fcdcd8f3419a7797455fab92"
+      "size": 24732,
+      "sha256": "05e7841944c61cd8faabf17bf3eb434d6c1d51ab0adb330c875f1fc8c80067ef"
     },
     {
       "path": "README.zh-CN.md",
-      "size": 5256,
-      "sha256": "16b0b7854c084b35dc28151de7b6b2553aa8555d9b26eb5e830f0ba4b1d90f03"
+      "size": 5582,
+      "sha256": "868bceda7e502d947bc816e36374a092c7b7ea190a89f7251e2211dabfa93440"
     },
     {
       "path": "release/artifacts/canvas-portable.json",
       "size": 2546,
-      "sha256": "723504db918fbfabde301c4fad773fef9408ae65c4458c5b38b2f541138f0950"
+      "sha256": "1008e9f543d5017689921a4df4a1b10061a9059e5333cc8362458ef90d508a0a"
     },
     {
       "path": "release/artifacts/canvas-portable/canvas-graph-export.json",
@@ -995,8 +1000,8 @@
     },
     {
       "path": "release/artifacts/macos-ui-impact.json",
-      "size": 149163,
-      "sha256": "aedcd176576d7044bfcb7bc7fa558bf3a8b7577e3f0f70996d049f40eb8f5b37"
+      "size": 149581,
+      "sha256": "4349b5825a090fb73a6c6bddd5cddf535249c93c194feb24b5753fbbceaca6b6"
     },
     {
       "path": "release/artifacts/model-backend-attestation.json",
@@ -1016,7 +1021,7 @@
     {
       "path": "release/source-manifest.json",
       "size": 127339,
-      "sha256": "cd72bc9a4a50680ebb9169d296840694d509d3c784454217f5cf7840e198c9b6"
+      "sha256": "aba835c118c6cd0ddecea949a3e93b698724f9244ef6168705a5667fc680862a"
     },
     {
       "path": "scripts/assert-resource-baseline.mjs",
@@ -1135,8 +1140,8 @@
     },
     {
       "path": "scripts/public-repo-policy.mjs",
-      "size": 32492,
-      "sha256": "c9b263d0b2331c3bdf93bae4421d68eb00b0908449a003749fffae2ae17e9f91"
+      "size": 32590,
+      "sha256": "55e2f50f7b2c876f9e1b027e7dd23e64413513560cfc17ab9307701373949c13"
     },
     {
       "path": "scripts/public-runtime-shutdown-probe.mjs",
@@ -1996,8 +2001,8 @@
   ],
   "payload": {
     "fileCount": 362,
-    "totalBytes": 9663031,
-    "treeSha256": "2cc1e242b56233c6588a42e3a2249a972ec959ab5bf0bcff12a02ebb28de50b6",
+    "totalBytes": 9663916,
+    "treeSha256": "dedbad53165df5234547d815d74d24a7945e2de60ce79e5edfd6f6054cf1617b",
     "files": [
       {
         "path": ".env.example",
@@ -2816,13 +2821,13 @@
       },
       {
         "path": "README.md",
-        "size": 24271,
-        "sha256": "4cc3b1e50fafcd959c940e2d1dc33700d6d97135fcdcd8f3419a7797455fab92"
+        "size": 24732,
+        "sha256": "05e7841944c61cd8faabf17bf3eb434d6c1d51ab0adb330c875f1fc8c80067ef"
       },
       {
         "path": "README.zh-CN.md",
-        "size": 5256,
-        "sha256": "16b0b7854c084b35dc28151de7b6b2553aa8555d9b26eb5e830f0ba4b1d90f03"
+        "size": 5582,
+        "sha256": "868bceda7e502d947bc816e36374a092c7b7ea190a89f7251e2211dabfa93440"
       },
       {
         "path": "release/license-inventory.json",
@@ -2832,7 +2837,7 @@
       {
         "path": "release/source-manifest.json",
         "size": 127339,
-        "sha256": "cd72bc9a4a50680ebb9169d296840694d509d3c784454217f5cf7840e198c9b6"
+        "sha256": "aba835c118c6cd0ddecea949a3e93b698724f9244ef6168705a5667fc680862a"
       },
       {
         "path": "scripts/assert-resource-baseline.mjs",
@@ -2951,8 +2956,8 @@
       },
       {
         "path": "scripts/public-repo-policy.mjs",
-        "size": 32492,
-        "sha256": "c9b263d0b2331c3bdf93bae4421d68eb00b0908449a003749fffae2ae17e9f91"
+        "size": 32590,
+        "sha256": "55e2f50f7b2c876f9e1b027e7dd23e64413513560cfc17ab9307701373949c13"
       },
       {
         "path": "scripts/public-runtime-shutdown-probe.mjs",
