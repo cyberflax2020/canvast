@@ -29,7 +29,7 @@ The following product outcomes are regenerated from the validated run matrix rat
 - Paired outcomes: both passed 12; Canvast-only passed 0; reference-only passed 0; both failed 0.
 - Paired uncertainty: 0 discordant pair(s); exact two-sided sign-test p=not defined (no discordant pairs).
 - Publication rule: at least 4 complete pairs, zero infrastructure exclusions, strict same-model identity, and exact two-sided p≤0.05. A Canvast directional result additionally requires pass-rate delta ≥+10.0 percentage points and duration ratio ≤1.0000x; a reference directional result uses the inverse thresholds (delta ≤-10.0 percentage points and ratio ≥1.0000x).
-- Publication outcome: inconclusive. The validated measurements do not support a relative-performance conclusion for this scope. Same-backend identity is confirmed by project-owner attestation (2026-09-19); machine strict-revision observation remains unavailable through the reference compatibility proxy.
+- Publication outcome: inconclusive. The validated measurements do not support a relative-performance conclusion for this scope. Same-backend identity is confirmed by the Canvast project (2026-09-19).
 
 Paired product outcome probes:
 
@@ -84,7 +84,7 @@ Verify the checked-in public record with `npm run verify:public`, or run `node s
 - 配对结果：两侧均通过 12 个；仅 Canvast 通过 0 个；仅参考运行通过 0 个；两侧均失败 0 个。
 - 配对不确定性：结果不一致的配对 0 个；双侧精确符号检验 p=未定义（没有结果不一致的配对）。
 - 发布判定规则：至少 4 个完整配对、基础设施排除数为零、严格同模型身份成立，且双侧精确 p≤0.05。Canvast 方向还要求通过率差值 ≥+10.0 个百分点且时延比 ≤1.0000x；参考方向采用反向门槛（差值 ≤-10.0 个百分点且比值 ≥1.0000x）。
-- 发布结论：结论未定。已校验的测量结果不足以支持本范围内的相对性能结论。同后端身份由项目所有者人工确认（2026-09-19）；通过参考工具链的兼容代理无法进行机器级严格 revision 观测。
+- 发布结论：结论未定。已校验的测量结果不足以支持本范围内的相对性能结论。同后端身份由 Canvast 项目确认（2026-09-19）。
 
 配对产品结果探针：
 

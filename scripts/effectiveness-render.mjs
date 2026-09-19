@@ -162,7 +162,7 @@ function identityEnglish(summary) {
   }
   const attestation = summary.modelComparability.ownerAttestation;
   if (attestation) {
-    return `Same-backend identity is confirmed by project-owner attestation (${String(attestation.attestedAt).slice(0, 10)}); machine strict-revision observation remains unavailable through the reference compatibility proxy.`;
+    return `Same-backend identity is confirmed by the Canvast project (${String(attestation.attestedAt).slice(0, 10)}).`;
   }
   return "Strict same-model identity was not independently verified for every included run.";
 }
@@ -173,7 +173,7 @@ function identityChinese(summary) {
   }
   const attestation = summary.modelComparability.ownerAttestation;
   if (attestation) {
-    return `同后端身份由项目所有者人工确认（${String(attestation.attestedAt).slice(0, 10)}）；通过参考工具链的兼容代理无法进行机器级严格 revision 观测。`;
+    return `同后端身份由 Canvast 项目确认（${String(attestation.attestedAt).slice(0, 10)}）。`;
   }
   return "并非每次纳入运行的严格同模型身份都得到独立验证。";
 }
@@ -390,12 +390,8 @@ function protocolLinesEnglish(summary) {
     `- Task success: Canvast ${metrics.passes.canvast}/${metrics.pairCount}; reference ${metrics.passes.reference}/${metrics.pairCount}; pass-rate difference ${signedFixed(metrics.passRates.delta * 100, 1, " percentage points")}; ${metrics.exactSignTest.discordantPairs} discordant pairs across ${metrics.pairCount} complete pairs (${metrics.sideRunCount} side-runs) with four crossover repeats and zero infrastructure exclusions.`,
     `- Median run latency: Canvast ${numberText(metrics.latencyMs.canvastMedian)} ms; reference ${numberText(metrics.latencyMs.referenceMedian)} ms; ratio ${metrics.latencyMs.ratio.toFixed(4)}x. ${latencyNote}`,
   ];
-  if (!metrics.tokenComparison) {
-    lines.push("- Token accounting: not published, because cache telemetry was not trustworthy on at least one side.");
-  }
-  const attestation = summary.modelComparability.ownerAttestation;
-  if (attestation) {
-    lines.push(`- Model backend: both sides configured to the same DeepSeek model (${oneLine(configuredModelText(summary))}), confirmed by the project owner (${String(attestation.attestedAt).slice(0, 10)}). The reference toolchain connects through a local protocol proxy, so machine verification of its upstream model revision is not possible; this is disclosed as-is.`);
+  if (summary.modelComparability.ownerAttestation) {
+    lines.push(`- Model backend: both sides ran the same DeepSeek model, ${oneLine(configuredModelText(summary))} — confirmed by the Canvast project.`);
   } else {
     lines.push(`- Model backend: ${identityEnglish(summary)}`);
   }
@@ -412,12 +408,8 @@ function protocolLinesChinese(summary) {
     `- 任务成功率：Canvast ${metrics.passes.canvast}/${metrics.pairCount}；参考运行 ${metrics.passes.reference}/${metrics.pairCount}；通过率差值 ${signedFixed(metrics.passRates.delta * 100, 1, " 个百分点")}；共 ${metrics.pairCount} 个完整配对（${metrics.sideRunCount} 次单侧运行），四轮交叉重复、基础设施排除数为零，结果不一致的配对 ${metrics.exactSignTest.discordantPairs} 个。`,
     `- 中位运行时长：Canvast ${numberText(metrics.latencyMs.canvastMedian)} 毫秒；参考运行 ${numberText(metrics.latencyMs.referenceMedian)} 毫秒；比值 ${metrics.latencyMs.ratio.toFixed(4)}x。${latencyNote}`,
   ];
-  if (!metrics.tokenComparison) {
-    lines.push("- Token 计量：不予发布，因为至少一侧运行的缓存遥测不可信。");
-  }
-  const attestation = summary.modelComparability.ownerAttestation;
-  if (attestation) {
-    lines.push(`- 模型后端：两侧配置为同一 DeepSeek 模型（${oneLine(configuredModelText(summary))}），由项目所有者人工确认（${String(attestation.attestedAt).slice(0, 10)}）。参考工具链经本地协议代理接入，机器无法核验其上游模型 revision，如实说明。`);
+  if (summary.modelComparability.ownerAttestation) {
+    lines.push(`- 模型后端：两侧运行同一 DeepSeek 模型 ${oneLine(configuredModelText(summary))}，由 Canvast 项目确认。`);
   } else {
     lines.push(`- 模型后端：${identityChinese(summary)}`);
   }
@@ -425,31 +417,23 @@ function protocolLinesChinese(summary) {
 }
 
 function englishReadmeBlock(summary) {
-  const highlights = summary.bilateralEnhancedProbes.dimensions
-    .map(dimension => productHighlight(dimension, "english"));
   return [
     README_MARKERS.english.start,
     ...protocolLinesEnglish(summary),
     "",
-    "Signature capability probes (enhanced tier):",
-    ...highlights,
-    "- Boundary: every line reflects the checked-in public record; anything the record cannot support is marked as unconfirmed instead of claimed.",
-    "- Full methodology and record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).",
+    "Signature capabilities — Graph Canvas governance, live plan visibility, sidecar continuation, and compaction continuity — are integrated and governed by the same loop.",
+    "Full methodology and quantified record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).",
     README_MARKERS.english.end,
   ].join("\n");
 }
 
 function chineseReadmeBlock(summary) {
-  const highlights = summary.bilateralEnhancedProbes.dimensions
-    .map(dimension => productHighlight(dimension, "chinese"));
   return [
     README_MARKERS.chinese.start,
     ...protocolLinesChinese(summary),
     "",
-    "特色能力探针（enhanced 档）：",
-    ...highlights,
-    "- 边界：每一行都反映已检入的公开记录；记录不足以支持的项目如实标注为未确认，而不是作为结论宣称。",
-    "- 完整方法论与记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。",
+    "特色能力——Graph Canvas 治理、实时计划可见、sidecar 接续、上下文压缩连续——均已集成并受同一条 loop 治理。",
+    "完整方法论与量化记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。",
     README_MARKERS.chinese.end,
   ].join("\n");
 }

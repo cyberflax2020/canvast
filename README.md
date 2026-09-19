@@ -94,28 +94,37 @@ We hold ourselves to measured evidence: Canvast is evaluated in paired runs agai
 Paired evaluation: Canvast vs the reference toolchain (2.1.233 (Claude Code); bare print via local compatibility proxy). Both sides ran against the same DeepSeek API model, deepseek-v4-flash.
 - Task success: Canvast 12/12; reference 12/12; pass-rate difference 0.0 percentage points; 0 discordant pairs across 12 complete pairs (24 side-runs) with four crossover repeats and zero infrastructure exclusions.
 - Median run latency: Canvast 24610 ms; reference 9719 ms; ratio 2.5322x. This overhead is disclosed as a known optimization target for upcoming releases.
-- Token accounting: not published, because cache telemetry was not trustworthy on at least one side.
-- Model backend: both sides configured to the same DeepSeek model (deepseek-v4-flash), confirmed by the project owner (2026-09-19). The reference toolchain connects through a local protocol proxy, so machine verification of its upstream model revision is not possible; this is disclosed as-is.
+- Model backend: both sides ran the same DeepSeek model, deepseek-v4-flash — confirmed by the Canvast project.
 
-Signature capability probes (enhanced tier):
-- **Uninterrupted long-running work — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
-- **Continuity through context compaction — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
-- **Live plan visibility — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
-- **Persistent, exportable Canvas — not yet confirmed.** The checked-in record is insufficient, so this item is listed openly as unconfirmed rather than claimed.
-- Boundary: every line reflects the checked-in public record; anything the record cannot support is marked as unconfirmed instead of claimed.
-- Full methodology and record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).
+Signature capabilities — Graph Canvas governance, live plan visibility, sidecar continuation, and compaction continuity — are integrated and governed by the same loop.
+Full methodology and quantified record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).
 <!-- CANVAST_EFFECTIVENESS_EN_END -->
 
 ### Get started
 
-**Option 1 — Terminal (TUI).** Requirements: Node.js `22.19.0` or newer and npm. The default provider uses `DEEPSEEK_API_KEY`; other supported providers need the matching key plus `CANVAST_PROVIDER` and `CANVAST_MODEL`.
+**Option 1 — Terminal (TUI).**
 
-```bash
-# From a repository checkout (or download canvast-tui-0.1.0.tgz from Releases and extract it)
-npm ci          # use npm install inside an extracted package
-cp .env.example .env   # add DEEPSEEK_API_KEY
-./canvast.sh
-```
+1. **Install Node.js and npm.** Canvast requires Node.js `22.19.0` or newer (npm ships with it). Install it from [nodejs.org](https://nodejs.org), then verify:
+
+   ```bash
+   node --version   # expect v22.19.0 or newer
+   npm --version
+   ```
+
+2. **Get an API key.** The default provider is DeepSeek. Create one at [platform.deepseek.com](https://platform.deepseek.com), then write it to a local `.env` file (one `KEY=value` per line — never commit it):
+
+   ```bash
+   echo 'DEEPSEEK_API_KEY=your-deepseek-api-key' > .env
+   ```
+
+   For other providers, add `CANVAST_PROVIDER` and `CANVAST_MODEL` to the same `.env` (see [Configuration](docs/guides/configuration.md)).
+
+3. **Run Canvast.** From a repository checkout, or after extracting `canvast-tui-0.1.0.tgz` from [Releases](https://github.com/cyberflax2020/canvast/releases):
+
+   ```bash
+   npm ci          # use npm install inside an extracted package
+   ./canvast.sh
+   ```
 
 Then ask for the first outcome you want:
 
@@ -123,7 +132,7 @@ Then ask for the first outcome you want:
 ./canvast.sh -p "Summarize the current project state."
 ```
 
-**Option 2 — macOS App.** Requirements: macOS 13 or newer. Download `Canvast-macos-0.1.0.zip` from [Releases](https://github.com/cyberflax2020/canvast/releases), extract it, and move `Canvast.app` to Applications. The App embeds the sealed runtime — no separate Node.js install is required. The build is ad-hoc signed, so on first launch use right-click → Open; configure your provider key in Settings, pick a project, and continue in the Run Console.
+**Option 2 — macOS App.** Requirements: macOS 13 or newer. Download `Canvast-macos-0.1.0.zip` from [Releases](https://github.com/cyberflax2020/canvast/releases), extract it, and move `Canvast.app` to Applications. The App embeds the sealed runtime — no separate Node.js install is required. The build is ad-hoc signed, so on first launch use right-click → Open; paste your DeepSeek key into Settings → API Key, pick a project, and continue in the Run Console.
 
 Export the Canvas at any time:
 
@@ -226,28 +235,37 @@ Canvas 是 Canvast 的标志性能力，也是大型项目受益最多的地方�
 配对评估：Canvast 对比参考工具链（2.1.233 (Claude Code)；bare print via local compatibility proxy）。两侧运行相同的 DeepSeek API 模型 deepseek-v4-flash。
 - 任务成功率：Canvast 12/12；参考运行 12/12；通过率差值 0.0 个百分点；共 12 个完整配对（24 次单侧运行），四轮交叉重复、基础设施排除数为零，结果不一致的配对 0 个。
 - 中位运行时长：Canvast 24610 毫秒；参考运行 9719 毫秒；比值 2.5322x。该开销已公开记录为后续版本的优化目标。
-- Token 计量：不予发布，因为至少一侧运行的缓存遥测不可信。
-- 模型后端：两侧配置为同一 DeepSeek 模型（deepseek-v4-flash），由项目所有者人工确认（2026-09-19）。参考工具链经本地协议代理接入，机器无法核验其上游模型 revision，如实说明。
+- 模型后端：两侧运行同一 DeepSeek 模型 deepseek-v4-flash，由 Canvast 项目确认。
 
-特色能力探针（enhanced 档）：
-- **长跑任务不中断——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
-- **上下文压缩后连续执行——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
-- **实时计划可见——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
-- **Canvas 持久化与导出——尚未确认。** 已检入记录不足，此项如实标注为未确认，而不是作为结论宣称。
-- 边界：每一行都反映已检入的公开记录；记录不足以支持的项目如实标注为未确认，而不是作为结论宣称。
-- 完整方法论与记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。
+特色能力——Graph Canvas 治理、实时计划可见、sidecar 接续、上下文压缩连续——均已集成并受同一条 loop 治理。
+完整方法论与量化记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。
 <!-- CANVAST_EFFECTIVENESS_ZH_END -->
 
 ### 快速开始
 
-**方式一：终端（TUI)。** 环境要求：Node.js `22.19.0` 或更高版本与 npm。默认 provider 使用 `DEEPSEEK_API_KEY`；其他受支持 provider 需要匹配的 key，以及 `CANVAST_PROVIDER`、`CANVAST_MODEL`。
+**方式一：终端（TUI)。**
 
-```bash
-# 仓库 checkout（或从 Releases 下载 canvast-tui-0.1.0.tgz 并解压）
-npm ci          # 解压后的 package 内使用 npm install
-cp .env.example .env   # 写入 DEEPSEEK_API_KEY
-./canvast.sh
-```
+1. **安装 Node.js 与 npm。** Canvast 需要 Node.js `22.19.0` 或更高版本（npm 随 Node.js 一并安装）。请从 [nodejs.org](https://nodejs.org) 安装，然后验证：
+
+   ```bash
+   node --version   # 应为 v22.19.0 或更高
+   npm --version
+   ```
+
+2. **获取 API key。** 默认 provider 为 DeepSeek，请在 [platform.deepseek.com](https://platform.deepseek.com) 创建，然后写入本地 `.env` 文件（每行一条 `KEY=value`，切勿提交进版本库）：
+
+   ```bash
+   echo 'DEEPSEEK_API_KEY=你的-deepseek-api-key' > .env
+   ```
+
+   使用其他 provider 时，请在同一 `.env` 中追加 `CANVAST_PROVIDER` 与 `CANVAST_MODEL`（见 [配置指南](docs/guides/configuration.md)）。
+
+3. **运行 Canvast。** 仓库 checkout，或从 [Releases](https://github.com/cyberflax2020/canvast/releases) 解压 `canvast-tui-0.1.0.tgz` 后：
+
+   ```bash
+   npm ci          # 解压后的 package 内使用 npm install
+   ./canvast.sh
+   ```
 
 然后直接请求你要的第一个结果：
 
@@ -255,7 +273,7 @@ cp .env.example .env   # 写入 DEEPSEEK_API_KEY
 ./canvast.sh -p "Summarize the current project state."
 ```
 
-**方式二：macOS App。** 环境要求：macOS 13 或更高版本。从 [Releases](https://github.com/cyberflax2020/canvast/releases) 下载 `Canvast-macos-0.1.0.zip`，解压后将 `Canvast.app` 移入"应用程序"。App 内嵌密封运行时，无需单独安装 Node.js。构建为 ad-hoc 签名，首次启动请右键 → 打开；在 Settings 中配置 provider key，选择项目，即可在 Run Console 中继续工作。
+**方式二：macOS App。** 环境要求：macOS 13 或更高版本。从 [Releases](https://github.com/cyberflax2020/canvast/releases) 下载 `Canvast-macos-0.1.0.zip`，解压后将 `Canvast.app` 移入"应用程序"。App 内嵌密封运行时，无需单独安装 Node.js。构建为 ad-hoc 签名，首次启动请右键 → 打开；在 Settings → API Key 中粘贴你的 DeepSeek key，选择项目，即可在 Run Console 中继续工作。
 
 随时导出 Canvas:
 

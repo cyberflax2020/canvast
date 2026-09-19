@@ -3,12 +3,12 @@
   "kind": "canvast-macos-ui-impact",
   "status": "passed",
   "classification": "release-presentation",
-  "generatedAt": "2026-09-19T00:54:21.929Z",
+  "generatedAt": "2026-09-19T02:48:22.365Z",
   "currentSourceManifest": {
     "path": "release/source-manifest.json",
-    "sha256": "21d449413b331d12a7c946aa85cabebb1f92649cf7eb4dd210a9d7c19bad48d3",
-    "generatedAt": "2026-09-19T00:29:43.530Z",
-    "sourceTreeSha256": "f45631367ad84bd58780afc622b9511919d2fb1e6d395f6f0d253e2e28bbe5fa"
+    "sha256": "dbd4913dc50f44e1a6dcded9c7428739815381a8eec10a619f74ec9453e42836",
+    "generatedAt": "2026-09-19T02:45:02.242Z",
+    "sourceTreeSha256": "80e14b3fe6579b7f97c162cf94775688b3e8c08f698dceecc06ed710c692e5cf"
   },
   "evaluationSourceManifest": {
     "path": "release/source-manifest.json",
@@ -4037,6 +4037,20 @@
       }
     },
     {
+      "path": "scripts/effectiveness-render.mjs",
+      "classification": "release-tooling",
+      "previous": {
+        "sha256": "0fc4be62facd0412cf15bd646890215c0ae5debd050e586abd09c7ae3e5e7747",
+        "size": 37206,
+        "mode": 420
+      },
+      "current": {
+        "sha256": "d476f56d1d1a60b93ec2386c92ced4773e1906dbc148af0dfa62d97145a43033",
+        "size": 35912,
+        "mode": 420
+      }
+    },
+    {
       "path": "scripts/public-release-guards.mjs",
       "classification": "release-tooling",
       "previous": {
@@ -4097,12 +4111,12 @@
     "evidenceProjection": {
       "command": "node scripts/generate-effectiveness-evidence.mjs verify --readme README.md",
       "status": "passed",
-      "completedAt": "2026-09-19T00:54:21.929Z",
+      "completedAt": "2026-09-19T02:48:22.365Z",
       "sourceManifest": {
         "path": "release/source-manifest.json",
-        "sha256": "21d449413b331d12a7c946aa85cabebb1f92649cf7eb4dd210a9d7c19bad48d3",
-        "generatedAt": "2026-09-19T00:29:43.530Z",
-        "sourceTreeSha256": "f45631367ad84bd58780afc622b9511919d2fb1e6d395f6f0d253e2e28bbe5fa"
+        "sha256": "dbd4913dc50f44e1a6dcded9c7428739815381a8eec10a619f74ec9453e42836",
+        "generatedAt": "2026-09-19T02:45:02.242Z",
+        "sourceTreeSha256": "80e14b3fe6579b7f97c162cf94775688b3e8c08f698dceecc06ed710c692e5cf"
       }
     }
   },
@@ -4123,7 +4137,7 @@
     },
     "effectivenessSummary": {
       "path": "release/artifacts/effectiveness-summary.json",
-      "sha256": "66583fe0cb6a6349a7eb59b51ec9c98df44827d98e049d13151fca78023efbfc",
+      "sha256": "ce8840204afbb4f16c9b415e581ae7507e5e7977ca5c09c3552f30543d4dc48a",
       "generatedAt": "2026-09-18T23:13:38.797Z",
       "sourceManifestSha256": "55587d20e78575efa3b97229387021d2e5698f236beef1f37f2bad9792dd4d2e",
       "sourceTreeSha256": "7b584540d5e2ed98f4e844c00ce839bb049f21a6161b1a56e381e0f61a4bb077"

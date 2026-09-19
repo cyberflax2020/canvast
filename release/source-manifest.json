@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "kind": "canvast-source-snapshot",
-  "generatedAt": "2026-09-19T00:29:43.530Z",
+  "generatedAt": "2026-09-19T02:45:02.242Z",
   "algorithm": "sha256",
   "scope": {
     "entries": [
@@ -75,8 +75,8 @@
     "sha256": "fc267f2ef73421ceef2bdae9e1ebb6a73748282e296300222a058357b33f6afe"
   },
   "fileCount": 650,
-  "totalBytes": 9722099,
-  "sourceTreeSha256": "f45631367ad84bd58780afc622b9511919d2fb1e6d395f6f0d253e2e28bbe5fa",
+  "totalBytes": 9720805,
+  "sourceTreeSha256": "80e14b3fe6579b7f97c162cf94775688b3e8c08f698dceecc06ed710c692e5cf",
   "files": [
     {
       "path": ".env.example",
@@ -1388,9 +1388,9 @@
     },
     {
       "path": "scripts/effectiveness-render.mjs",
-      "size": 37206,
+      "size": 35912,
       "mode": 420,
-      "sha256": "0fc4be62facd0412cf15bd646890215c0ae5debd050e586abd09c7ae3e5e7747"
+      "sha256": "d476f56d1d1a60b93ec2386c92ced4773e1906dbc148af0dfa62d97145a43033"
     },
     {
       "path": "scripts/effectiveness-summary.mjs",

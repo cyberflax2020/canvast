@@ -22,13 +22,13 @@
     },
     "modelBackendAttestation": {
       "path": "release/artifacts/model-backend-attestation.json",
-      "sha256": "df8743783591e8239b062f87d46927728f19ae2dd5fa20962293ffbcafa3a5e4",
+      "sha256": "e296cd2cd6ce0027b1a70e4b27f45d7329f08e2acc6a190524490c211980c66a",
       "attestedAt": "2026-09-19T00:00:00.000Z"
     }
   },
   "document": {
     "path": "docs/EFFECTIVENESS_EVIDENCE.md",
-    "sha256": "ef1e02b56bdf0d966e904565b541e0ada14907673135f11c12c37ec49be450d5"
+    "sha256": "bea020536ceded272c536198d6d0b097c5f1c354f5e60f6953773cbc88be5fed"
   },
   "comparisonOutcome": {
     "status": "inconclusive",
