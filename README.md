@@ -66,6 +66,7 @@ What this buys you in a large project:
 
 Everything you expect from a top-tier agent harness is here — and it is all governed by the same loop:
 
+- **Context management**: context budgeting with bounded, scoped context instead of ever-growing transcripts; structured compaction that preserves the active plan, sub-agents, workflows, and tool-run state across the compact; token tracking; and governed long-term recall of project decisions.
 - **Orchestration**: automatic DAG workflow decomposition (`run_workflow`), bounded sub-agent dispatch (`spawn_agent`, `parallel_agents`) with capacity limits and in-process or isolated execution, sidecar continuation for long-running primary work, plan mode with typed approvals, auto-orchestration decisions recorded as structured receipts.
 - **Execution**: sandboxed shell, file, and Git execution with identity pinning; background tasks; worktrees; notebook editing; LSP fallback lookup; grounded web search and fetch with explicit evidence reasons.
 - **Observability**: request receipts, input queue, request lifecycle, tool runs, runtime events, task and plan projections, and approval history — first-class, inspectable state in both surfaces.
@@ -207,6 +208,7 @@ Canvas 是 Canvast 的标志性能力，也是大型项目受益最多的地方�
 
 你对顶级 agent harness 的一切期待都在这里——并且都被同一条 loop 治理：
 
+- **上下文管理**：有界的 scoped 上下文，而不是无限增长的 transcript；结构化压缩在压缩后保留活动计划、子 agent、workflow 与工具运行状态；token 追踪；受治理的项目决策长期召回。
 - **编排**：自动 DAG workflow 拆分（`run_workflow`)、有界子 agent 配发（`spawn_agent`、`parallel_agents`，容量受限，进程内或隔离执行）、长跑主任务的 sidecar 接续、带 typed 审批的 plan mode、记录为结构化回执的自动编排决策。
 - **执行**：带身份钉住的沙箱 shell、文件与 Git 执行；后台任务；worktree;notebook 编辑；LSP fallback 查询；带显式证据理由的联网搜索与抓取。
 - **观测**:request receipt、input queue、request lifecycle、tool runs、runtime events、task 与 plan 投影、approval history——两个界面上都是一等可检查状态。

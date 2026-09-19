@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "kind": "canvast-public-tree",
-  "generatedAt": "2026-09-19T02:48:23.501Z",
+  "generatedAt": "2026-09-19T02:56:33.767Z",
   "algorithm": "sha256",
   "sourceManifest": {
     "path": "release/source-manifest.json",
@@ -55,8 +55,8 @@
     }
   ],
   "fileCount": 387,
-  "totalBytes": 11194090,
-  "treeSha256": "d56240d52117e91d644797554c3f04c495c49b34862747676f11fe5c74282e75",
+  "totalBytes": 11194623,
+  "treeSha256": "4a25f6ab9ea18ae812284aa4f54856a8acf17b9edd475760787c3d7f07b84ad9",
   "files": [
     {
       "path": ".env.example",
@@ -945,8 +945,8 @@
     },
     {
       "path": "README.md",
-      "size": 20447,
-      "sha256": "c43ff9de20fd71ebb781e31beeb893cfd4dd17bb88c76eceb5feee0d7fcbc0bb"
+      "size": 20980,
+      "sha256": "d24029afc6e21c408aab6349c3c86156d9550f6452555149231b2d232f2221c3"
     },
     {
       "path": "README.zh-CN.md",
@@ -1996,8 +1996,8 @@
   ],
   "payload": {
     "fileCount": 362,
-    "totalBytes": 9655088,
-    "treeSha256": "e3b05a3663dec92496031d3a4b2af56088c39fe442bbe46678153b5694b7117c",
+    "totalBytes": 9655621,
+    "treeSha256": "02c92edd5f8b520b72f14164b225ea1b5901652ddffa3855ce719c2500572968",
     "files": [
       {
         "path": ".env.example",
@@ -2816,8 +2816,8 @@
       },
       {
         "path": "README.md",
-        "size": 20447,
-        "sha256": "c43ff9de20fd71ebb781e31beeb893cfd4dd17bb88c76eceb5feee0d7fcbc0bb"
+        "size": 20980,
+        "sha256": "d24029afc6e21c408aab6349c3c86156d9550f6452555149231b2d232f2221c3"
       },
       {
         "path": "README.zh-CN.md",
