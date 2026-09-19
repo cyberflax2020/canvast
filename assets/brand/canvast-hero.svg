@@ -1,11 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
   <title id="title">Canvast — the loop harness for AI coding agents</title>
-  <desc id="desc">Canvast hero: self-built open-source loop harness wordmark beside a governance canvas graph with File, Plan, Decision, and AgentRun nodes.</desc>
+  <desc id="desc">Canvast hero: self-built open-source loop harness wordmark beside the governance canvas provenance chain — Decision motivates Plan, Plan is executed by an AgentRun, AgentRun produces a File.</desc>
   <defs>
     <style>
       .bg { fill: #070b13; }
-      .grid { fill: none; stroke: #10222f; stroke-width: 1.5; }
-      .eyebrow { fill: #1fc4f4; font-family: "SF Mono", "Menlo", monospace; font-size: 21px; font-weight: 600; letter-spacing: 6px; }
+      .eyebrow { fill: #1fc4f4; font-family: "SF Mono", "Menlo", monospace; font-size: 19px; font-weight: 600; letter-spacing: 3px; }
       .name { fill: #eaf6ff; font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif; font-size: 100px; font-weight: 800; letter-spacing: 8px; }
       .tag-en { fill: #a9dcf3; font-family: "SF Pro Text", "Helvetica Neue", Arial, sans-serif; font-size: 27px; font-weight: 500; }
       .tag-zh { fill: #7192ab; font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; font-size: 24px; font-weight: 400; letter-spacing: 2px; }
@@ -13,8 +12,8 @@
       .chip-text { font-family: "SF Mono", "Menlo", monospace; font-size: 20px; }
       .panel { fill: #0a141f; stroke: #1fc4f4; stroke-width: 4; }
       .edge { fill: none; stroke: #1c577a; stroke-width: 3; }
-      .edge-active { fill: none; stroke: #47d86b; stroke-width: 4.5; stroke-linecap: round; }
       .node-label { fill: #b8d8ea; font-family: "SF Mono", "Menlo", monospace; font-size: 17px; text-anchor: middle; }
+      .edge-label { fill: #5b8aa8; font-family: "SF Mono", "Menlo", monospace; font-size: 13px; }
       .legend { fill: #7192ab; font-family: "SF Mono", "Menlo", monospace; font-size: 16px; }
       .n-file { fill: #07111b; stroke: #1fc4f4; stroke-width: 5; }
       .n-plan { fill: #07111b; stroke: #47d86b; stroke-width: 5; }
@@ -26,13 +25,12 @@
       .dot-agent { fill: #8b7cf6; }
       .divider { stroke: #14324a; stroke-width: 2; }
     </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="10" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L5 10L10 0z" fill="#1c577a"/>
+    </marker>
   </defs>
 
   <rect class="bg" width="1280" height="640"/>
-
-  <!-- right-zone subtle grid only -->
-  <path class="grid" d="M760 128H1280M760 256H1280M760 384H1280M760 512H1280"/>
-  <path class="grid" d="M880 0V640M1000 0V640M1120 0V640"/>
 
   <!-- left zone: identity -->
   <text class="eyebrow" x="84" y="150">SELF-BUILT · OPEN SOURCE · LOOP HARNESS</text>
@@ -54,38 +52,44 @@
     <text class="chip-text" x="318" y="550" fill="#9ce8b2">Loop Governance</text>
   </g>
   <g>
-    <rect class="chip" x="540" y="520" width="248" height="46" rx="9" stroke="#ffbd36"/>
+    <rect class="chip" x="540" y="520" width="220" height="46" rx="9" stroke="#ffbd36"/>
     <text class="chip-text" x="564" y="550" fill="#f2cf8a">TUI + macOS App</text>
   </g>
 
   <path class="divider" d="M788 120V520"/>
 
-  <!-- right zone: governance canvas panel -->
+  <!-- right zone: governance canvas — the provenance chain (Decision → Plan → AgentRun → File) -->
   <rect class="panel" x="828" y="120" width="392" height="400" rx="18"/>
 
-  <!-- edges: with an 8px gap from each node so no edge touches a node -->
-  <path class="edge" d="M968 210H1102"/>
-  <path class="edge" d="M1140 248V382"/>
-  <path class="edge" d="M1102 420H968"/>
-  <path class="edge" d="M930 382V248"/>
-  <path class="edge-active" d="M968 210H1102L1140 248V382"/>
+  <!-- typed edges: the traceability chain, top → bottom -->
+  <path class="edge" d="M1024 194V226" marker-end="url(#arrow)"/>
+  <path class="edge" d="M1024 294V326" marker-end="url(#arrow)"/>
+  <path class="edge" d="M1024 394V426" marker-end="url(#arrow)"/>
 
-  <!-- nodes: 2×2 grid, labels below each node -->
-  <circle class="n-file" cx="930" cy="210" r="30"/>
-  <circle class="dot-file" cx="930" cy="210" r="9"/>
-  <text class="node-label" x="930" y="266">File</text>
+  <!-- Decision: why -->
+  <circle class="n-decision" cx="1024" cy="160" r="26"/>
+  <circle class="dot-decision" cx="1024" cy="160" r="9"/>
+  <text class="node-label" x="988" y="166" text-anchor="end">Decision</text>
 
-  <circle class="n-plan" cx="1140" cy="210" r="30"/>
-  <circle class="dot-plan" cx="1140" cy="210" r="9"/>
-  <text class="node-label" x="1140" y="266">Plan</text>
+  <!-- Plan: what -->
+  <circle class="n-plan" cx="1024" cy="260" r="26"/>
+  <circle class="dot-plan" cx="1024" cy="260" r="9"/>
+  <text class="node-label" x="988" y="266" text-anchor="end">Plan</text>
 
-  <circle class="n-decision" cx="930" cy="420" r="30"/>
-  <circle class="dot-decision" cx="930" cy="420" r="9"/>
-  <text class="node-label" x="930" y="476">Decision</text>
+  <!-- AgentRun: who -->
+  <circle class="n-agent" cx="1024" cy="360" r="26"/>
+  <circle class="dot-agent" cx="1024" cy="360" r="9"/>
+  <text class="node-label" x="988" y="366" text-anchor="end">AgentRun</text>
 
-  <circle class="n-agent" cx="1140" cy="420" r="30"/>
-  <circle class="dot-agent" cx="1140" cy="420" r="9"/>
-  <text class="node-label" x="1140" y="476">AgentRun</text>
+  <!-- File: result -->
+  <circle class="n-file" cx="1024" cy="460" r="26"/>
+  <circle class="dot-file" cx="1024" cy="460" r="9"/>
+  <text class="node-label" x="988" y="466" text-anchor="end">File</text>
 
-  <text class="legend" x="1035" y="492" text-anchor="middle">typed nodes · typed links · persistent</text>
+  <!-- typed link labels -->
+  <text class="edge-label" x="1060" y="214">MOTIVATED_BY</text>
+  <text class="edge-label" x="1060" y="314">EXECUTED_BY</text>
+  <text class="edge-label" x="1060" y="414">PRODUCED_BY</text>
+
+  <text class="legend" x="1024" y="508" text-anchor="middle">typed nodes · typed links · persistent</text>
 </svg>

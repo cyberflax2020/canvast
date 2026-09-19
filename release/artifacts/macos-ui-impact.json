@@ -3,12 +3,12 @@
   "kind": "canvast-macos-ui-impact",
   "status": "passed",
   "classification": "release-presentation",
-  "generatedAt": "2026-09-19T08:28:40.963Z",
+  "generatedAt": "2026-09-19T09:33:10.130Z",
   "currentSourceManifest": {
     "path": "release/source-manifest.json",
-    "sha256": "3157626d298f7f71dc6a0e000570ac46462d1fc0927194b60adc0c0f63ee5a9b",
-    "generatedAt": "2026-09-19T08:28:40.494Z",
-    "sourceTreeSha256": "7cc2eb0ac5082fad9860d188e018c260a15afba5bc799371f31072765b6be92e"
+    "sha256": "d60452b3f211078243622b100313eda90fd753ed395ffc323e6c2993ed577524",
+    "generatedAt": "2026-09-19T09:32:41.968Z",
+    "sourceTreeSha256": "1b81136030793390936163d75d4ac709010f507f29d7e0292f0f8a83a7ddad1f"
   },
   "evaluationSourceManifest": {
     "path": "release/source-manifest.json",
@@ -4017,7 +4017,7 @@
         "mode": 420
       },
       "current": {
-        "sha256": "45c061916ccc97cd52708b7d2eaf85bdbad7ad9737d4e39f7f5b2595cdddd84e",
+        "sha256": "9b64d3721c15844439211863fd7ce01eaf5f524102faf110be5379a5df3ba49b",
         "size": 1938,
         "mode": 420
       }
@@ -4031,8 +4031,8 @@
         "mode": 420
       },
       "current": {
-        "sha256": "f52306d0428f2fd77cf2bdcb3821bd7572c3cadd1d6565948062b4f4d39ac5a6",
-        "size": 4839,
+        "sha256": "19e95de2619db99dbf55350fd92f52ade76931733ff472ddddf81ce6f9f2db01",
+        "size": 5187,
         "mode": 420
       }
     },
@@ -4111,12 +4111,12 @@
     "evidenceProjection": {
       "command": "node scripts/generate-effectiveness-evidence.mjs verify --readme README.md",
       "status": "passed",
-      "completedAt": "2026-09-19T08:28:40.963Z",
+      "completedAt": "2026-09-19T09:33:10.130Z",
       "sourceManifest": {
         "path": "release/source-manifest.json",
-        "sha256": "3157626d298f7f71dc6a0e000570ac46462d1fc0927194b60adc0c0f63ee5a9b",
-        "generatedAt": "2026-09-19T08:28:40.494Z",
-        "sourceTreeSha256": "7cc2eb0ac5082fad9860d188e018c260a15afba5bc799371f31072765b6be92e"
+        "sha256": "d60452b3f211078243622b100313eda90fd753ed395ffc323e6c2993ed577524",
+        "generatedAt": "2026-09-19T09:32:41.968Z",
+        "sourceTreeSha256": "1b81136030793390936163d75d4ac709010f507f29d7e0292f0f8a83a7ddad1f"
       }
     }
   },
