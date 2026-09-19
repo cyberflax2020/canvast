@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
   "kind": "canvast-public-tree",
-  "generatedAt": "2026-09-19T10:23:48.090Z",
+  "generatedAt": "2026-09-19T10:29:51.340Z",
   "algorithm": "sha256",
   "sourceManifest": {
     "path": "release/source-manifest.json",
-    "sha256": "6bb04a63a5bb27f858e53a8851391285c1e5059234fe2f11561516b57fcdcd66"
+    "sha256": "cd72bc9a4a50680ebb9169d296840694d509d3c784454217f5cf7840e198c9b6"
   },
   "policy": {
     "path": "scripts/public-repo-policy.mjs",
@@ -55,8 +55,8 @@
     }
   ],
   "fileCount": 387,
-  "totalBytes": 11023948,
-  "treeSha256": "83515b2f25554f00e7f235b03d0412548bd09746280de025027559b207295c77",
+  "totalBytes": 11023513,
+  "treeSha256": "0eef619819352effee851f66e07b09ac498fed2f69861cf6f0a691ea68b8844e",
   "files": [
     {
       "path": ".env.example",
@@ -96,12 +96,12 @@
     {
       "path": "assets/brand/asset-manifest.json",
       "size": 1938,
-      "sha256": "65f53a2b0faf044041485bb5f4f6fe371d069075fa7bb0c1cae9c154af307bbf"
+      "sha256": "63f6aee8d7cc8131cbe39ce140c57f1c04fbcda8c1819d18f470e44f8ad49bae"
     },
     {
       "path": "assets/brand/canvast-hero.svg",
-      "size": 5160,
-      "sha256": "b6720269d94cb90b917218a8ca0b22fec65d976ddabdfabf458eb0d4877bbe32"
+      "size": 4725,
+      "sha256": "dc9498b152c72839c83e62ad3f3b757efaf336e1a0e8b528f7a23d53c9b2c295"
     },
     {
       "path": "assets/brand/canvast-logo.svg",
@@ -956,7 +956,7 @@
     {
       "path": "release/artifacts/canvas-portable.json",
       "size": 2546,
-      "sha256": "3c364d5078c4bc7ec49ac08182d7fb9bc396f5acb97a0c272a1690d571324f88"
+      "sha256": "723504db918fbfabde301c4fad773fef9408ae65c4458c5b38b2f541138f0950"
     },
     {
       "path": "release/artifacts/canvas-portable/canvas-graph-export.json",
@@ -996,7 +996,7 @@
     {
       "path": "release/artifacts/macos-ui-impact.json",
       "size": 149163,
-      "sha256": "1b90f7a63c69c62377541831d58cf85050b426f12186c5c19c9d033b3450abbc"
+      "sha256": "aedcd176576d7044bfcb7bc7fa558bf3a8b7577e3f0f70996d049f40eb8f5b37"
     },
     {
       "path": "release/artifacts/model-backend-attestation.json",
@@ -1016,7 +1016,7 @@
     {
       "path": "release/source-manifest.json",
       "size": 127339,
-      "sha256": "6bb04a63a5bb27f858e53a8851391285c1e5059234fe2f11561516b57fcdcd66"
+      "sha256": "cd72bc9a4a50680ebb9169d296840694d509d3c784454217f5cf7840e198c9b6"
     },
     {
       "path": "scripts/assert-resource-baseline.mjs",
@@ -1996,8 +1996,8 @@
   ],
   "payload": {
     "fileCount": 362,
-    "totalBytes": 9663466,
-    "treeSha256": "ab471e05fa6b70e60da7fd77abf2ebda039c3366f58a3b11ca1403460fedbaec",
+    "totalBytes": 9663031,
+    "treeSha256": "2cc1e242b56233c6588a42e3a2249a972ec959ab5bf0bcff12a02ebb28de50b6",
     "files": [
       {
         "path": ".env.example",
@@ -2007,12 +2007,12 @@
       {
         "path": "assets/brand/asset-manifest.json",
         "size": 1938,
-        "sha256": "65f53a2b0faf044041485bb5f4f6fe371d069075fa7bb0c1cae9c154af307bbf"
+        "sha256": "63f6aee8d7cc8131cbe39ce140c57f1c04fbcda8c1819d18f470e44f8ad49bae"
       },
       {
         "path": "assets/brand/canvast-hero.svg",
-        "size": 5160,
-        "sha256": "b6720269d94cb90b917218a8ca0b22fec65d976ddabdfabf458eb0d4877bbe32"
+        "size": 4725,
+        "sha256": "dc9498b152c72839c83e62ad3f3b757efaf336e1a0e8b528f7a23d53c9b2c295"
       },
       {
         "path": "assets/brand/canvast-logo.svg",
@@ -2832,7 +2832,7 @@
       {
         "path": "release/source-manifest.json",
         "size": 127339,
-        "sha256": "6bb04a63a5bb27f858e53a8851391285c1e5059234fe2f11561516b57fcdcd66"
+        "sha256": "cd72bc9a4a50680ebb9169d296840694d509d3c784454217f5cf7840e198c9b6"
       },
       {
         "path": "scripts/assert-resource-baseline.mjs",

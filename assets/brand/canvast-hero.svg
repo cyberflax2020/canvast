@@ -11,9 +11,8 @@
       .chip { fill: #0a1622; stroke-width: 2; }
       .chip-text { font-family: "SF Mono", "Menlo", monospace; font-size: 20px; }
       .panel { fill: #0a141f; stroke: #1fc4f4; stroke-width: 4; }
-      .edge { fill: none; stroke: #2a6f92; stroke-width: 3.5; }
-      .edge-loop { fill: none; stroke: #2a6f92; stroke-width: 3.5; stroke-dasharray: 7 6; }
-      .node-label { fill: #b8d8ea; font-family: "SF Mono", "Menlo", monospace; font-size: 17px; text-anchor: middle; }
+      .edge { fill: none; stroke: #33708f; stroke-width: 3; }
+      .node-label { fill: #b8d8ea; font-family: "SF Mono", "Menlo", monospace; font-size: 17px; }
       .legend { fill: #7192ab; font-family: "SF Mono", "Menlo", monospace; font-size: 16px; }
       .n-file { fill: #07111b; stroke: #1fc4f4; stroke-width: 5; }
       .n-plan { fill: #07111b; stroke: #47d86b; stroke-width: 5; }
@@ -25,9 +24,6 @@
       .dot-agent { fill: #8b7cf6; }
       .divider { stroke: #14324a; stroke-width: 2; }
     </style>
-    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="10" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0 0L5 10L10 0z" fill="#2a6f92"/>
-    </marker>
   </defs>
 
   <rect class="bg" width="1280" height="640"/>
@@ -58,35 +54,34 @@
 
   <path class="divider" d="M788 120V520"/>
 
-  <!-- right zone: governance canvas — a clockwise loop -->
+  <!-- right zone: governance canvas — a closed loop -->
   <rect class="panel" x="828" y="120" width="392" height="400" rx="18"/>
 
-  <!-- curved typed links: Decision → Plan → AgentRun → File -->
-  <path class="edge" d="M1048 254Q1104 262 1090 296" marker-end="url(#arrow)"/>
-  <path class="edge" d="M1090 344Q1104 378 1048 386" marker-end="url(#arrow)"/>
-  <path class="edge" d="M1000 386Q944 378 958 344" marker-end="url(#arrow)"/>
-  <!-- loop back: File → Decision (next turn) -->
-  <path class="edge-loop" d="M958 296Q944 262 1000 254" marker-end="url(#arrow)"/>
+  <!-- curved typed links: Decision → Plan → AgentRun → File → Decision -->
+  <path class="edge" d="M1048 254Q1104 262 1090 296"/>
+  <path class="edge" d="M1090 344Q1104 378 1048 386"/>
+  <path class="edge" d="M1000 386Q944 378 958 344"/>
+  <path class="edge" d="M958 296Q944 262 1000 254"/>
 
   <!-- Decision (why) — top -->
   <circle class="n-decision" cx="1024" cy="230" r="24"/>
-  <circle class="dot-decision" cx="1024" cy="230" r="8"/>
-  <text class="node-label" x="1024" y="192" text-anchor="middle">Decision</text>
+  <circle class="dot-decision" cx="1024" cy="230" r="7"/>
+  <text class="node-label" x="1024" y="190" text-anchor="middle">Decision</text>
 
   <!-- Plan (what) — right -->
   <circle class="n-plan" cx="1114" cy="320" r="24"/>
-  <circle class="dot-plan" cx="1114" cy="320" r="8"/>
-  <text class="node-label" x="1150" y="326" text-anchor="start">Plan</text>
+  <circle class="dot-plan" cx="1114" cy="320" r="7"/>
+  <text class="node-label" x="1153" y="326" text-anchor="start">Plan</text>
 
   <!-- AgentRun (who) — bottom -->
   <circle class="n-agent" cx="1024" cy="410" r="24"/>
-  <circle class="dot-agent" cx="1024" cy="410" r="8"/>
-  <text class="node-label" x="1024" y="472" text-anchor="middle">AgentRun</text>
+  <circle class="dot-agent" cx="1024" cy="410" r="7"/>
+  <text class="node-label" x="1024" y="458" text-anchor="middle">AgentRun</text>
 
   <!-- File (result) — left -->
   <circle class="n-file" cx="934" cy="320" r="24"/>
-  <circle class="dot-file" cx="934" cy="320" r="8"/>
-  <text class="node-label" x="898" y="326" text-anchor="end">File</text>
+  <circle class="dot-file" cx="934" cy="320" r="7"/>
+  <text class="node-label" x="895" y="326" text-anchor="end">File</text>
 
   <text class="legend" x="1024" y="508" text-anchor="middle">typed nodes · typed links · persistent</text>
 </svg>
