@@ -67,9 +67,12 @@ What this buys you in a large project:
 Everything you expect from a top-tier agent harness is here — and it is all governed by the same loop:
 
 - **Context management**: context budgeting with bounded, scoped context instead of ever-growing transcripts; structured compaction that preserves the active plan, sub-agents, workflows, and tool-run state across the compact; token tracking; and governed long-term recall of project decisions.
-- **Orchestration**: automatic DAG workflow decomposition (`run_workflow`), bounded sub-agent dispatch (`spawn_agent`, `parallel_agents`) with capacity limits and in-process or isolated execution, sidecar continuation for long-running primary work, plan mode with typed approvals, auto-orchestration decisions recorded as structured receipts.
-- **Execution**: sandboxed shell, file, and Git execution with identity pinning; background tasks; worktrees; notebook editing; LSP fallback lookup; grounded web search and fetch with explicit evidence reasons.
-- **Observability**: request receipts, input queue, request lifecycle, tool runs, runtime events, task and plan projections, and approval history — first-class, inspectable state in both surfaces.
+- **Planning & tasks**: plan mode with enter / propose / approve / exit, a live plan-tree projection, and a full task lifecycle (`task_create`, `task_update`, `task_list`); automatic orchestration decisions are recorded as structured receipts.
+- **Orchestration & delegation**: automatic DAG workflow decomposition (`run_workflow`); bounded sub-agent dispatch (`spawn_agent`, `parallel_agents`) with capacity limits and in-process or isolated execution; sidecar continuation for long-running primary work; and agent messaging (`send_message`, `list_agents`).
+- **Execution**: sandboxed shell, file, and Git execution with identity pinning; background tasks; worktrees; and notebook editing.
+- **Code intelligence**: LSP fallback lookup (definition, references, symbols, hover), a bounded structural repository map (`canvas_repomap`), and lightweight code review with structured findings.
+- **Search & web**: bounded file and content search, and grounded web search / fetch / research with explicit evidence reasons.
+- **Observability**: request receipts, input queue, request lifecycle, tool runs, runtime events, task and plan projections, approval history, and usage stats — first-class, inspectable state in both surfaces.
 - **Safety and permissions**: `read-only`, `workspace-write`, and `full-access` profiles; typed grant and revoke actions with recorded rationale; credential redaction; a resource watchdog and a single process-fence wrapper (`safe-run.sh`) born from real crash postmortems; an owned-handle registry that pins PID, process group, and process birth time and fails closed on PID reuse.
 - **Runtime hardening**: the relocatable sealed launcher scrubs dozens of inherited environment variables (including dynamic-linker injection and TLS key-logging hooks) and pins a known TLS configuration before starting the agent.
 - **Extensibility**: explicitly activated skills (off by default, unknown names rejected), an MCP registry, cron schedules, monitors, and local HTML artifacts.
@@ -209,9 +212,12 @@ Canvas 是 Canvast 的标志性能力，也是大型项目受益最多的地方�
 你对顶级 agent harness 的一切期待都在这里——并且都被同一条 loop 治理：
 
 - **上下文管理**：有界的 scoped 上下文，而不是无限增长的 transcript；结构化压缩在压缩后保留活动计划、子 agent、workflow 与工具运行状态；token 追踪；受治理的项目决策长期召回。
-- **编排**：自动 DAG workflow 拆分（`run_workflow`)、有界子 agent 配发（`spawn_agent`、`parallel_agents`，容量受限，进程内或隔离执行）、长跑主任务的 sidecar 接续、带 typed 审批的 plan mode、记录为结构化回执的自动编排决策。
-- **执行**：带身份钉住的沙箱 shell、文件与 Git 执行；后台任务；worktree;notebook 编辑；LSP fallback 查询；带显式证据理由的联网搜索与抓取。
-- **观测**:request receipt、input queue、request lifecycle、tool runs、runtime events、task 与 plan 投影、approval history——两个界面上都是一等可检查状态。
+- **计划与任务**：plan mode（进入/提出/批准/退出）、实时计划树投影、完整任务生命周期（`task_create`、`task_update`、`task_list`）；自动编排决策记录为结构化回执。
+- **编排与委派**：自动 DAG workflow 拆分（`run_workflow`）；有界子 agent 配发（`spawn_agent`、`parallel_agents`，容量受限，进程内或隔离执行）；长跑主任务的 sidecar 接续；agent 消息传递（`send_message`、`list_agents`）。
+- **执行**：带身份钉住的沙箱 shell、文件与 Git 执行；后台任务；worktree;notebook 编辑。
+- **代码智能**：LSP fallback 查询（定义、引用、符号、hover）、有界的结构化仓库图谱（`canvas_repomap`）、轻量代码评审与结构化 findings。
+- **搜索与联网**：有界的文件与内容搜索；带显式证据理由的联网搜索/抓取/研究。
+- **观测**:request receipt、input queue、request lifecycle、tool runs、runtime events、task 与 plan 投影、approval history、usage stats——两个界面上都是一等可检查状态。
 - **安全与权限**:`read-only`、`workspace-write`、`full-access` 三档 profile；带记录理由的 typed grant 与 revoke；凭据脱敏；从真实崩溃复盘长出来的资源 watchdog 与进程围栏（`safe-run.sh`)；钉住 PID、进程组与进程出生时间、PID 复用时安全拒绝的 owned-handle 注册表。
 - **运行时加固**：可迁移密封启动器在启动 agent 前清除数十个继承环境变量（包括动态链接器注入与 TLS key-logging 钩子），并钉住已知 TLS 配置。
 - **可扩展**：显式启用的 skill（默认关闭，未知名称拒绝）、MCP registry、cron 调度、监控器、本地 HTML artifact。
