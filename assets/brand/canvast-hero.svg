@@ -13,7 +13,6 @@
       .panel { fill: #0a141f; stroke: #1fc4f4; stroke-width: 4; }
       .edge { fill: none; stroke: #1c577a; stroke-width: 3; }
       .node-label { fill: #b8d8ea; font-family: "SF Mono", "Menlo", monospace; font-size: 17px; text-anchor: middle; }
-      .edge-label { fill: #5b8aa8; font-family: "SF Mono", "Menlo", monospace; font-size: 13px; }
       .legend { fill: #7192ab; font-family: "SF Mono", "Menlo", monospace; font-size: 16px; }
       .n-file { fill: #07111b; stroke: #1fc4f4; stroke-width: 5; }
       .n-plan { fill: #07111b; stroke: #47d86b; stroke-width: 5; }
@@ -58,38 +57,33 @@
 
   <path class="divider" d="M788 120V520"/>
 
-  <!-- right zone: governance canvas — the provenance chain (Decision → Plan → AgentRun → File) -->
+  <!-- right zone: governance canvas — provenance chain as a Z-flow -->
   <rect class="panel" x="828" y="120" width="392" height="400" rx="18"/>
 
-  <!-- typed edges: the traceability chain, top → bottom -->
-  <path class="edge" d="M1024 194V226" marker-end="url(#arrow)"/>
-  <path class="edge" d="M1024 294V326" marker-end="url(#arrow)"/>
-  <path class="edge" d="M1024 394V426" marker-end="url(#arrow)"/>
+  <!-- typed edges: Decision → Plan → AgentRun → File -->
+  <path class="edge" d="M972 200H1078" marker-end="url(#arrow)"/>
+  <path class="edge" d="M1110 232V378" marker-end="url(#arrow)"/>
+  <path class="edge" d="M1078 410H972" marker-end="url(#arrow)"/>
 
-  <!-- Decision: why -->
-  <circle class="n-decision" cx="1024" cy="160" r="26"/>
-  <circle class="dot-decision" cx="1024" cy="160" r="9"/>
-  <text class="node-label" x="988" y="166" text-anchor="end">Decision</text>
+  <!-- Decision (why) — top-left -->
+  <circle class="n-decision" cx="940" cy="200" r="26"/>
+  <circle class="dot-decision" cx="940" cy="200" r="9"/>
+  <text class="node-label" x="940" y="156" text-anchor="middle">Decision</text>
 
-  <!-- Plan: what -->
-  <circle class="n-plan" cx="1024" cy="260" r="26"/>
-  <circle class="dot-plan" cx="1024" cy="260" r="9"/>
-  <text class="node-label" x="988" y="266" text-anchor="end">Plan</text>
+  <!-- Plan (what) — top-right -->
+  <circle class="n-plan" cx="1110" cy="200" r="26"/>
+  <circle class="dot-plan" cx="1110" cy="200" r="9"/>
+  <text class="node-label" x="1110" y="156" text-anchor="middle">Plan</text>
 
-  <!-- AgentRun: who -->
-  <circle class="n-agent" cx="1024" cy="360" r="26"/>
-  <circle class="dot-agent" cx="1024" cy="360" r="9"/>
-  <text class="node-label" x="988" y="366" text-anchor="end">AgentRun</text>
+  <!-- AgentRun (who) — bottom-right -->
+  <circle class="n-agent" cx="1110" cy="410" r="26"/>
+  <circle class="dot-agent" cx="1110" cy="410" r="9"/>
+  <text class="node-label" x="1110" y="462" text-anchor="middle">AgentRun</text>
 
-  <!-- File: result -->
-  <circle class="n-file" cx="1024" cy="460" r="26"/>
-  <circle class="dot-file" cx="1024" cy="460" r="9"/>
-  <text class="node-label" x="988" y="466" text-anchor="end">File</text>
-
-  <!-- typed link labels -->
-  <text class="edge-label" x="1060" y="214">MOTIVATED_BY</text>
-  <text class="edge-label" x="1060" y="314">EXECUTED_BY</text>
-  <text class="edge-label" x="1060" y="414">PRODUCED_BY</text>
+  <!-- File (result) — bottom-left -->
+  <circle class="n-file" cx="940" cy="410" r="26"/>
+  <circle class="dot-file" cx="940" cy="410" r="9"/>
+  <text class="node-label" x="940" y="462" text-anchor="middle">File</text>
 
   <text class="legend" x="1024" y="508" text-anchor="middle">typed nodes · typed links · persistent</text>
 </svg>
