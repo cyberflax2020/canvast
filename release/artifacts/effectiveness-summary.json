@@ -22,7 +22,7 @@
     },
     "modelBackendAttestation": {
       "path": "release/artifacts/model-backend-attestation.json",
-      "sha256": "dd5735f4c52ee59532e4bad9750046a9db17dcee432f1bd72ce1dd04c7a6d564",
+      "sha256": "abd63ef51a6755037791459629f79f209b41d58029103c9c541b93aa0022882d",
       "attestedAt": "2026-09-19T00:00:00.000Z"
     }
   },

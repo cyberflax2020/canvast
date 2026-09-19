@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "canvast-canvas-portable-release",
-  "generatedAt": "2026-09-19T07:28:16.009Z",
+  "generatedAt": "2026-09-19T08:22:16.255Z",
   "sourceManifest": {
     "path": "release/source-manifest.json",
     "status": "verified",
-    "sourceTreeSha256": "d6674c8b954160e9e4fea13bfcad85e90698efab9b65eb9c53e499ea125d0a14",
-    "manifestSha256": "242c420dbea6a74e22f9dcda4e157795327607dd7b60378803f3d144c4266935"
+    "sourceTreeSha256": "3e84ebbcb2bec88f5966a73d702b180b2317bf99a834248ac283fd8253fce3bc",
+    "manifestSha256": "52fdb6971a7dc0239c00e56905a12f3f267f2158b07b530a0fbb6a4cd4c6e031"
   },
   "entry": "npm run export:canvas -- --input release/artifacts/canvas-portable/fixture-input.json --out release/artifacts/canvas-portable --title \"Canvas Surface Proof\"",
   "verificationCommand": "node scripts/export-canvas.mjs --input release/artifacts/canvas-portable/fixture-input.json --out release/artifacts/canvas-portable --title \"Canvas Surface Proof\"",

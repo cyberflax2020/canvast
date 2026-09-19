@@ -46,8 +46,8 @@
     {
       "path": "assets/brand/canvast-hero.svg",
       "mediaType": "image/svg+xml",
-      "size": 4830,
-      "sha256": "29609a346e6a7c2b2a193f0ed99410c6ba7929399e8a44c4e4f940406181e011",
+      "size": 4842,
+      "sha256": "cc5f9f490e0e8508234708bbe2c15eaf94929ac10765bca36bcb87c77ec40b6a",
       "purpose": [
         "product-brand",
         "documentation",

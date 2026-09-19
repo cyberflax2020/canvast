@@ -100,10 +100,14 @@ Paired evaluation: Canvast vs the reference toolchain (2.1.233 (Claude Code); ba
 - Median run latency: Canvast 27294 ms; reference 12780 ms; ratio 2.1357x. This overhead is disclosed as a known optimization target for upcoming releases.
 - Model backend: both sides ran the same DeepSeek model, deepseek-v4-flash — confirmed by the Canvast project.
 
-Beyond parity, Canvast's signature capability is the Graph Canvas governance canvas — a persistent File / Plan / Decision / AgentRun graph with typed links, BFS traceability, and canvas-scoped context. Claude Code offers no equivalent typed project graph.
+Canvast's signature capability is the Graph Canvas governance canvas — a persistent File / Plan / Decision / AgentRun graph with typed links, BFS traceability, and canvas-scoped context.
 - Machine-verified: Canvas projection and export worked in 2 of 4 measured repeats.
-Full methodology and record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).
+End-to-end traceability is verified; bounded-context and large-project advantages are recorded for follow-up verification, not yet measured at scale. Full methodology and record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).
 <!-- CANVAST_EFFECTIVENESS_EN_END -->
+
+**Verification status.** The Graph Canvas's traceability is measured and verified: a decision recorded with its rationale persists across sessions, and a fresh session's BFS trace recovers the full File → Plan → Decision chain, so the "why" of an artifact survives context loss.
+
+**Recorded as follow-up verification.** The Graph Canvas's bounded-context and stability advantages are expected to be most visible in large projects — long unattended agent sessions, multiple coordinated sub-agents, hundreds of changed files, and cross-session continuity. This scenario is not yet measured at scale and is recorded here as a follow-up verification item, not as a claim.
 
 ### Get started
 
@@ -256,10 +260,14 @@ Canvas 是 Canvast 的标志性能力，也是大型项目受益最多的地方�
 - 中位运行时长：Canvast 27294 毫秒；参考运行 12780 毫秒；比值 2.1357x。该开销已公开记录为后续版本的优化目标。
 - 模型后端：两侧运行同一 DeepSeek 模型 deepseek-v4-flash，由 Canvast 项目确认。
 
-对标之外，Canvast 的标志性特色是 Graph Canvas 治理画布——File / Plan / Decision / AgentRun 持久化图谱，带 typed link、BFS 可回溯与 Canvas 作用域上下文。Claude Code 没有对应的 typed 项目图谱。
+Canvast 的标志性特色是 Graph Canvas 治理画布——File / Plan / Decision / AgentRun 持久化图谱，带 typed link、BFS 可回溯与 Canvas 作用域上下文。
 - 机器验证：Canvas 投影与导出在 4 次重复中 2 次通过。
-完整方法论与记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。
+端到端溯源已实测验证；有界上下文与大型项目优势记为后续验证项，尚未规模化实测。完整方法论与记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。
 <!-- CANVAST_EFFECTIVENESS_ZH_END -->
+
+**验证状态。** Graph Canvas 的溯源已实测验证：带 rationale 的决策跨会话持久，全新会话的 BFS 溯源完整找回 File → Plan → Decision 链，产物的"为什么"不因上下文丢失而消失。
+
+**记为后续验证项。** Graph Canvas 的有界上下文与稳定性优势，预期在大型项目中体现最明显——长时间无人值守 agent、多个协调子 agent、数百文件变更、跨 session 连续。该场景尚未规模化实测，此处如实记为后续验证项，而非结论。
 
 ### 快速开始
 

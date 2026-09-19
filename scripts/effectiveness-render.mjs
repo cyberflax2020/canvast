@@ -432,9 +432,9 @@ function englishReadmeBlock(summary) {
     README_MARKERS.english.start,
     ...protocolLinesEnglish(summary),
     "",
-    "Beyond parity, Canvast's signature capability is the Graph Canvas governance canvas — a persistent File / Plan / Decision / AgentRun graph with typed links, BFS traceability, and canvas-scoped context. Claude Code offers no equivalent typed project graph.",
+    "Canvast's signature capability is the Graph Canvas governance canvas — a persistent File / Plan / Decision / AgentRun graph with typed links, BFS traceability, and canvas-scoped context.",
     canvasLine,
-    "Full methodology and record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).",
+    "End-to-end traceability is verified; bounded-context and large-project advantages are recorded for follow-up verification, not yet measured at scale. Full methodology and record: [Effectiveness Evidence](docs/EFFECTIVENESS_EVIDENCE.md).",
     README_MARKERS.english.end,
   ].join("\n");
 }
@@ -448,9 +448,9 @@ function chineseReadmeBlock(summary) {
     README_MARKERS.chinese.start,
     ...protocolLinesChinese(summary),
     "",
-    "对标之外，Canvast 的标志性特色是 Graph Canvas 治理画布——File / Plan / Decision / AgentRun 持久化图谱，带 typed link、BFS 可回溯与 Canvas 作用域上下文。Claude Code 没有对应的 typed 项目图谱。",
+    "Canvast 的标志性特色是 Graph Canvas 治理画布——File / Plan / Decision / AgentRun 持久化图谱，带 typed link、BFS 可回溯与 Canvas 作用域上下文。",
     canvasLine,
-    "完整方法论与记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。",
+    "端到端溯源已实测验证；有界上下文与大型项目优势记为后续验证项，尚未规模化实测。完整方法论与记录见：[有效性证据](docs/EFFECTIVENESS_EVIDENCE.md)。",
     README_MARKERS.chinese.end,
   ].join("\n");
 }
