@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
   <title id="title">Canvast — the loop harness for AI coding agents</title>
-  <desc id="desc">Canvast hero: self-built open-source loop harness wordmark beside the governance canvas provenance chain — Decision motivates Plan, Plan is executed by an AgentRun, AgentRun produces a File.</desc>
+  <desc id="desc">Canvast hero: self-built open-source loop harness wordmark beside the governance canvas — Decision, Plan, AgentRun, and File arranged in a loop, each turn producing files that feed the next decision.</desc>
   <defs>
     <style>
       .bg { fill: #070b13; }
@@ -11,7 +11,8 @@
       .chip { fill: #0a1622; stroke-width: 2; }
       .chip-text { font-family: "SF Mono", "Menlo", monospace; font-size: 20px; }
       .panel { fill: #0a141f; stroke: #1fc4f4; stroke-width: 4; }
-      .edge { fill: none; stroke: #1c577a; stroke-width: 3; }
+      .edge { fill: none; stroke: #2a6f92; stroke-width: 3.5; }
+      .edge-loop { fill: none; stroke: #2a6f92; stroke-width: 3.5; stroke-dasharray: 7 6; }
       .node-label { fill: #b8d8ea; font-family: "SF Mono", "Menlo", monospace; font-size: 17px; text-anchor: middle; }
       .legend { fill: #7192ab; font-family: "SF Mono", "Menlo", monospace; font-size: 16px; }
       .n-file { fill: #07111b; stroke: #1fc4f4; stroke-width: 5; }
@@ -25,7 +26,7 @@
       .divider { stroke: #14324a; stroke-width: 2; }
     </style>
     <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="10" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0 0L5 10L10 0z" fill="#1c577a"/>
+      <path d="M0 0L5 10L10 0z" fill="#2a6f92"/>
     </marker>
   </defs>
 
@@ -57,33 +58,35 @@
 
   <path class="divider" d="M788 120V520"/>
 
-  <!-- right zone: governance canvas — provenance chain as a Z-flow -->
+  <!-- right zone: governance canvas — a clockwise loop -->
   <rect class="panel" x="828" y="120" width="392" height="400" rx="18"/>
 
-  <!-- typed edges: Decision → Plan → AgentRun → File -->
-  <path class="edge" d="M972 200H1078" marker-end="url(#arrow)"/>
-  <path class="edge" d="M1110 232V378" marker-end="url(#arrow)"/>
-  <path class="edge" d="M1078 410H972" marker-end="url(#arrow)"/>
+  <!-- curved typed links: Decision → Plan → AgentRun → File -->
+  <path class="edge" d="M1048 254Q1104 262 1090 296" marker-end="url(#arrow)"/>
+  <path class="edge" d="M1090 344Q1104 378 1048 386" marker-end="url(#arrow)"/>
+  <path class="edge" d="M1000 386Q944 378 958 344" marker-end="url(#arrow)"/>
+  <!-- loop back: File → Decision (next turn) -->
+  <path class="edge-loop" d="M958 296Q944 262 1000 254" marker-end="url(#arrow)"/>
 
-  <!-- Decision (why) — top-left -->
-  <circle class="n-decision" cx="940" cy="200" r="26"/>
-  <circle class="dot-decision" cx="940" cy="200" r="9"/>
-  <text class="node-label" x="940" y="156" text-anchor="middle">Decision</text>
+  <!-- Decision (why) — top -->
+  <circle class="n-decision" cx="1024" cy="230" r="24"/>
+  <circle class="dot-decision" cx="1024" cy="230" r="8"/>
+  <text class="node-label" x="1024" y="192" text-anchor="middle">Decision</text>
 
-  <!-- Plan (what) — top-right -->
-  <circle class="n-plan" cx="1110" cy="200" r="26"/>
-  <circle class="dot-plan" cx="1110" cy="200" r="9"/>
-  <text class="node-label" x="1110" y="156" text-anchor="middle">Plan</text>
+  <!-- Plan (what) — right -->
+  <circle class="n-plan" cx="1114" cy="320" r="24"/>
+  <circle class="dot-plan" cx="1114" cy="320" r="8"/>
+  <text class="node-label" x="1150" y="326" text-anchor="start">Plan</text>
 
-  <!-- AgentRun (who) — bottom-right -->
-  <circle class="n-agent" cx="1110" cy="410" r="26"/>
-  <circle class="dot-agent" cx="1110" cy="410" r="9"/>
-  <text class="node-label" x="1110" y="462" text-anchor="middle">AgentRun</text>
+  <!-- AgentRun (who) — bottom -->
+  <circle class="n-agent" cx="1024" cy="410" r="24"/>
+  <circle class="dot-agent" cx="1024" cy="410" r="8"/>
+  <text class="node-label" x="1024" y="472" text-anchor="middle">AgentRun</text>
 
-  <!-- File (result) — bottom-left -->
-  <circle class="n-file" cx="940" cy="410" r="26"/>
-  <circle class="dot-file" cx="940" cy="410" r="9"/>
-  <text class="node-label" x="940" y="462" text-anchor="middle">File</text>
+  <!-- File (result) — left -->
+  <circle class="n-file" cx="934" cy="320" r="24"/>
+  <circle class="dot-file" cx="934" cy="320" r="8"/>
+  <text class="node-label" x="898" y="326" text-anchor="end">File</text>
 
   <text class="legend" x="1024" y="508" text-anchor="middle">typed nodes · typed links · persistent</text>
 </svg>
